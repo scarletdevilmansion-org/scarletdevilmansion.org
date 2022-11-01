@@ -1,0 +1,302 @@
+/*  Charset  */
+@charset "UTF-8";
+
+body {
+    background-color: #a5a4e9;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+/*  Desktop and laptop  */
+@media only screen and (min-width: 720px) {
+
+    body {
+        background-color: #a5a4e9;
+        font-family: "Comic Sans MS", "Comic Sans", cursive;
+    }
+
+    #active {
+        background-color: rgb(99, 32, 76, 0.6);
+        transition: all 250ms ease-in-out;
+        border-radius: 15px;
+    }
+
+    .section-top-bar {
+        border-radius: 15px;
+        height: 256px;
+        background-color: transparent;
+        margin: 50px 100px 0px 190px;
+    }
+
+    .nav-wrapper {
+        color: #eeeeee;
+        margin-bottom: 650px;
+    }
+
+    .cover-nav-wrapper {
+        margin: 50px 100px 50px 190px;
+        border-radius: 15px;
+        background: rgb(202, 147, 218);
+    }
+
+    .cover-nav-wrapper ul {
+        list-style: none;
+    }
+
+    .cover-nav {
+        line-height: 1.5;
+        font-size: 17px;
+        color: #546673;
+        -webkit-font-smoothing: antialiased;
+        -webkit-tap-highlight-color: transparent;
+        font-family: 'Rosarivo';
+        box-sizing: inherit;
+        border: 0;
+        margin: 0;
+        padding: 0;
+        display: block;
+        width: 100%;
+        padding-left: 365px;
+        padding-right: 35px;
+    }
+    
+    .cover-nav-options {
+        display: flex;
+        text-decoration: none;
+    }
+
+    .cover-nav-options a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .cover-nav-link {
+        display: block;
+        max-width: 170px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 15px;
+        font-weight: 400;
+        color: #fcfcfc;
+        transition: all 250ms ease-in-out;
+        float: left;
+        position: relative;
+        margin: 0px 5px 0px 5px;
+        padding: 0 12px;
+        box-sizing: content-box;
+    }
+
+    .cover-nav-link:hover {
+        background-color:rgb(99, 32, 76);
+        border-radius: 15px;
+    }
+
+    .truncate-line, .truncate-line>p {
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .profile-wrapper {
+        margin: 0px 400px 0px 490px;
+    }
+
+    .cover-profile-bar {
+        border-radius: 15px;
+        float: left;
+        height: 300px;
+        background-color: #546673;
+        padding: 20px 20px 20px 20px;
+    }
+
+    .cover-profile-avatar-img {
+        display: inline-block;
+        position: relative;
+        border: 3px #0f0000 solid;
+        border-radius: 100%;
+        text-align: center;
+        width: 129px;
+        transition: width .2s ease-in-out;
+    }
+
+    .cover-option-bar {
+        border-radius: 15px;
+        height: 300px;
+        background-color: #245557;
+        padding: 20px 20px 20px 230px;
+    }
+
+    .profile-wrapper {
+        margin-bottom: 60px;
+        display: block;
+        height: 300px;
+        width: 71%;
+        border-radius: 10px;
+    }
+
+    .profile-picture {
+        margin-bottom: inherit;
+        height: 74%;
+        width: inherit;
+        background-color: #546673;
+        border-radius: inherit;     
+    }
+
+    .profile-picture-content {
+        display: flex;
+        padding: 20px;
+    }
+
+    .user-about {
+        margin-bottom: inherit;
+        width: inherit;
+        background-color: #546673;
+        border-radius: inherit;     
+    }
+
+    
+    .user-about-content {
+        padding: 10px 20px 20px 20px;
+        height: auto;
+    }
+
+    #message_counter {
+        color: #fff;
+        background-color: #546673;
+        float: right;
+        border-radius: 6px;
+        margin-top: -3%;
+        margin-right: 0.29%;
+        padding: 1px 0px 0px 2px;
+        width: 7.8%;
+    }
+
+    #count_message {
+        color: #fff;
+        background-color: #546673;
+        float: right;
+        border-radius: 6px;
+        margin-top: -3%;
+        margin-right: 1%;
+        padding: 1px 0px 0px 2px;
+        width: 3.7%;
+    }
+
+    .user-p-change {
+        margin-bottom: inherit;
+        width: inherit;
+        background-color: #546673;
+        border-radius: inherit;  
+        padding: 15px;   
+    }
+
+    .user-p-content {
+        margin-top: 15px;
+        margin-left: 35px;
+    }
+
+    input[type="password"] {
+        padding: 6px 4px 6px 4px;
+        font-size: 14px;
+        border-radius: 5px;
+        border: none;
+        color: #000;
+        background-color: #fff;
+    }
+
+    input[type="submit"] {
+        font-size: 14px;
+        border-radius: 4px;
+        border: #c058af;
+        background-color: #f1ace6;
+        color: #fff;
+        padding: 6px 4px 6px 4px;
+    }
+
+    #none-decoration {
+        text-decoration: none;
+        color: yellow;
+    }
+    
+    sup {
+        background-color: rgb(253, 0, 219, 0.5);
+        font-size: 10px;
+        border-radius: 5px;
+        margin: 2px 5px 2px 5px;
+        padding: 2px 2px 2px 2px;
+    }
+
+    p {
+        margin-top: 5px;
+    }
+
+
+
+    .btn-sett {
+        text-decoration: none;
+        border: transparent;
+        background-color: transparent;
+        background: transparent;
+        margin: 5px 5px 2px 5px;
+    }
+
+    .btn-sett:hover {
+        text-decoration: none;
+        border: #d1d1d1;
+        border-radius: 3px;
+        margin: 5px 5px 2px 5px;
+        background-color: #110606;
+        background: #1a1616;
+    }
+
+    img {
+        border-radius: 15px;
+    }
+}
+
+/*  769 pixel  */
+@media screen and (max-width: 768px) {
+    
+}
+
+/*  425 pixel */
+@media screen and (max-width: 425px) {
+    
+}
+
+@media screen and (max-width: 412px) {
+    
+}
+
+/*  Code for Firefox  */
+::-moz-selection { 
+    color: #d1d1d1;
+    background: #ff6e8b;
+}
+
+/*  Code for all browsers  */
+::selection {
+    color: #d1d1d1;
+    background: #ff6e8b;
+}
+
+/*  Kalınlık  */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/*  Kayan �?eyin arkasındaki �?ey  */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 3px #0f0000; 
+    border-radius: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #800000;
+    border-radius: 7px;
+}
+
+/*  kayan �?eyin üstüne gelince olan �?ey  */
+::-webkit-scrollbar-thumb:hover {
+    background: #b30000; 
+}

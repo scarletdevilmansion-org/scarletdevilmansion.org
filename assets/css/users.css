@@ -1,0 +1,226 @@
+/*  Charset  */
+@charset "UTF-8";
+
+/*  Desktop and laptop  */
+@media only screen and (min-width: 1024px) {
+    body {
+        background-color: #a5a4e9;
+        font-family: "Comic Sans MS", "Comic Sans", cursive;
+    }
+
+    #active {
+        background-color: rgb(99, 32, 76, 0.6);
+        transition: all 250ms ease-in-out;
+        border-radius: 15px;
+    }
+
+    .section-top-bar {
+        border-radius: 15px;
+        height: 256px;
+        background-color: transparent;
+        margin: 50px 100px 0px 190px;
+    }
+
+    .nav-wrapper {
+        color: #eeeeee;
+    }
+
+    .cover-nav-wrapper {
+        margin: 50px 100px 50px 190px;
+        border-radius: 15px;
+        background: rgb(202, 147, 218);
+    }
+
+    .cover-nav-wrapper ul {
+        list-style: none;
+    }
+
+    .cover-nav {
+        line-height: 1.5;
+        font-size: 17px;
+        font-family: "Comic Sans MS", "Comic Sans", cursive;
+        color: #546673;
+        -webkit-font-smoothing: antialiased;
+        -webkit-tap-highlight-color: transparent;
+        box-sizing: inherit;
+        border: 0;
+        margin: 0;
+        padding: 0;
+        display: block;
+        width: 100%;
+        padding-left: 365px;
+        padding-right: 35px;
+    }
+    
+    .cover-nav-options {
+        display: flex;
+        text-decoration: none;
+    }
+
+    .cover-nav-options a {
+        text-decoration: none;
+    }
+
+    .cover-nav-link {
+        display: block;
+        max-width: 170px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 15px;
+        font-weight: 400;
+        color: #fcfcfc;
+        transition: all 250ms ease-in-out;
+        float: left;
+        position: relative;
+        margin: 0px 5px 0px 5px;
+        padding: 0 12px;
+        box-sizing: content-box;
+    }
+
+    .cover-nav-link:hover {
+        background-color:rgb(99, 32, 76);
+        border-radius: 15px;
+    }
+
+    .truncate-line, .truncate-line>p {
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .cover-profile-avatar-img {
+        display: inline-block;
+        position: relative;
+        border: 3px #0f0000 solid;
+        border-radius: 100%;
+        text-align: center;
+        width: 129px;
+        transition: width .2s ease-in-out;
+    }
+
+    .cover-option-bar {
+        border-radius: 15px;
+        height: 310px;
+        background-color: #245557;
+        padding: 20px;
+    }
+
+    .profile-bg {
+        background-color: #465570;
+    }
+
+    .profile-img {
+        width: 64px;
+    }
+
+    .profile-bg-up {
+        background-color: #465570;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+
+    .profile-bg-down {
+        background-color: #465570;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+
+    .none-decoration {
+        text-decoration: none;
+        color: yellow;
+    }
+
+    sup {
+        background-color: rgb(253, 0, 219, 0.5);
+        font-size: 10px;
+        border-radius: 5px;
+        margin: 2px 5px 2px 5px;
+        padding: 2px 2px 2px 2px;
+    }
+
+    p {
+        margin-top: 5px;
+        padding: 10px;
+    }
+
+    a {
+        font-size: 13px;
+    }
+
+    h5 {
+        font-size: 24px;
+    }
+
+    .margin {
+        margin-bottom: 15px;
+    }
+
+    .btn-sett {
+        text-decoration: none;
+        border: transparent;
+        background-color: transparent;
+        background: transparent;
+        margin: 5px 5px 2px 5px;
+    }
+
+    .btn-sett:hover {
+        text-decoration: none;
+        border: #d1d1d1;
+        border-radius: 3px;
+        margin: 5px 5px 2px 5px;
+        background-color: #110606;
+        background: #1a1616;
+    }
+
+    img {
+        border-radius: 15px;
+    }
+}
+
+/*  769 pixel  */
+@media screen and (max-width: 768px) {
+    
+}
+
+/*  425 pixel */
+@media screen and (max-width: 425px) {
+    
+}
+
+@media screen and (max-width: 412px) {
+    
+}
+
+/*  Code for Firefox  */
+::-moz-selection { 
+    color: #d1d1d1;
+    background: #ff6e8b;
+}
+
+/*  Code for all browsers  */
+::selection {
+    color: #d1d1d1;
+    background: #ff6e8b;
+}
+
+/*  Kalınlık  */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/*  Kayan �?eyin arkasındaki �?ey  */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 3px #0f0000; 
+    border-radius: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #800000;
+    border-radius: 7px;
+}
+
+/*  kayan �?eyin üstüne gelince olan �?ey  */
+::-webkit-scrollbar-thumb:hover {
+    background: #b30000; 
+}

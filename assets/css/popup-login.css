@@ -1,0 +1,96 @@
+.anim {
+	margin-right: 125px;
+	transition: all 1s ease-in-out;
+}
+
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 138px;
+  bottom: 50px;
+  border: none;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 350px;
+  padding: 15px;
+  background-color: #242526;
+  border-radius: 20px;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], input[type=password] {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	box-sizing: border-box;
+}
+
+.submit-btn {
+	background-color: #802424;
+	color: #d9d7d7;
+	transition: all 2s ease-in-out;
+	padding: 14px 20px;
+	border: none;
+	cursor: pointer;
+	margin-top: 15px;
+	margin-bottom: 5px;
+	border-radius: 15px;
+	padding: 10px 90px 10px 90px;
+	font-size: 14px;
+}
+
+.submit-btn:hover {
+	background-color: #cf5454;
+}
+
+.submit-btn-cncl {
+	background-color: #802424;
+	color: #d9d7d7;
+	padding: 14px 20px;
+	border: none;
+	cursor: pointer;
+	margin-top: 15px;
+	margin-bottom: 5px;
+	border-radius: 15px;
+	padding: 10px 102px 10px 102px;
+	font-size: 14px;
+}
+
+.submit-btn-cncl:hover {
+	background-color: #cf5454;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}

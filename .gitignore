@@ -1,0 +1,14 @@
+# ignore ALL .log files
+*.log
+
+# ignore ALL files in ANY directory named connections
+**/pages/u/
+**/connections/
+**/functions/PHPMailer/
+**/functions/register/PHPMailer/
+
+# ignore ALL files in directory connections
+# connections/connection.php
+# connections/databaseconnect.php
+# connections/pdoconfig.php
+# connections/connection_close.php
