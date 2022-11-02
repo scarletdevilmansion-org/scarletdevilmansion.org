@@ -2,10 +2,14 @@
 
 // Veritabanı bağlantısı için gerekli olan şey
 require_once "../../connections/connection.php";
+
+require '../PHPMailer/src/Exception.php';
+require '../PHPMailer/src/PHPMailer.php';
+require '../PHPMailer/src/SMTP.php';
  
 // Değişkenler oluştulup boş değerler atanılır
-$new_password = $confirm_password = $code_recovery_err = $username_err = "";
-$new_password_err = $confirm_password_err = $code_recovery = $username = "";
+$code_err = $username_err = "";
+$code = $username = "";
  
 // Form gönderildiğinde form verileri işlenir
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -17,84 +21,482 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     else
     {
         $username = trim($_POST['username']);
-    }
 
-    if(empty($_POST['new_password']))
-    {
-        $new_password_err = "Yeni bir parola belirle.";
-    }
-    else
-    {
-        $new_password = trim($_POST['new_password']);
-    }
+        include "../uvid-func.php";
+        $recovery_code = get_rand_alphanumeric(8);
 
-    if(empty($_POST['confirm_password']))
-    {
-        $confirm_password_err = "Parolanı tekrar gir.";
-    }
-    else
-    {
-        if($_POST['confirm_password'] != $new_password)
+        $code_sql = $db->prepare("UPDATE user_verification SET uvid = ? WHERE username = ? ");
+        $code_sql->execute(array($recovery_code, $username));
+
+        $result = mysqli_query($db,"SELECT * FROM users WHERE username = '$username'");
+
+        while ($info = mysqli_fetch_array($result,MYSQLI_ASSOC))
         {
-            $confirm_password_err = "Parolalar uyuşmuyor.";
+          $email = $info["user_email"];
+          $name = $info["isim"];
         }
-        else
+
+        $mail = new PHPMailer\PHPMailer\PHPMailer();
+
+        $mail->CharSet = "UTF-8";
+            
+        //Türkçe dil ayarı
+        $mail->setLanguage('tr', '../PHPMailer/language/');         // Set mailer language
+            
+            
+        //$mail->SMTPDebug = 3;                                  // Enable verbose debug output
+           
+        $mail->isSMTP();                                         // Set mailer to use SMTP
+        $mail->Host = 'mail.scarletdevilmansion.org';            // Specify main and backup SMTP servers
+        $mail->SMTPAuth = true;                                  // Enable SMTP authentication
+        $mail->Username = 'no-reply@scarletdevilmansion.org';    // SMTP username
+        $mail->Password = 'bbt50c!#@7p00ZX';                     // SMTP password
+        $mail->SMTPSecure = 'ssl';                               // Enable TLS encryption, `ssl` also accepted
+        $mail->Port = 465;                                       // TCP port to connect to
+            
+        $mail->setFrom('no-reply@scarletdevilmansion.org', 'SDM Destek');  //Sender Mail
+        $mail->addAddress($email, $name);                    // Add a recipient
+            
+        //Content
+        $mail->isHTML(true);                                 //Set email format to HTML
+        $mail->Subject = 'Şifre Sıfırlama Talebi';
+        $mail->Body    = 
+        '
+        <!doctype html>
+        <html>
+          <head>
+                      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+                      <title>Scarlet Devil Mansion Şifre Sıfırlama</title>
+                      <style>
+                        /* -------------------------------------
+                            GLOBAL RESETS
+                        ------------------------------------- */
+                        
+                        /*All the styling goes here*/
+                        
+                        img {
+                          border: none;
+                          -ms-interpolation-mode: bicubic;
+                          max-width: 100%; 
+                        }
+                  
+                        body {
+                          background-color: #a6a6a6;
+                          font-family: sans-serif;
+                          -webkit-font-smoothing: antialiased;
+                          font-size: 14px;
+                          line-height: 1.4;
+                          margin: 0;
+                          margin-top: 50px;
+                          padding: 0;
+                          -ms-text-size-adjust: 100%;
+                          -webkit-text-size-adjust: 100%; 
+                        }
+                  
+                        table {
+                          border-collapse: separate;
+                          mso-table-lspace: 0pt;
+                          mso-table-rspace: 0pt;
+                          width: 100%; }
+                          table td {
+                            font-family: sans-serif;
+                            font-size: 14px;
+                            vertical-align: top; 
+                        }
+                  
+                        p {
+                          color: #dbdbdb;
+                        }
+                  
+                        /* -------------------------------------
+                            BODY & CONTAINER
+                        ------------------------------------- */
+                  
+                        .body {
+                          background-color: #a6a6a6;
+                          width: 100%; 
+                        }
+                  
+                        /* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
+                        .container {
+                          display: block;
+                          margin: 0 auto !important;
+                          /* makes it centered */
+                          max-width: 580px;
+                          padding: 10px;
+                          width: 580px; 
+                        }
+                  
+                        /* This should also be a block element, so that it will fill 100% of the .container */
+                        .content {
+                          box-sizing: border-box;
+                          display: block;
+                          margin: 0 auto;
+                          max-width: 580px;
+                          padding: 10px; 
+                        }
+                  
+                        /* -------------------------------------
+                            HEADER, FOOTER, MAIN
+                        ------------------------------------- */
+                        .main {
+                          background: #747474;
+                          border-radius: 3px;
+                          width: 100%; 
+                        }
+                  
+                        .wrapper {
+                          box-sizing: border-box;
+                          padding: 20px; 
+                        }
+                  
+                        .content-block {
+                          padding-bottom: 10px;
+                          padding-top: 10px;
+                        }
+                  
+                        .footer {
+                          clear: both;
+                          margin-top: 10px;
+                          text-align: center;
+                          width: 100%; 
+                        }
+                          .footer td,
+                          .footer p,
+                          .footer span,
+                          .footer a {
+                            color: #fff;
+                            font-size: 12px;
+                            text-align: center; 
+                        }
+                  
+                        /* -------------------------------------
+                            TYPOGRAPHY
+                        ------------------------------------- */
+                        h1,
+                        h2,
+                        h3,
+                        h4 {
+                          color: #fff;
+                          font-family: sans-serif;
+                          font-weight: 400;
+                          line-height: 1.4;
+                          margin: 0;
+                          margin-bottom: 30px; 
+                        }
+                  
+                        h1 {
+                          font-size: 35px;
+                          font-weight: 300;
+                          text-align: center;
+                          text-transform: capitalize; 
+                        }
+                  
+                        p,
+                        ul,
+                        ol {
+                          font-family: sans-serif;
+                          font-size: 14px;
+                          font-weight: normal;
+                          margin: 0;
+                          margin-bottom: 15px; 
+                        }
+                          p li,
+                          ul li,
+                          ol li {
+                            list-style-position: inside;
+                            margin-left: 5px; 
+                        }
+                  
+                        a {
+                          color: #3498db;
+                          text-decoration: underline; 
+                        }
+                  
+                        /* -------------------------------------
+                            BUTTONS
+                        ------------------------------------- */
+                        .btn {
+                          box-sizing: border-box;
+                          width: 100%; }
+                          .btn > tbody > tr > td {
+                            padding-bottom: 15px; }
+                          .btn table {
+                            width: auto; 
+                        }
+                          .btn table td {
+                            background-color: #dfdfdf;
+                            border-radius: 5px;
+                            text-align: center; 
+                        }
+                          .btn a {
+                            background-color: #dfdfdf;
+                            border: solid 1px #3498db;
+                            border-radius: 5px;
+                            box-sizing: border-box;
+                            color: #3498db;
+                            cursor: pointer;
+                            display: inline-block;
+                            font-size: 14px;
+                            font-weight: bold;
+                            margin: 0;
+                            padding: 12px 25px;
+                            text-decoration: none;
+                            text-transform: capitalize; 
+                        }
+                  
+                        .btn-primary table td {
+                          background-color: #8d4a84; 
+                        }
+                  
+                        .btn-primary a {
+                          background-color: #8d4a84;
+                          border-color: #8d4a84;
+                          color: #dfdfdf; 
+                        }
+                  
+                        /* -------------------------------------
+                            OTHER STYLES THAT MIGHT BE USEFUL
+                        ------------------------------------- */
+                        .last {
+                          margin-bottom: 0; 
+                        }
+                  
+                        .first {
+                          margin-top: 0; 
+                        }
+                  
+                        .align-center {
+                          text-align: center; 
+                        }
+                  
+                        .align-right {
+                          text-align: right; 
+                        }
+                  
+                        .align-left {
+                          text-align: left; 
+                        }
+                  
+                        .clear {
+                          clear: both; 
+                        }
+                  
+                        .mt0 {
+                          margin-top: 0; 
+                        }
+                  
+                        .mb0 {
+                          margin-bottom: 0; 
+                        }
+                  
+                        .preheader {
+                          color: transparent;
+                          display: none;
+                          height: 0;
+                          max-height: 0;
+                          max-width: 0;
+                          opacity: 0;
+                          overflow: hidden;
+                          mso-hide: all;
+                          visibility: hidden;
+                          width: 0; 
+                        }
+                  
+                        .powered-by a {
+                          text-decoration: none; 
+                        }
+                  
+                        hr {
+                          border: 0;
+                          border-bottom: 1px solid #f6f6f6;
+                          margin: 20px 0; 
+                        }
+                  
+                        /* -------------------------------------
+                            RESPONSIVE AND MOBILE FRIENDLY STYLES
+                        ------------------------------------- */
+                        @media only screen and (max-width: 620px) {
+                          table.body h1 {
+                            font-size: 28px !important;
+                            margin-bottom: 10px !important; 
+                          }
+                          table.body p,
+                          table.body ul,
+                          table.body ol,
+                          table.body td,
+                          table.body span,
+                          table.body a {
+                            font-size: 16px !important; 
+                          }
+                          table.body .wrapper,
+                          table.body .article {
+                            padding: 10px !important; 
+                          }
+                          table.body .content {
+                            padding: 0 !important; 
+                          }
+                          table.body .container {
+                            padding: 0 !important;
+                            width: 100% !important; 
+                          }
+                          table.body .main {
+                            border-left-width: 0 !important;
+                            border-radius: 0 !important;
+                            border-right-width: 0 !important; 
+                          }
+                          table.body .btn table {
+                            width: 100% !important; 
+                          }
+                          table.body .btn a {
+                            width: 100% !important; 
+                          }
+                          table.body .img-responsive {
+                            height: auto !important;
+                            max-width: 100% !important;
+                            width: auto !important; 
+                          }
+                        }
+                  
+                        /* -------------------------------------
+                            PRESERVE THESE STYLES IN THE HEAD
+                        ------------------------------------- */
+                        @media all {
+                          .ExternalClass {
+                            width: 100%; 
+                          }
+                          .ExternalClass,
+                          .ExternalClass p,
+                          .ExternalClass span,
+                          .ExternalClass font,
+                          .ExternalClass td,
+                          .ExternalClass div {
+                            line-height: 100%; 
+                          }
+                          .apple-link a {
+                            color: inherit !important;
+                            font-family: inherit !important;
+                            font-size: inherit !important;
+                            font-weight: inherit !important;
+                            line-height: inherit !important;
+                            text-decoration: none !important; 
+                          }
+                          #MessageViewBody a {
+                            color: inherit;
+                            text-decoration: none;
+                            font-size: inherit;
+                            font-family: inherit;
+                            font-weight: inherit;
+                            line-height: inherit;
+                          }
+                          .btn-primary table td:hover {
+                            background-color: #34495e !important;
+                            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                          }
+                          .btn-primary a:hover {
+                            background-color: #34495e !important;
+                            border-color: #34495e !important; 
+                          } 
+                        }
+                  
+                      </style>
+                    </head>
+                    <body>
+                      <span class="preheader">Scarlet Devil Mansion Doğrulama E-Postası</span>
+                      <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="body">
+                        <tr>
+                          <td>&nbsp;</td>
+                          <td class="container">
+                            <div class="content">
+                  
+                              <!-- START CENTERED WHITE CONTAINER -->
+                              <table role="presentation" class="main">
+                  
+                                <!-- START MAIN CONTENT AREA -->
+                                <tr>
+                                  <td class="wrapper">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+                                      <tr>
+                                        <td>
+                                          <p>Değerli kullanıcımız,</p>
+                                          <p>Siz ve ya birisi şifre sıfırlama talebinde bulundu. Sıfırlama için kullanacağınız kod '.$recovery_code.' olmaktadır.</p>
+                                          <p>Eğer bu siz değilseniz bizimle iletişime geçmeniz önemle rica edilir.</p>
+                                          <p>Saygılarla,<br>Scarlet Devil Mansion Destek ekibi.</p>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                  
+                              <!-- END MAIN CONTENT AREA -->
+                              </table>
+                              <!-- END CENTERED WHITE CONTAINER -->
+                  
+                            </div>
+                          </td>
+                <td>&nbsp;</td>
+              </tr>
+            </table>
+          </body>
+        </html>
+        ';
+        $mail->AltBody = 'SDM Destek Ekibi';
+                
+        if(!$mail->send())
         {
-            $confirm_password = trim($_POST['confirm_password']);
+          echo 'E-mail gönderilemedi.';
+          echo 'Hata bilgisi: ' . $mail->ErrorInfo;
         }
     }
 
     if(empty($_POST['recovery_code']))
     {
-        $code_recovery_err = "Kurtarma kodun gerekli.";
+        $code_err = "Kayıtlı e-mail adresinize gelen koda ihtiyacımız var.";
     }
     else
     {
-        $code_recovery = $_POST['recovery_code'];
+        $result = mysqli_query($db,"SELECT * FROM user_verification WHERE username = '$username'");
+        while ($info = mysqli_fetch_array($result,MYSQLI_ASSOC))
+        {
+            $code = $info["uvid"];
+        }
+        if($code == $_POST['recovery_code'])
+        {
+            $code_err = "Kodunuz doğru değil ya da kullanılmış";
+        }
     }
-    
-    if(empty($username_err) && empty($code_recovery_err) && empty($new_password_err) && empty($confirm_password_err))
+
+    /*
+    if(empty($username_err))
     {
-        $sql = "SELECT * FROM user_verification WHERE uvid = '$code_recovery' AND username = '$username'";
-
-        if(mysqli_stmt_execute(mysqli_prepare($db, $sql))){
-
-            $sql2 = "UPDATE users SET password = ? WHERE username = '$username'";
-
-            if($stmt = mysqli_prepare($db, $sql2)){
-                // Bind variables to the prepared statement as parameters
-                mysqli_stmt_bind_param($stmt, "s", $param_password);
-
-                $param_password = password_hash($new_password, PASSWORD_DEFAULT); // Creates a password hash
-
-                // Attempt to execute the prepared statement
-                if(mysqli_stmt_execute($stmt)){
-                    
-                    // Bind variables to the prepared statement as parameters
-                    mysqli_stmt_bind_param($stmt, "s", $param_password);
-
-                    $param_password = password_hash($new_password, PASSWORD_DEFAULT); // Creates a password hash
-
-                    $sql3 = "UPDATE user_verification SET uvid = NULL WHERE username = '$username'";
-                    mysqli_stmt_execute(mysqli_prepare($db, $sql3));
-
-                    header("location: http://localhost/functions/login");
-                }
-            }
-
-            mysqli_stmt_close($stmt);
+        if(empty($_POST['recovery_code']))
+        {
+            $code_err = "Kayıtlı e-mail adresinize gelen koda ihtiyacımız var.";
         }
         else
         {
-            $code_recovery_err = "Kod Hatalı.";
+            $code = $_POST['recovery_code'];
+
+            $code_v_sql = $db->prepare("SELECT uvid FROM user_verification WHERE uvid = ? ");
+
+            if($code_v_sql->execute(array($code)))
+            {
+                header("Location: ../new-password/");
+            }
+            else
+            {
+                $code_err = "Size gönderilen kod ile yazılan kod uyuşmuyor.";
+            }
         }
-    }
+    }*/
+
     mysqli_close($db);
 }
 ?>
  
 <!DOCTYPE html>
-<html lang="TR">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>Şifre Sıfırlama</title>
@@ -104,6 +506,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         body{ font: 14px Comic Sans MS; }
         .wrapper{ width: 360px; padding: 20px; }
     </style>
+    <script type="text/javascript">
+    window.onload = setupRefresh;
+    function setupRefresh()
+    {
+        setInterval("refreshBlock();",30000);
+    }
+    
+    function refreshBlock()
+    {
+        $('#code').load(document.URL +  ' #code');
+    }
+    </script>
 </head>
 <body>
     <div class="wrapper">
@@ -112,31 +526,23 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"> 
             <div class="form-group">
                 <label>Kullanıcı Adın</label>
-                <input type="code" name="username" placeholder="kullanıcıAadını Yaz"
+                <input type="code" name="username" placeholder="Kullanıcı Adını Yaz"
                 class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
                 <span class="invalid-feedback"><?php echo $username_err; ?></span>
             </div>
             <div class="form-group">
-                <label>Parola sıfırlama kodun</label>
-                <input type="code" name="recovery_code" placeholder="Parola Sıfırlama Kodunu Yaz"
-                class="form-control <?php echo (!empty($code_recovery_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $code_recovery; ?>">
-                <span class="invalid-feedback"><?php echo $code_recovery_err; ?></span>
+                <input type="submit" class="btn btn-primary" value="Kodu Al">
             </div>
+        </form>
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group">
-                <label>Yeni Parola</label>
-                <input type="password" name="new_password" placeholder="Yeni Parola Buraya"
-                class="form-control <?php echo (!empty($new_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $new_password; ?>">
-                <span class="invalid-feedback"><?php echo $new_password_err; ?></span>
-            </div>
-            <div class="form-group">
-                <label>Parolayı Onaylayınız</label>
-                <input type="password" name="confirm_password" placeholder="Yeni Parola TeKRaR Buraya"
-                class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>">
-                <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
+                <label>Sıfırlama Kodun</label>
+                <input type="code" name="username" placeholder="Sana gönderilen kodu yaz"
+                class="form-control <?php echo (!empty($code_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $code; ?>">
+                <span class="invalid-feedback"><?php echo $code_err; ?></span>
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Sıfırla">
-                <a class="btn btn-link ml-2" href="http://localhost/">Vazgeçtim :d</a>
             </div>
         </form>
     </div>    
