@@ -12,7 +12,7 @@
 }
 
 input[type=text] {
-    font-family: Rosarivo;
+    font-family: Comic Sans MS;
     width: 60%;
     padding: 12px 20px;
     margin-top: 10px;
@@ -24,10 +24,9 @@ input[type=text] {
 }
 
 .search-container button {
-    padding: 14px 16px 16px 14px;
-    margin-bottom: -2px;
+    padding: 16px 18px 14px 14px;
     margin-left: 5px;
-    border-radius: 5px;
+    border-radius: 8px;
     background-color: rgb(255, 119, 146);
     border: none;
     cursor: pointer;
