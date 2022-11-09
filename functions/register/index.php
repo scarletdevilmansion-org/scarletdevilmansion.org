@@ -197,55 +197,75 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
     <meta charset="UTF-8">
     <title>Kayıt Formu</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body{ font: 14px Comic Sans MS; }
-        .wrapper{ width: 360px; padding: 20px; }
-    </style>
+    <link rel="stylesheet" href="../../assets/css/register.css">
 </head>
 <body>
-    <div class="wrapper">
-        <h2>Kayıt Formu</h2>
-        <p>Hesap oluşturmak bu formu doldur.</p>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="form-group">
-                <label>Adınız</label>
-                <input type="text" name="nameuser" class="form-control <?php echo (!empty($nameuser_err)) ? 'is-invalid' : ''; ?>" placeholder="Adınız" value="<?php echo $nameuser; ?>">
-                <span class="invalid-feedback"><?php echo $nameuser_err; ?></span>
+    <center>
+        <div class="section">
+            <div class="wrapper-1">
+                <h1>Başlık H1</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum animi fugit,<br>
+                vitae voluptate possimus placeat vero ullam reiciendis odit ipsam necessitatibus eaque.<br>
+                Dolor placeat facilis, impedit eos esse minus. Dolore? 1425x881,812 - 641,438x633,812</p>
             </div>
-            <div class="form-group">
-                <label>Adınız</label>
-                <input type="text" name="surnameuser" class="form-control <?php echo (!empty($surnameuser_err)) ? 'is-invalid' : ''; ?>" placeholder="Soy Adınız" value="<?php echo $surnameuser; ?>">
-                <span class="invalid-feedback"><?php echo $surnameuser_err; ?></span>
+            <div class="wrapper-2">
+                <center>
+                    <h2>Kayıt Formu</h2>
+                    <p>Hesap oluşturmak bu formu doldur.</p>
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                        <div class="form-group">
+                            <label>Adınız</label>
+                            <input type="text" name="nameuser"
+                            class="form-control <?php echo (!empty($nameuser_err)) ? 'is-invalid' : ''; ?>"
+                            placeholder="Adınız" value="<?php echo $nameuser; ?>">
+                            <span class="invalid-feedback"><?php echo $nameuser_err; ?></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Adınız</label>
+                            <input type="text" name="surnameuser"
+                            class="form-control <?php echo (!empty($surnameuser_err)) ? 'is-invalid' : ''; ?>"
+                            placeholder="Soy Adınız" value="<?php echo $surnameuser; ?>">
+                            <span class="invalid-feedback"><?php echo $surnameuser_err; ?></span>
+                        </div>
+                        <div class="form-group">
+                            <label>E-Posta Adresiniz</label>
+                            <input type="email" name="email"
+                            class="form-control <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>"
+                            placeholder="E-posta Adresiniz" value="<?php echo $email; ?>">
+                            <span class="invalid-feedback"><?php echo $email_err; ?></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Kullanıcı Adınız</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="username"
+                            class="form-control fix-rounded-right <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>"
+                            placeholder="Kullanıcı Adınızı Seçiniz" value="<?php echo $username; ?>" required>
+                            <span class="invalid-feedback"><?php echo $username_err; ?></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Parola</label>
+                            <input type="password" name="password"
+                            class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>"
+                            placeholder="Şifrenizi Giriniz" value="<?php echo $password; ?>">
+                            <span class="invalid-feedback"><?php echo $password_err; ?></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Parola Doğrulama</label>
+                            <input type="password" name="confirm_password"
+                            class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>"
+                            placeholder="Şifrenizi Doğrulayınız" value="<?php echo $confirm_password; ?>">
+                            <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="reset" value="Formu Sıfırla">
+                            <input type="submit" value="Kaydol">
+                        </div>
+                        <p>Zaten hesabın mı var? <a href="https://localhost/functions/login/">E- gelsene şuraya</a>.</p>
+                    </form>
+                </center>
             </div>
-            <div class="form-group">
-                <label>E-Posta Adresiniz</label>
-                <input type="email" name="email" class="form-control <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>" placeholder="E-posta Adresiniz" value="<?php echo $email; ?>">
-                <span class="invalid-feedback"><?php echo $email_err; ?></span>
-            </div>
-            <div class="input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">@</span>
-                </div>
-                <input type="text" name="username" class="form-control fix-rounded-right <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>" required>
-                <span class="invalid-feedback"><?php echo $username_err; ?></span>
-            </div>
-            <div class="form-group">
-                <label>Parola</label>
-                <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>">
-                <span class="invalid-feedback"><?php echo $password_err; ?></span>
-            </div>
-            <div class="form-group">
-                <label>Confirm Password</label>
-                <input type="password" name="confirm_password" class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $confirm_password; ?>">
-                <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Kaydol">
-                <input type="reset" class="btn btn-secondary ml-2" value="Formu Sıfırla">
-            </div>
-            <p>Zaten hesabın mı var? <a href="https://localhost/functions/login/">E- gelsene şuraya</a>.</p>
-        </form>
-    </div>    
+        </div> 
+    </center>
 </body>
 </html>
