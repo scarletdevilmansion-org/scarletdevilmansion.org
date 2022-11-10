@@ -257,6 +257,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             placeholder="Şifrenizi Doğrulayınız" value="<?php echo $confirm_password; ?>">
                             <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
                         </div>
+                        <label style="font-size:14px; margin:0;">
+                            Kayıt olursan <a>Kullanıcı Sözleşmesi</a><br>
+                            ve<br>
+                            <a>Gizlilik Anlaşmasını</a> kabul etmiş sayılırsın.
+                        </label>
                         <div class="form-group">
                             <input type="reset" value="Formu Sıfırla">
                             <input type="submit" value="Kaydol">

@@ -98,12 +98,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
  
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Giriş Yap</title>
-        <link rel="stylesheet" href="../../../assets/css/login.css">
-        <meta name="robots" content="noindex">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="../../../assets/css/login.css">
+</head>
     <body>
         <center>
             <div class="section">
