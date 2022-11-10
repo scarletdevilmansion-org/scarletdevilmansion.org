@@ -27,7 +27,7 @@ input[type="password"] {
     padding: 6px 6px;
     font-size: 16px;
     border-radius: 5px;
-    color: #495057;
+    color: #c9c9c9;
 }
 
 input[type="submit"],
@@ -37,7 +37,7 @@ input[type="reset"] {
     font-size: 16px;
     border-radius: 5px;
     border: none;
-    color: #495057;
+    color: #c9c9c9;
 }
 
 input[type="submit"]:hover,
@@ -75,7 +75,7 @@ input[type="reset"]:hover {
 .form-control {
     padding: 9px 7px;
     font-size: 16px;
-    color: #495057;
+    color: #c9c9c9;
     margin-bottom: 10px;
 }
 

@@ -98,48 +98,55 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
  
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-    <meta name="robots" content="noindex">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body{ font: 14px Comic Sans MS; }
-        .wrapper{ width: 360px; padding: 20px; }
-    </style>
-</head>
-<body>
-    <div class="wrapper">
-        <h2>Giriş Yapınız</h2>
-        <p>Giriş yapmak için boş yerleri doldur.</p>
-
-        <?php 
-        if(!empty($login_err)){
-            echo '<div class="alert alert-danger">' . $login_err . '</div>';
-        }        
-        ?>
-
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="form-group">
-                <label>Kullanıcı Adı</label>
-                <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
-                <span class="invalid-feedback"><?php echo $username_err; ?></span>
-            </div>    
-            <div class="form-group">
-                <label>Parola</label>
-                <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
-                <span class="invalid-feedback"><?php echo $password_err; ?></span>
+    <head>
+        <meta charset="UTF-8">
+        <title>Giriş Yap</title>
+        <link rel="stylesheet" href="../../../assets/css/login.css">
+        <meta name="robots" content="noindex">
+    </head>
+    <body>
+        <center>
+            <div class="section">
+                <div class="wrapper-2">
+                    <h2>Giriş Yapınız</h2>
+                    <p>Giriş yapmak için boş yerleri doldur.</p>
+                    <?php 
+                        if(!empty($login_err)){
+                            echo '<div class="alert alert-danger">' . $login_err . '</div>';
+                        }        
+                    ?>
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                        <div class="form-group">
+                            <label>Kullanıcı Adı</label>
+                            <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>"
+                            placeholder="O eşsiz kullanıcı adını yaz." value="<?php echo $username; ?>">
+                            <span class="invalid-feedback"><?php echo $username_err; ?></span>
+                        </div>    
+                        <div class="form-group">
+                            <label>Parola</label>
+                            <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>"
+                            placeholder="Sır gibi sakladığın şifren buraya.">
+                            <span class="invalid-feedback"><?php echo $password_err; ?></span>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value= { unchecked } id="checkbox" name="checkbox">
+                            <label class="form-check-label" for="checkbox">Beni Unuğtma</label>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary" value="Giriş Yap">
+                        </div>
+                        <p>Hesap mı lazım? <a href="../register/">Hop Şuraya alalım seni</a>.</p>
+                    </form>
+                </div>
+                <div class="wrapper-1">
+                    <h2>Test</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo<br>
+                    unde expedita distinctio dolores saepe corrupti deleniti<br>
+                    excepturi aperiam deserunt, fugit quo? Pariatur voluptatum quaerat<br>
+                    alias necessitatibus optio, modi reprehenderit nesciunt!</p>
+                </div>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value= { unchecked } id="checkbox" name="checkbox">
-                <label class="form-check-label" for="checkbox">Beni Unuğtma</label>
-            </div>
-            <br>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Giriş Yap">
-            </div>
-            <p>Hesap mı lazım? <a href="../register/">Hop Şuraya alalım seni</a>.</p>
-        </form>
-    </div>
-</body>
+        </center>
+    </body>
 </html>
