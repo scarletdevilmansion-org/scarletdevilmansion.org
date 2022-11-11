@@ -9,9 +9,8 @@
 
 # PHPMailer file
 **/PHPMailer
-# this file include phpmailer settings and mail template
-**/functions/register/mail/
 
+# this file include phpmailer settings and mail template
 /functions/register/uvidcheck.php
 
 # ignore ALL files in directory connections
