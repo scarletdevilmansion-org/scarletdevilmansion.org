@@ -1,5 +1,7 @@
 # ignore ALL .log files
 *.log
+*.txt
+*.ini
 
 # ignore ALL files in ANY directory named connections
 **/connections/
@@ -12,9 +14,3 @@
 
 # this file include phpmailer settings and mail template
 /functions/register/uvidcheck.php
-
-# ignore ALL files in directory connections
-# connections/connection.php
-# connections/databaseconnect.php
-# connections/pdoconfig.php
-# connections/connection_close.php
