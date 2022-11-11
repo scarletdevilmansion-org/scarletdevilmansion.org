@@ -19,24 +19,24 @@ $mail = new PHPMailer\PHPMailer\PHPMailer();
 $mail->CharSet = "UTF-8";
     
 //Türkçe dil ayarı
-$mail->setLanguage('tr', '../PHPMailer/language/');         // Set mailer language
+$mail->setLanguage('tr', '../PHPMailer/language/');             // Set mailer language
     
     
-$mail->SMTPDebug = 3;    // Enable verbose debug output
+$mail->SMTPDebug = 3;                                           // Enable verbose debug output
 
-$mail->isSMTP();                                         // Set mailer to use SMTP
-$mail->Host = 'smtp.gmail.com';            // Specify main and backup SMTP servers
-$mail->SMTPAuth = true;                                  // Enable SMTP authentication
-$mail->Username = 'scarletdevilmansion.temporary@gmail.com';    // SMTP username
-$mail->Password = 'bbt50c!#@7p00Z';                     // SMTP password
-$mail->SMTPSecure = 'ssl';                               // Enable TLS encryption, `ssl` also accepted
-$mail->Port = 465;                                       // TCP port to connect to
+$mail->isSMTP();                                                // Set mailer to use SMTP
+$mail->SMTPAuth = true;                                         // Enable SMTP authentication
+$mail->Host = 'smtp.yandex.com.tr';                                 // Specify main and backup SMTP servers
+$mail->Username = 'remilia.sc4rlet@yandex.com';                 // SMTP username
+$mail->Password = 'bbt50c!#@7p00Z';                             // SMTP password
+$mail->SMTPSecure = 'ssl';                                      // Enable TLS encryption, `ssl` also accepted
+$mail->Port = 465;                                              // TCP port to connect to
     
-$mail->setFrom('no-reply@scarletdevilmansion.org', 'SDM Destek');  //Sender Mail
-$mail->addAddress($email, $name);                    // Add a recipient
+$mail->setFrom($mail->Username , 'SDM Support Team');           //Sender Mail
+$mail->addAddress($email, $name);                               // Add a recipient
     
 //Content
-$mail->isHTML(true);                                 //Set email format to HTML
+$mail->isHTML(true);                                            //Set email format to HTML
 $mail->Subject = 'Şifre Sıfırlama Talebi';
 $mail->Body    = 
 '

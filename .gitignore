@@ -7,14 +7,12 @@
 # User page files
 **/pages/u/
 
-# PHPMailer files
-**/functions/PHPMailer/
-**/functions/register/PHPMailer/
-
+# PHPMailer file
+**/PHPMailer
 # this file include phpmailer settings and mail template
-**/functions/register/uvid-check.php
-uvid-check.php
-test.php
+**/functions/register/mail/
+
+/functions/register/uvidcheck.php
 
 # ignore ALL files in directory connections
 # connections/connection.php

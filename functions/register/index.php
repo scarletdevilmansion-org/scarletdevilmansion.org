@@ -151,17 +151,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         /*include('vuid-register.php');*/
         
         // Prepare an insert statement
-        $sql = "INSERT INTO users (`isim`, `soy_isim`, `user_email`, `username`, `password`) VALUES (?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO users (`isim`, `soy_isim`, `user_email`, `username`, `password`, `users_url`) VALUES (?, ?, ?, ?, ?, ?)";
          
         if($stmt = mysqli_prepare($db, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "sssss", $param_name, $param_surname, $param_email, $param_username, $param_password);
+            mysqli_stmt_bind_param($stmt, "ssssss", $param_name, $param_surname, $param_email, $param_username, $param_password, $param_users_url);
             
             // Set parameters
             $param_name = $nameuser;
             $param_surname = $surnameuser;
             $param_username = $username;
             $param_email = $email;
+            $param_users_url = $username;
 
             //$param_password = $password; // Creates a password hash
             $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
@@ -172,9 +173,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $user_about_sql = "INSERT INTO `user_about` (`table_id`, `user_id`, `about`, `discord`, `link`, `social`) VALUES (NULL, '$username', 'Bu kullanıcı anonim takılmayı seviyor.', 'Bu arkadaş discord kullanmıyor.', 'Yani evet. Herkes site sahibi olacak değil ya.', 'Cidden sosyal medya kullanmayan kaldı mı?')";
                 mysqli_stmt_execute(mysqli_prepare($db, $user_about_sql));
 
+                //Check if username exists
+                $user_verify_code = "INSERT INTO user_verification (`uvid`, `username`) VALUES (NULL, '$username')";
+                mysqli_stmt_execute(mysqli_prepare($db, $user_verify_code));
+
                 //check the mail sender
-                require "uvid-check.php";
-                
+                require "uvidcheck.php";
 
                 // Redirect to login page
                 header("location: http://localhost/functions/login");

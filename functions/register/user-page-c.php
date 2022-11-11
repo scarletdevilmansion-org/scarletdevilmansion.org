@@ -22,12 +22,7 @@ $username2 = "'.$username.'";
 $user_setting_page_f = "
 <?php
 
-".$sym."host = 'localhost';
-".$sym."userroot ='root';
-".$sym."key = '';
-".$sym."database ='sdm';
-
-".$sym."db = mysqli_connect(".$sym."host,".$sym."userroot,".$sym."key,".$sym."database);
+require_once '../../../../connections/connection.php';
 
 
 // Bağlantı kontrolü
@@ -404,7 +399,7 @@ $user = '
         <td rowspan="2">
             <div class="cover-option-bar">
                 <div>
-                <h3>Hakkında</h3>
+                <h4>Hakkında</h3>
                 <a class="none-decoration">
         <?php 
             include("../../../connections/connection.php");
@@ -417,7 +412,7 @@ $user = '
         ?>
                 </a>
                 <br>
-                <h3>Link(ler)</h3>
+                <h4>Discord</h3>
                 <a class="none-decoration" href="#">
         <?php 
             include("../../../connections/connection.php");
@@ -430,7 +425,7 @@ $user = '
         ?>
                 </a>
                 <br>
-                <h4>Sosyal Medya</h4>
+                <h4>Link</h4>
                 <a class="none-decoration" href="#">
         <?php 
             include("../../../connections/connection.php");
@@ -443,7 +438,7 @@ $user = '
         ?>
                 </a>
                 <br>
-                <h4>internet sitesi</h4>
+                <h4>Sosyal Medya</h4>
                 <a class="none-decoration" href="#">
         <?php 
             include("../../../connections/connection.php");
@@ -516,7 +511,7 @@ $guest = '
         <td rowspan="2">
             <div class="cover-option-bar">
                 <div>
-                <h3>Hakkında</h3>
+                <h4>Hakkında</h3>
                 <a class="none-decoration">
         <?php 
             include("../../../connections/connection.php");
@@ -529,7 +524,7 @@ $guest = '
         ?>
                 </a>
                 <br>
-                <h3>Link(ler)</h3>
+                <h4>Discord</h3>
                 <a class="none-decoration" href="#">
         <?php 
             include("../../../connections/connection.php");
@@ -542,7 +537,7 @@ $guest = '
         ?>
                 </a>
                 <br>
-                <h4>Sosyal Medya</h4>
+                <h4>Link</h4>
                 <a class="none-decoration" href="#">
         <?php 
             include("../../../connections/connection.php");
@@ -555,7 +550,7 @@ $guest = '
         ?>
                 </a>
                 <br>
-                <h4>internet sitesi</h4>
+                <h4>Sosyal Medya</h4>
                 <a class="none-decoration" href="#">
         <?php 
             include("../../../connections/connection.php");

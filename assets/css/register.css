@@ -1,6 +1,6 @@
 body {
     font-family: Comic Sans MS;
-    color: #dadada;
+    color: #757575;
     background-color: #533e55;
 }
 
@@ -27,7 +27,7 @@ input[type="password"] {
     padding: 6px 6px;
     font-size: 16px;
     border-radius: 5px;
-    color: #c5c5c5;
+    color: #2b2b2b;
 }
 
 input[type="submit"],
