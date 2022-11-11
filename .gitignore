@@ -2,13 +2,19 @@
 *.log
 
 # ignore ALL files in ANY directory named connections
-**/pages/u/
 **/connections/
+
+# User page files
+**/pages/u/
+
+# PHPMailer files
 **/functions/PHPMailer/
 **/functions/register/PHPMailer/
 
 # this file include phpmailer settings and mail template
-/functions/register/uvid-check.php
+**/functions/register/uvid-check.php
+uvid-check.php
+test.php
 
 # ignore ALL files in directory connections
 # connections/connection.php

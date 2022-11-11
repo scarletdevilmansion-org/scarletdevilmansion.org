@@ -25,10 +25,10 @@ $mail->setLanguage('tr', '../PHPMailer/language/');         // Set mailer langua
 $mail->SMTPDebug = 3;    // Enable verbose debug output
 
 $mail->isSMTP();                                         // Set mailer to use SMTP
-$mail->Host = 'mail.scarletdevilmansion.org';            // Specify main and backup SMTP servers
+$mail->Host = 'smtp.gmail.com';            // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;                                  // Enable SMTP authentication
-$mail->Username = 'support@scarletdevilmansion.org';    // SMTP username
-$mail->Password = 'bbt50c!#@7p00ZX';                     // SMTP password
+$mail->Username = 'scarletdevilmansion.temporary@gmail.com';    // SMTP username
+$mail->Password = 'bbt50c!#@7p00Z';                     // SMTP password
 $mail->SMTPSecure = 'ssl';                               // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 465;                                       // TCP port to connect to
     
