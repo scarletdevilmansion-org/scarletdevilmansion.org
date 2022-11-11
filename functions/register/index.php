@@ -173,7 +173,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 mysqli_stmt_execute(mysqli_prepare($db, $user_about_sql));
 
                 //check the mail sender
-                //require "uvid-check.php";
+                require "uvid-check.php";
                 
 
                 // Redirect to login page

@@ -7,6 +7,9 @@
 **/functions/PHPMailer/
 **/functions/register/PHPMailer/
 
+# this file include phpmailer settings and mail template
+/functions/register/uvid-check.php
+
 # ignore ALL files in directory connections
 # connections/connection.php
 # connections/databaseconnect.php
