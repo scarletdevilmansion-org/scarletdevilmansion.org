@@ -18,6 +18,8 @@
         <link rel="stylesheet" href="http://localhost/assets/css/main.css" />
         <link rel="stylesheet" href="http://localhost/assets/css/menu.css" />
         <link rel="stylesheet" href="http://localhost/assets/css/users.css" />
+        <link rel="stylesheet" href="css/loading.css">
+        <script src="js/loading.js"></script>
 
         <link rel="alternate" type="application/rss+xml" title="Latest File" href="https://scarletdevilmansion.org/rss/#" />
         <link rel="alternate" type="application/rss+xml" title="Latest Videos" href="https://scarletdevilmansion.org/rss/#" />

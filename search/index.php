@@ -42,6 +42,8 @@ else
     <meta charset="UTF-8">
     <title>Ara Beni Bul Beni</title>
     <link rel="stylesheet" href="../../assets/css/search.css">
+    <link rel="stylesheet" href="../../assets/css/loading.css">
+    <script src="../../assets/js/loading.js"></script>
     <script src="https://kit.fontawesome.com/1493595c02.js" crossorigin="anonymous"></script>
 </head>
     <body>

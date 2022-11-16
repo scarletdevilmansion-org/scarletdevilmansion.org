@@ -22,12 +22,12 @@ if (mysqli_connect_errno()) {
 
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     include('assets/logout-header.php');
-    include('pages/logout-m-page.php');
+    include('pages/m-page.php');
     include('assets/footer.php');
     exit;
 } else {
     include('assets/login-header.php');
-    include('pages/login-m-page.php');
+    include('pages/m-page.php');
     include('assets/footer.php');
 }
 

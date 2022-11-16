@@ -202,6 +202,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta charset="UTF-8">
     <title>Kayıt Formu</title>
     <link rel="stylesheet" href="../../assets/css/register.css">
+    <link rel="stylesheet" href="../../assets/css/loading.css">
+    <script src="../../assets/js/loading.js"></script>
 </head>
 <body>
     <center>

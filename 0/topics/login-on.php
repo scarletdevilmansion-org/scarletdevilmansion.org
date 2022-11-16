@@ -5,7 +5,9 @@
         <meta charset="UTF-8">
         <meta name="description" content="SDM Forum Sitesi">
         <meta name="author" content="Remilia Hakurei">
-        <link rel="stylesheet" href="topic.css" />
+        <link rel="stylesheet" href="../../assets/css/topic.css" />
+        <link rel="stylesheet" href="../../assets/css/loading.css">
+        <script src="../../assets/js/loading.js"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     </head>
     <body>

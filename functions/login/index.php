@@ -103,6 +103,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <title>Login</title>
     <meta name="robots" content="noindex">
     <link rel="stylesheet" href="../../../assets/css/login.css">
+    <link rel="stylesheet" href="../../assets/css/loading.css">
+    <script src="../../assets/js/loading.js"></script>
 </head>
     <body>
         <center>
