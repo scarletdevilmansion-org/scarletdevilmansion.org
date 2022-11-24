@@ -1,5 +1,5 @@
 <?php
-error_reporting();
+error_reporting(0);
 
 require "../connections/connection.php";
 
@@ -41,6 +41,19 @@ else
 <head>
     <meta charset="UTF-8">
     <title>Ara Beni Bul Beni</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Touhou ile ilgili bir şeyler arayabilirsin burada.">
+    <meta name="keywords" content="SDM Ara, Ara">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:image" content="assets/images/open-graph/yuyuko-touhou.png">
+    <meta property="og:url" content="https://scarletdevilmansion.org">
+    <meta property="og:title" content="Malikâne Antresi">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Scarlet Devil Mansion | Türkçe Touhou Şeyler Kaynağınız?..">
+    <meta property="og:locale" content="TR">
+    <link rel="canonical" href="https://scarletdevilmansion.org" />
+    <meta name="author" content="Hakurei Remilia">
+
     <link rel="stylesheet" href="../../assets/css/search.css">
     <link rel="stylesheet" href="../../assets/css/loading.css">
     <script src="../../assets/js/loading.js"></script>
@@ -48,7 +61,7 @@ else
 </head>
     <body>
         <center>
-            <h3>Bulmak için ara</h3>
+            <h3>Aramak için Bul</h3>
             <form action="?" method="get">
                 <input type="text" name="q">
                 <button type="submit"><i class="fa-inverse fa-solid fa-magnifying-glass"></i></button>
@@ -59,7 +72,7 @@ else
                     echo '
                         <table>
                             <tr>
-                                <td>E Ne Beliyorsun?</td>
+                                <td>E Ne Bekliyorsun?</td>
                             </tr>
                             <tr>
                                 <td>Bir şeyler aramaz mısın?</td>
@@ -127,6 +140,10 @@ else
                     }
                 }
             ?>
+            <div style="width: 56.5%; margin-right: 70px;">
+                <?php include('../assets/footer.php');?>
+            </div>
         </center>
+        
     </body>
 </html>

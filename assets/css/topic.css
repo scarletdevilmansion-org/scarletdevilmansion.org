@@ -1,96 +1,50 @@
 
 @charset "UTF-8";
 
-/* kalınlık */
-::-webkit-scrollbar {
-    width: 8px;
-}
-      
-/* Kayan şeyin arkasındaki şey */
-::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 3px #0f0000; 
-    border-radius: 7px;
-}
-       
-/* kayan şey */
-::-webkit-scrollbar-thumb {
-    background: #800000;
-    border-radius: 7px;
-}   
-      
-/* kayan şeyin üstüne gelinve olan şey */
-::-webkit-scrollbar-thumb:hover {
-    background: #b30000; 
+body {
+    color: #fff;
 }
 
-#active {
-    background-color: rgb(99, 32, 76, 0.6);
-    transition: all 250ms ease-in-out;
-    border-radius: 10px;
+#topics-p span {
+    margin-bottom: 10px;
 }
 
-.nav-wrapper {
-    color: #eeeeee;
+.topic-m {
+    display: flex;
+    width: 80%;
+    height: auto;
+    margin-top: 35px;
+    margin-left: 140px;
 }
 
-.cover-nav-wrapper {
-    margin: 50px 100px 50px 190px;
-    border-radius: 10px;
-    background: rgb(173, 91, 196);
-}
-
-.cover-nav-wrapper ul {
+.topic-m li {
     list-style: none;
 }
 
-.cover-nav {
-    line-height: 1.5;
-    font-size: 17px;
-    color: #546673;
-    -webkit-font-smoothing: antialiased;
-    -webkit-tap-highlight-color: transparent;
-    font-family: 'Rosarivo';
-    box-sizing: inherit;
-    border: 0;
-    margin: 0;
-    padding: 0;
-    display: block;
-    width: 100%;
-    padding-left: 365px;
-    padding-right: 35px;
-}
-
-.cover-nav-options {
-    display: flex;
-    text-decoration: none;
-}
-
-.cover-nav-options a {
-    text-decoration: none;
-}
-
-.cover-nav-link {
-    display: block;
-    max-width: 170px;
-    height: 40px;
-    line-height: 40px;
-    font-size: 15px;
-    font-weight: 400;
-    color: #fcfcfc;
-    transition: all 250ms ease-in-out;
-    float: left;
-    position: relative;
-    margin: 0px 5px 0px 5px;
-    padding: 0 12px;
-    box-sizing: content-box;
-}
-
-.cover-nav-link:hover {
-    background-color:rgb(99, 32, 76);
+.list {
+    height: auto;
+    background-color: #3d0909;
+    margin-bottom: 10px;
+    padding: 10px;
     border-radius: 10px;
+    width: 850px;
+    transition: border-left 1s, margin-left 1s, 200ms ease-in-out;
+}
+
+#w-co {
+    color: #fff;
+}
+
+.topic-m li:hover{
+    border-left: 7px solid rgb(78, 185, 180);
+    margin-left: 7px;
+
+}
+
+.topic-m a {
+    margin-right: 10px;
     text-decoration: none;
-    color: #d5e400;
-    transition: all 300ms ease;
+    color: rgb(14, 138, 143);
 }
 
 .truncate-line, .truncate-line>p {

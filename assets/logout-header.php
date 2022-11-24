@@ -3,33 +3,27 @@
     <head>
         <title>Scarlet Devil Mansion | Türkçe Touhou Şeyler Kaynağınız?..</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta property="og:image" content="assets/images/open-graph/yuyuko-touhou.png">
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="description" content="Touhou ile ilgili türkçe içerikleri bulabileceğiniz bir, diyar? Alem? internet sitesi?...">
+        <meta name="keywords" content="">
+        <meta property="og:image" content="assets/images/open-graph/yuyuko-touhou.png">
         <meta property="og:url" content="https://scarletdevilmansion.org">
         <meta property="og:title" content="Malikâne Antresi">
         <meta property="og:type" content="website">
         <meta property="og:site_name" content="Scarlet Devil Mansion | Türkçe Touhou Şeyler Kaynağınız?..">
         <meta property="og:locale" content="TR">
-        <meta name="description" content="Touhou ile ilgili türkçe içerikleri bulabileceğiniz bir, diyar? Alem? internet sitesi?...">
-        <meta name="keywords" content="">
         <link rel="canonical" href="https://scarletdevilmansion.org" />
 
         <meta name="author" content="Hakurei Remilia">
         <link rel="stylesheet" href="http://localhost/assets/css/main.css" />
         <link rel="stylesheet" href="http://localhost/assets/css/menu.css" />
         <link rel="stylesheet" href="http://localhost/assets/css/users.css" />
-        <link rel="stylesheet" href="css/loading.css">
-        <script src="js/loading.js"></script>
+        
+        <!-- Page load things -->
+        <link rel="stylesheet" href="assets/css/loading.css">
+        <script src="assets/js/loading.js"></script>
+        <!-- Page load things END -->
 
-        <link rel="alternate" type="application/rss+xml" title="Latest File" href="https://scarletdevilmansion.org/rss/#" />
-        <link rel="alternate" type="application/rss+xml" title="Latest Videos" href="https://scarletdevilmansion.org/rss/#" />
-        <link rel="alternate" type="application/rss+xml" title="Recent Topic" href="https://scarletdevilmansion.org/rss/#" />
-        <link rel="alternate" type="application/rss+xml" title="Latest Image" href="https://scarletdevilmansion.org/rss/#" />
-
-        <link rel="manifest" href="http://localhost/assets/manifest.webmanifest/">
-        <meta name="msapplication-config" content="http://localhost/assets/browserconfig.xml/">
-        <meta name="msapplication-starturl" content="/">
-        <meta name="application-name" content="Scarlet Devil Mansion | Türkçe Touhou Şeyler Kaynağınız?..">
         <meta name="apple-mobile-web-app-title" content="Scarlet Devil Mansion | Türkçe Touhou Şeyler Kaynağınız?..">
         <meta name="theme-color" content="#2e0008">
 
@@ -43,11 +37,7 @@
         <link rel="icon" sizes="384x384" href="http://localhost/assets/logo/android-chrome-384x384.png">
         <link rel="icon" sizes="512x512" href="http://localhost/assets/logo/android-chrome-512x512.png">
 
-        <meta name="msapplication-square70x70logo" content="http://localhost/assets/logo/msapplication/msapplication-square70x70logo.png" />
-        <meta name="msapplication-square150x150logo" content="http://localhost/assets/logo/msapplication/msapplication-square150x150logo.png" />
-        <meta name="msapplication-square310x310logo" content="http://localhost/assets/logo/msapplication/msapplication-square310x310logo.png" />
-
-        <link rel="apple-touch-icon" href="http://localhost/assets/logo/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="57x57" href="http://localhost/assets/logo/apple-touch-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="http://localhost/assets/logo/apple-touch-icon-60x60.png">
         <link rel="apple-touch-icon" sizes="72x72" href="http://localhost/assets/logo/apple-touch-icon-72x72.png">
         <link rel="apple-touch-icon" sizes="76x76" href="http://localhost/assets/logo/apple-touch-icon-76x76.png">
@@ -162,182 +152,128 @@
         (document, 'script', 'facebook-jssdk'));
         </script>-->
 
-        <nav class="sidebar close">
-
-            <header>
-                <div class="image-text">
-                    <span class="image">
-                        <img src="http://localhost/assets/logo/logo.png" alt="Logo">
-                    </span>
+        
     
-                    <div class="text logo-text">
-                        <span class="name">Scarlet Devil Mansion</span>
-                        <span class="profession">Touhou içerik sitesi</span>
-                    </div>
-                </div>
-    
-                <i class='bx bx-chevron-right toggle'></i>
-            </header>
-    
-            <div class="menu-bar">
-                <div class="menu">
-    
-                    <li class="search-box">
-                        <i class="bx bx-search icon"></i>
-                        <input type="text" placeholder="Ara bul beni...">
-                    </li>
-    
-                    <ul class="nav-link">
-                        <li class="nav-link">
-                            <a href="#">
-                                <i class="bx bx-home-alt icon"></i>
-                                <span class="text nav-text">Ana Sayfa</span>
+            <!--<li class="">
+                            <a id="login-btn" onclick="openForm()">
+                                <i class="bx bx-log-in icon"></i>
+                                <span class="text nav-text">Giriş</span>
                             </a>
-                        </li>
+
+                            <div class="form-popup" id="myForm">
+
+                                <?php /*
+                                if(!empty($login_err)){
+                                    echo '<div class="alert alert-danger">' . $login_err . '</div>';
+                                }   
+                                ?>
+
+                                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="form-container" method="post">
+                                    <h1 style="color: #d9d7d7;">Giriş mi Yapçan Şen</h1>
+
+                                    <label for="username"><b style="color: #d9d7d7;">Kullanıcı Adı</b></label>
+                                    <input type="text" placeholder="Sana özel eşsiz kullanıcı adın" name="username" id="username" class="<?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>" required>
+                                    <span class="invalid-feedback"><?php echo $username_err; ?></span>
+
+                                    <label for="password"><b style="color: #d9d7d7;">Şifre</b></label>
+                                    <input type="password" placeholder="Hesap oluştururken kullandığın o garip şifre" name="password" id="password" class="<?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" required>
+                                    <span class="invalid-feedback"><?php echo $password_err; */ ?></span>
+                
+                                    <div class="input-group">
+                                        <div class="checkbox">
+                                            <label>
+                                            <center style="color: #d9d7d7;"><input class="rmbr" style="color: #d9d7d7;" type="checkbox" id="remember" name="remember" { unchecked  } > Beni unutma </center>
+                                            </label>
+                                        </div>
+                                    </div>
+                
+                                    <center style="margin-top: 10px;"><div id="html_element"></center>
+                                    <script>
+                                    document.getElementById("my_captcha_form").addEventListener("submit",function(evt)
+                                    {
+                                        var response = grecaptcha.getResponse();
+                                        if(response.length == 0)
+                                        { 
+                                            //reCaptcha not verified
+                                            alert("please verify you are humann!"); 
+                                            evt.preventDefault();
+                                            return false;
+                                        }
+                                        //captcha verified
+                                        //do the rest of your validations here
+                                    });
+                                    </script>
+
+                                    <center><button class="submit-btn" type="submit" value="">Giriş Yap</button></center>
+
+                                    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+                                    
+                                    <center><button class="submit-btn-cncl" type="button" onclick="closeForm()">Kapat</button></center>
+                                    
+                                </form>
+                            </div>
+
+                            <script>
+
+                            function openForm()
+                            {
+                                document.getElementById("myForm").style.display = "block";
+                            }
+
+                            function closeForm()
+                            {
+                                document.getElementById("myForm").style.display = "none";
+                            }
+                            </script>
+                        
+                        </li>-->
     
-                        <li class="nav-link">
-                            <a href="0/videolar">
-                                <i class="bx bxs-video icon"></i>
-                                <span class="text nav-text">Videolar</span>
-                            </a>
-                        </li>
-    
-                        <li class="nav-link">
-                            <a href="0/etkinlikler">
-                                <i class="bx bx-calendar-event icon"></i>
-                                <span class="text nav-text">Etkinlikler</span>
-                            </a>
-                        </li>
-    
-                        <li class="nav-link">
-                            <a href="0/mangalar">
-                                <i class="bx bx-book icon"></i>
-                                <span class="text nav-text">Mangalar</span>
-                            </a>
-                        </li>
-    
-                        <li class="nav-link">
-                            <a href="0/oyunlar">
-                                <i class="bx bx-joystick-alt icon"></i>
-                                <span class="text nav-text">Oyunlar</span>
-                            </a>
-                        </li>
-    
-                        <li class="nav-link">
-                            <a href="0/muzikler">
-                                <i class="bx bx-music icon"></i>
-                                <span class="text nav-text">Müzikler</span>
-                            </a>
-                        </li>
-    
-                    </ul>
-
-                </div>
-    
-                <div class="bottom-content">
-
-                <li class="">
-                    <a href="http://localhost/functions/login/">
-                        <i class="bx bx-log-in icon"></i>
-                        <span class="text nav-text">Giriş</span>
-                    </a>
-                </li>
-                <!--<li class="">
-                        <a id="login-btn" onclick="openForm()">
-                            <i class="bx bx-log-in icon"></i>
-                            <span class="text nav-text">Giriş</span>
-                        </a>
-
-                        <div class="form-popup" id="myForm">
-
-                            <?php /*
-                            if(!empty($login_err)){
-                                echo '<div class="alert alert-danger">' . $login_err . '</div>';
-                            }   
-                            ?>
-
-                            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="form-container" method="post">
-                                <h1 style="color: #d9d7d7;">Giriş mi Yapçan Şen</h1>
-
-                                <label for="username"><b style="color: #d9d7d7;">Kullanıcı Adı</b></label>
-			                    <input type="text" placeholder="Sana özel eşsiz kullanıcı adın" name="username" id="username" class="<?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>" required>
-                                <span class="invalid-feedback"><?php echo $username_err; ?></span>
-
-			                    <label for="password"><b style="color: #d9d7d7;">Şifre</b></label>
-			                    <input type="password" placeholder="Hesap oluştururken kullandığın o garip şifre" name="password" id="password" class="<?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" required>
-                                <span class="invalid-feedback"><?php echo $password_err; */ ?></span>
-			
-			                    <div class="input-group">
-				                    <div class="checkbox">
-					                    <label>
-					                    <center style="color: #d9d7d7;"><input class="rmbr" style="color: #d9d7d7;" type="checkbox" id="remember" name="remember" { unchecked  } > Beni unutma </center>
-				                        </label>
-				                    </div>
-			                    </div>
-			
-			                    <center style="margin-top: 10px;"><div id="html_element"></center>
-                                <script>
-                                document.getElementById("my_captcha_form").addEventListener("submit",function(evt)
-                                {
-                                    var response = grecaptcha.getResponse();
-                                    if(response.length == 0)
-                                    { 
-                                        //reCaptcha not verified
-                                        alert("please verify you are humann!"); 
-                                        evt.preventDefault();
-                                        return false;
-                                    }
-                                    //captcha verified
-                                    //do the rest of your validations here
-                                });
-                                </script>
-
-                                <center><button class="submit-btn" type="submit" value="">Giriş Yap</button></center>
-
-                                <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
-                                
-                                <center><button class="submit-btn-cncl" type="button" onclick="closeForm()">Kapat</button></center>
-                                
-                            </form>
-                        </div>
-
-                        <script>
-
-                        function openForm()
-                        {
-                            document.getElementById("myForm").style.display = "block";
-                        }
-
-                        function closeForm()
-                        {
-                            document.getElementById("myForm").style.display = "none";
-                        }
-                        </script>
-                    
-                    </li>-->
-
-                    <li class="">
-                        <a href="http://localhost/functions/register/">
-                            <i class="bx bx-registered icon"></i>
-                            <span class="text nav-text">Kayıt</span>
+        <div class="cover-nav-wrapper">
+            <nav class="cover-nav">
+                <ul class="cover-nav-options tabs-scrollable">
+                    <li class="cover-nav-option">
+                        <a title="Ana Sayfa" class="cover-nav-link truncate-line"  id="active" href="#">
+                            Ana Sayfa
                         </a>
                     </li>
-    
-                    <li class="mode">
-                        <div class="sun-moon">
-                            <i class='bx bx-moon icon moon'></i>
-                            <i class='bx bx-sun icon sun'></i>
-                        </div>
-                        <span class="mode-text text">Karanlık taraf</span>
-    
-                        <div class="toggle-switch">
-                            <span class="switch"></span>
-                        </div>
+                    <li class="cover-nav-option">
+                        <a title="Oyunlar" class="cover-nav-link truncate-line" href="#">
+                            Oyunlar
+                        </a>
                     </li>
-                </div>
-            </div>
-    
-        </nav>
+                    <li class="cover-nav-option">
+                        <a title="Videolar" class="cover-nav-link truncate-line" href="#">
+                            Videolar
+                        </a>
+                    </li>
+                    <li class="cover-nav-option">
+                        <a title="Müzikler" class="cover-nav-link truncate-line" href="#">
+                            Müzikler
+                        </a>
+                    </li>
+                    <li class="cover-nav-option">
+                        <a title="Mangalar" class="cover-nav-link truncate-line" href="<?php echo 'http://localhost/functions/login/'; ?>">
+                            Mangalar
+                        </a>
+                    </li>
+                    <li class="cover-nav-option">
+                        <a title="Giriş Yap" class="cover-nav-link truncate-line" href="<?php echo 'http://localhost/functions/login/'; ?>">
+                            Giriş Yap
+                        </a>
+                    </li>
+                    <li class="cover-nav-option">
+                        <a title="Kayıt Ol" class="cover-nav-link truncate-line" href="<?php echo 'http://localhost/functions/register/'; ?>">
+                            Kayıt Ol
+                        </a>
+                    </li>
+                    <li class="cover-nav-option">
+                        <form action="search" method="GET">
+                            <input type="text" placeholder="Ara Beni Bul Beni" name="q">
+                        </form>
+                    </li>
+                </ul>
+            </nav>
+        </div>
 
         <script src="http://localhost/assets/js/script.js"></script>
     

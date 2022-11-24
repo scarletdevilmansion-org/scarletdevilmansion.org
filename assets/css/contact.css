@@ -1,0 +1,88 @@
+body {
+    background-color: #200318;
+    color: #fff;
+    font-family: Comic Sans MS, cursive, sans-serif;
+}
+
+::placeholder {
+    color: #fff;
+}
+
+.form-control {
+    margin: 100px auto;
+    width: 40%;
+    background-color: rgb(66, 1, 41);
+    border: 1px solid rgb(156, 45, 110);
+    padding: 25px;
+}
+
+::selection {
+    background-color: #d41717;
+}
+
+.option {
+    color: #fff;
+    background-color: rgb(212, 23, 23);
+    background: rgb(156, 45, 110);
+    padding: 5px;
+    margin: 5px;
+}
+
+select {
+    width: 50%;
+    margin-bottom: 10px;
+    color: #fff;
+    background-color: rgb(156, 45, 110);
+    border: 1px solid rgb(54, 13, 37);
+    border-radius: 6px;
+    padding: 10px;
+}
+
+input {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    width: 45%;
+    margin-bottom: 10px;
+    color: #fff;
+    background-color: rgb(156, 45, 110);
+    border: 1px solid rgb(54, 13, 37);
+    border-radius: 6px;
+    padding: 10px;
+}
+
+input[type="email"] {
+    width: 45%;
+    margin-bottom: 10px;
+    color: #fff;
+    background-color: rgb(156, 45, 110);
+    border: 1px solid rgb(54, 13, 37);
+    border-radius: 6px;
+    padding: 10px;
+}
+
+textarea {
+    width: 45%;
+    margin-bottom: 6px;
+    background-color: rgb(66, 1, 41);
+    border: 1px solid rgb(156, 45, 110);
+    padding: 10px;
+    resize: none;
+    color: #fff;
+}
+
+input[type="submit"] {
+    width: 50%;
+    margin-bottom: 10px;
+    background-color: rgb(156, 45, 110);
+    border: 1px solid rgb(54, 13, 37);
+    border-radius: 6px;
+    color: #fff;
+    padding: 10px;
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(184, 24, 117);
+}
