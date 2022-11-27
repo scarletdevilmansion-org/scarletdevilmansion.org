@@ -15,9 +15,8 @@
         <link rel="canonical" href="https://scarletdevilmansion.org" />
 
         <meta name="author" content="Hakurei Remilia">
-        <link rel="stylesheet" href="http://localhost/assets/css/main.css" />
-        <link rel="stylesheet" href="http://localhost/assets/css/menu.css" />
-        <link rel="stylesheet" href="http://localhost/assets/css/users.css" />
+        <link rel="stylesheet" href="http://localhost/assets/css/main.css?v=1" />
+        <link rel="stylesheet" href="http://localhost/assets/css/menu.css?v=1" />
         
         <!-- Page load things -->
         <link rel="stylesheet" href="assets/css/loading.css">
@@ -252,17 +251,17 @@
                         </a>
                     </li>
                     <li class="cover-nav-option">
-                        <a title="Mangalar" class="cover-nav-link truncate-line" href="<?php echo 'http://localhost/functions/login/'; ?>">
+                        <a title="Mangalar" class="cover-nav-link truncate-line" href="http://localhost/functions/login/">
                             Mangalar
                         </a>
                     </li>
                     <li class="cover-nav-option">
-                        <a title="Giriş Yap" class="cover-nav-link truncate-line" href="<?php echo 'http://localhost/functions/login/'; ?>">
+                        <a title="Giriş Yap" class="cover-nav-link truncate-line" href="http://localhost/functions/login/">
                             Giriş Yap
                         </a>
                     </li>
                     <li class="cover-nav-option">
-                        <a title="Kayıt Ol" class="cover-nav-link truncate-line" href="<?php echo 'http://localhost/functions/register/'; ?>">
+                        <a title="Kayıt Ol" class="cover-nav-link truncate-line" href="http://localhost/functions/register/">
                             Kayıt Ol
                         </a>
                     </li>
@@ -274,6 +273,4 @@
                 </ul>
             </nav>
         </div>
-
-        <script src="http://localhost/assets/js/script.js"></script>
     

@@ -3,8 +3,8 @@ session_start();
 error_reporting();
 
 require "../../connections/connection.php";
-
 ?>
+
 <!DOCTYPE html>
 <html lang="TR" style="font-family: 'Comic Sans MS', 'Comic Sans', cursive;">
     <head>
@@ -277,19 +277,57 @@ else
                             </li>
                         </a>
                     </ul>
-                    <h2>Touhou Oyunları</h2>
-                    <span>O çok sevdiğiniz. bayıldığınız oyunlar</span>
+                    <h2>Touhou Danmaku Oyunları</h2>
+                    <span>O çok sevdiğiniz. bayıldığınız oyunlar.</span>
                     <ul>
                         <li class="list">
                             <h4>PC-98 Oyunları</h4>
                             <p>Touhou'da ilk çıkan 5 oyun.</p>
                             <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 1</a>
+                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 2</a>
+                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 3</a>
                             <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 4</a>
+                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 5</a>
                         </li>
                         <li class="list">
                             <h4>1. Nesil Oyunlar</h4>
                             <p>1. nesil oyunlar, 6 ve 9.5'da dahil olmak üzere arasındaki oyunları kapsar.</p>
                             <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 6</a>
+                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 7</a>
+                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 8</a>
+                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 9</a>
+                        </li>
+                        <li class="list">
+                            <h4>2. Nesil Oyunlar</h4>
+                            <p>2. nesil oyunlar, 10 ve 12.5'da dahil olmak üzere arasındaki oyunları kapsar.</p>
+                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 10</a>
+                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 11</a>
+                        <li class="list">
+                            <h4>3. Nesil Oyunlar</h4>
+                            <p>3. nesil oyunlar, 12.8 ve 18'de dahil olmak üzere arasındaki oyunları kapsar.</p>
+                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 12.8</a>
+                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 13</a>
+                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 18</a>
+                        </li>
+                    </ul>
+                    <h2>Touhou Dövüş Oyunları</h2>
+                    <span>Alışılmış danmakunun dışına çıkan oyuncular.</span>
+                    <ul>
+                        <li class="list">
+                            <h4>PC-98 Oyunları</h4>
+                            <p>Touhou'da ilk çıkan 5 oyun.</p>
+                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 1</a>
+                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 2</a>
+                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 3</a>
+                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 4</a>
+                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 5</a>
+                        </li>
+                        <li class="list">
+                            <h4>1. Nesil Oyunlar</h4>
+                            <p>1. nesil oyunlar, 6 ve 9.5'da dahil olmak üzere arasındaki oyunları kapsar.</p>
+                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 6</a>
+                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 7</a>
+                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 8</a>
                             <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 9</a>
                         </li>
                         <li class="list">

@@ -16,77 +16,13 @@
 
     .section-top-bar {
         border-radius: 15px;
-        height: 256px;
+        height: fit-content;
         background-color: transparent;
-        margin: 50px 100px 0px 190px;
+        margin: 50px 120px 0px 140px;
     }
 
-    .nav-wrapper {
-        color: #eeeeee;
-    }
-
-    .cover-nav-wrapper {
-        margin: 50px 100px 50px 190px;
-        border-radius: 15px;
-        background: rgb(202, 147, 218);
-    }
-
-    .cover-nav-wrapper ul {
-        list-style: none;
-    }
-
-    .cover-nav {
-        line-height: 1.5;
-        font-size: 17px;
-        font-family: "Comic Sans MS", "Comic Sans", cursive;
-        color: #546673;
-        -webkit-font-smoothing: antialiased;
-        -webkit-tap-highlight-color: transparent;
-        box-sizing: inherit;
-        border: 0;
-        margin: 0;
-        padding: 0;
-        display: block;
-        width: 100%;
-        padding-left: 365px;
-        padding-right: 35px;
-    }
-    
-    .cover-nav-options {
-        display: flex;
-        text-decoration: none;
-    }
-
-    .cover-nav-options a {
-        text-decoration: none;
-    }
-
-    .cover-nav-link {
-        display: block;
-        max-width: 170px;
-        height: 40px;
-        line-height: 40px;
-        font-size: 15px;
-        font-weight: 400;
-        color: #fcfcfc;
-        transition: all 250ms ease-in-out;
-        float: left;
-        position: relative;
-        margin: 0px 5px 0px 5px;
-        padding: 0 12px;
-        box-sizing: content-box;
-    }
-
-    .cover-nav-link:hover {
-        background-color:rgb(99, 32, 76);
-        border-radius: 15px;
-    }
-
-    .truncate-line, .truncate-line>p {
-        display: block;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+    .cover-nav-c {
+        margin-left: 205px;
     }
 
     .cover-profile-avatar-img {
@@ -101,7 +37,7 @@
 
     .cover-option-bar {
         border-radius: 15px;
-        height: 310px;
+        height: 360px;
         background-color: #245557;
         padding: 20px;
     }
@@ -146,6 +82,11 @@
 
     a {
         font-size: 13px;
+    }
+
+    span {
+        margin:0px;
+        padding:0px;
     }
 
     h5 {
