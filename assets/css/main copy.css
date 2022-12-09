@@ -1,0 +1,568 @@
+/*  Charset  */
+@charset "UTF-8";
+
+/*  Masaüstü ve dizüstü bilgisayarlar için  */
+@media only screen and (min-width: 1024px) {
+/*
+    h1, h2, h3, h4 {
+        margin-bottom: 15px;
+    }*/
+
+    .div-block-main {
+        margin: 50px 120px 0px 140px;
+        background-color: rgb(81, 0, 31);
+        border-radius: 15px;
+        border: #000 solid;
+    }
+    
+    .div-block-main-2 {
+        margin: 0px 0px 0px 0px;    
+        background-color: rgb(116, 0, 45);
+        border-radius: 15px;
+    }
+    
+    .div-block-main-3 {
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 20px 0px;
+        background-color: rgb(149, 0, 57);
+        border-radius: 15px;
+    }
+    
+    .div-block-heading {
+        margin: 0px 0px 0px 0px;
+        padding: 20px 60px 20px 60px;
+        color: #d9d7d7;
+        background-color: rgb(81, 0, 31);
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        color: #d9d7d7;
+    }
+    
+    .div-block-game {
+        margin: 0px 0px 0px 0px;
+        padding: 20px 60px 20px 60px;
+        color: #d9d7d7;
+        background-color: rgb(116, 0, 45);
+        border-radius: 15px;
+        border-top: #000 solid;
+    }
+    
+    .div-block-game-2 {
+        margin: 0px 0px 0px 0px;
+        padding: 20px 60px 20px 60px;
+        color: #d9d7d7;
+        background-color: rgb(116, 0, 45);
+        border-radius: 15px;
+        border-top: #000 solid;
+    }
+    
+    .slider-game-area {
+        margin: 0px 20px 20px 20px;
+        padding: 5px 20px 0px 20px;
+        color: #d9d7d7;
+        background-color: rgb(61, 0, 68);
+        border-radius: 15px;
+        border: #000 solid;
+    }
+    
+    .slider-game-area-in {
+        margin: 0px 5px 20px 5px;
+        padding: 10px 10px 10px 10px;
+        color: #d9d7d7;
+        background-color: rgb(255, 119, 119);
+        border-radius: 15px;
+        border: #000 solid;
+        -moz-border-radius: 15px;
+        -webkit-border-radius: 15px;
+    }
+    
+    .div-block-music {
+        margin: 0px 0px 0px 0px;
+        padding: 20px 60px 20px 60px;
+        color: #d9d7d7;
+        background-color: rgb(149, 0, 57);
+        border-radius: 15px;
+        border-top: #000 solid;
+    }
+    
+    .div-block-music-2 {
+        margin: 0px 0px 0px 0px;
+        padding: 20px 60px 20px 60px;
+        color: #d9d7d7;
+        background-color: rgb(149, 0, 57);
+        border-radius: 15px;
+        border-top: #000 solid;
+    }
+    
+    .slider-music-area {
+        margin: 0px 20px 0px 20px;
+        padding: 5px 20px 0px 20px;
+        color: #d9d7d7;
+        background-color: rgb(61, 0, 68);
+        border-radius: 15px;
+        border: #000 solid;
+    }
+    
+    .slider-music-area-in {
+        margin: 0px 5px 20px 5px;
+        padding: 10px 10px 10px 10px;
+        color: #d9d7d7;
+        background-color: rgb(255, 119, 119);
+        border-radius: 15px;
+        border: #000 solid;
+        -moz-border-radius: 15px;
+        -webkit-border-radius: 15px;
+    }
+
+    .swiper {
+        width: 100%;
+        height: 200px;
+    }
+
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: transparent;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+
+    .swiper-slide img {
+        display: block;
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+    }
+      
+    .swiper-img {
+        max-height: 250px;
+        max-width: 250px;
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+    }
+}
+/*  Masaüstü ve dizüstü css kod bitimi  */
+
+@media screen and (max-width: 768px) {
+
+    .div-block-main {
+        margin: 50px 10px 0px 100px;
+        background-color: rgb(81, 0, 31);
+        border-radius: 15px;
+        border: #000 solid;
+    }
+    
+    .div-block-main-2 {
+        margin: 0px 0px 0px 0px;
+        background-color: rgb(116, 0, 45);
+        border-radius: 15px;
+    }
+    
+    .div-block-main-3 {
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 20px 0px;
+        background-color: rgb(149, 0, 57);
+        border-radius: 15px;
+    }
+    
+    .div-block-heading {
+        margin: 0px 0px 0px 0px;
+        padding: 10px 30px 10px 30px;
+        color: #d9d7d7;
+        background-color: rgb(81, 0, 31);
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+    
+    .div-block-game {
+        margin: 0px 0px 0px 0px;
+        padding: 10px 30px 10px 30px;
+        color: #d9d7d7;
+        background-color: rgb(116, 0, 45);
+        border-radius: 15px;
+        border-top: #000 solid;
+    }
+    
+    .div-block-game-2 {
+        margin: 0px 0px 0px 0px;
+        padding: 10px 30px 10px 30px;
+        color: #d9d7d7;
+        background-color: rgb(116, 0, 45);
+        border-radius: 15px;
+        border-top: #000 solid;
+    }
+    
+    .slider-game-area {
+        margin: 0px 10px 10px 10px;
+        padding: 5px 10px 0px 10px;
+        color: #d9d7d7;
+        background-color: rgb(61, 0, 68);
+        border-radius: 15px;
+        border: #000 solid;
+    }
+    
+    .slider-game-area-in {
+        margin: 0px 5px 15px 5px;
+        padding: 14px 10px 14px 10px;
+        color: #d9d7d7;
+        background-color: rgb(255, 119, 119);
+        border-radius: 15px;
+        border: #000 solid;
+    }
+    
+    .div-block-music {
+        margin: 0px 0px 0px 0px;
+        padding: 10px 30px 0px 30px;
+        color: #d9d7d7;
+        background-color: rgb(149, 0, 57);
+        border-radius: 15px;
+        border-top: #000 solid;
+    }
+    
+    .div-block-music-2 {
+        margin: 0px 0px 0px 0px;
+        padding: 10px 30px 0px 30px;
+        color: #d9d7d7;
+        background-color: rgb(149, 0, 57);
+        border-radius: 15px;
+        border-top: #000 solid;
+    }
+    
+    .slider-music-area {
+        margin: 0px 10px 0px 10px;
+        padding: 5px 10px 0px 10px;
+        color: #d9d7d7;
+        background-color: rgb(61, 0, 68);
+        border-radius: 15px;
+        border: #000 solid;
+    }
+    
+    .slider-music-area-in {
+        margin: 0px 5px 15px 5px;
+        padding: 14px 10px 14px 10px;
+        color: #d9d7d7;
+        background-color: rgb(255, 119, 119);
+        border-radius: 15px;
+        border: #000 solid;
+    }
+    
+    .swiper-slide img {
+        display: block;
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+    }
+    
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: rgb(0, 0, 0, 0);
+        width: 28px;
+        margin-right: 200px;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+}
+
+/*  425 piksel genişlikli telefonlar için  */
+@media screen and (max-width: 425px) {
+
+    .div-block-main {
+        margin: 50px 10px 0px 100px;
+        background-color: rgb(81, 0, 31);
+        border-radius: 15px;
+        border: #000 solid;
+    }
+    
+    .div-block-main-2 {
+        margin: 0px 0px 0px 0px;
+        background-color: rgb(116, 0, 45);
+        border-radius: 15px;
+    }
+    
+    .div-block-main-3 {
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 20px 0px;
+        background-color: rgb(149, 0, 57);
+        border-radius: 15px;
+    }
+    
+    .div-block-heading {
+        margin: 0px 0px 0px 0px;
+        padding: 10px 30px 10px 30px;
+        color: #d9d7d7;
+        background-color: rgb(81, 0, 31);
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+    
+    .div-block-game {
+        margin: 0px 0px 0px 0px;
+        padding: 10px 30px 10px 30px;
+        color: #d9d7d7;
+        background-color: rgb(116, 0, 45);
+        border-radius: 15px;
+        border-top: #000 solid;
+    }
+    
+    .div-block-game-2 {
+        margin: 0px 0px 0px 0px;
+        padding: 10px 30px 10px 30px;
+        color: #d9d7d7;
+        background-color: rgb(116, 0, 45);
+        border-radius: 15px;
+        border-top: #000 solid;
+    }
+    
+    .slider-game-area {
+        margin: 0px 10px 10px 10px;
+        padding: 5px 10px 0px 10px;
+        color: #d9d7d7;
+        background-color: rgb(61, 0, 68);
+        border-radius: 15px;
+        border: #000 solid;
+    }
+    
+    .slider-game-area-in {
+        margin: 0px 5px 15px 5px;
+        padding: 14px 10px 14px 10px;
+        color: #d9d7d7;
+        background-color: rgb(255, 119, 119);
+        border-radius: 15px;
+        border: #000 solid;
+    }
+    
+    .div-block-music {
+        margin: 0px 0px 0px 0px;
+        padding: 10px 30px 0px 30px;
+        color: #d9d7d7;
+        background-color: rgb(149, 0, 57);
+        border-radius: 15px;
+        border-top: #000 solid;
+    }
+    
+    .div-block-music-2 {
+        margin: 0px 0px 0px 0px;
+        padding: 10px 30px 0px 30px;
+        color: #d9d7d7;
+        background-color: rgb(149, 0, 57);
+        border-radius: 15px;
+        border-top: #000 solid;
+    }
+    
+    .slider-music-area {
+        margin: 0px 10px 0px 10px;
+        padding: 5px 10px 0px 10px;
+        color: #d9d7d7;
+        background-color: rgb(61, 0, 68);
+        border-radius: 15px;
+        border: #000 solid;
+    }
+    
+    .slider-music-area-in {
+        margin: 0px 5px 15px 5px;
+        padding: 14px 10px 14px 10px;
+        color: #d9d7d7;
+        background-color: rgb(255, 119, 119);
+        border-radius: 15px;
+        border: #000 solid;
+    }
+    
+    .swiper-slide img {
+        display: block;
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+    }
+    
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: rgb(0, 0, 0, 0);
+        width: 28px;
+        margin-right: 200px;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 412px) {
+
+    .div-block-main {
+        margin: 50px 10px 0px 100px;
+        background-color: rgb(81, 0, 31);
+        border-radius: 15px;
+        border: #000 solid;
+    }
+    
+    .div-block-main-2 {
+        margin: 0px 0px 0px 0px;
+        background-color: rgb(116, 0, 45);
+        border-radius: 15px;
+    }
+    
+    .div-block-main-3 {
+        margin: 0px 0px 0px 0px;
+        padding: 0px 0px 20px 0px;
+        background-color: rgb(149, 0, 57);
+        border-radius: 15px;
+    }
+    
+    .div-block-heading {
+        margin: 0px 0px 0px 0px;
+        padding: 10px 30px 10px 30px;
+        color: #d9d7d7;
+        background-color: rgb(81, 0, 31);
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+    
+    .div-block-game {
+        margin: 0px 0px 0px 0px;
+        padding: 10px 30px 10px 30px;
+        color: #d9d7d7;
+        background-color: rgb(116, 0, 45);
+        border-radius: 15px;
+        border-top: #000 solid;
+    }
+    
+    .div-block-game-2 {
+        margin: 0px 0px 0px 0px;
+        padding: 10px 30px 10px 30px;
+        color: #d9d7d7;
+        background-color: rgb(116, 0, 45);
+        border-radius: 15px;
+        border-top: #000 solid;
+    }
+    
+    .slider-game-area {
+        margin: 0px 10px 10px 10px;
+        padding: 5px 10px 0px 10px;
+        color: #d9d7d7;
+        background-color: rgb(61, 0, 68);
+        border-radius: 15px;
+        border: #000 solid;
+    }
+    
+    .slider-game-area-in {
+        margin: 0px 5px 15px 5px;
+        padding: 14px 8px 14px 10px;
+        color: #d9d7d7;
+        background-color: rgb(255, 119, 119);
+        border-radius: 15px;
+        border: #000 solid;
+    }
+    
+    .div-block-music {
+        margin: 0px 0px 0px 0px;
+        padding: 10px 30px 0px 30px;
+        color: #d9d7d7;
+        background-color: rgb(149, 0, 57);
+        border-radius: 15px;
+        border-top: #000 solid;
+    }
+    
+    .div-block-music-2 {
+        margin: 0px 0px 0px 0px;
+        padding: 10px 30px 0px 30px;
+        color: #d9d7d7;
+        background-color: rgb(149, 0, 57);
+        border-radius: 15px;
+        border-top: #000 solid;
+    }
+    
+    .slider-music-area {
+        margin: 0px 10px 0px 10px;
+        padding: 5px 10px 0px 10px;
+        color: #d9d7d7;
+        background-color: rgb(61, 0, 68);
+        border-radius: 15px;
+        border: #000 solid;
+    }
+    
+    .slider-music-area-in {
+        margin: 0px 5px 15px 5px;
+        padding: 14px 8px 14px 10px;
+        color: #d9d7d7;
+        background-color: rgb(255, 119, 119);
+        border-radius: 15px;
+        border: #000 solid;
+    }
+    
+    .swiper-slide img {
+        display: block;
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+    }
+}
+
+/*  Code for Firefox  */
+::-moz-selection { 
+    color: #d1d1d1;
+    background: #ff6e8b;
+}
+
+/*  Code for all browsers  */
+::selection {
+    color: #d1d1d1;
+    background: #ff6e8b;
+}
+
+/*  Kalınlık  */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/*  Kayan şeyin arkasındaki şey  */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 3px #0f0000; 
+    border-radius: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #800000;
+    border-radius: 7px;
+}
+
+/*  kayan şeyin üstüne gelince olan şey  */
+::-webkit-scrollbar-thumb:hover {
+    background: #b30000; 
+}

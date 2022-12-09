@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="TR" style="font-family: Rosarivo;">
+<html lang="TR">
     <head>
         <title>Scarlet Devil Mansion | Türkçe Touhou Şeyler Kaynağınız?..</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,8 +15,8 @@
         <link rel="canonical" href="https://scarletdevilmansion.org" />
 
         <meta name="author" content="Hakurei Remilia">
-        <link rel="stylesheet" href="http://localhost/assets/css/main.css?v=1" />
-        <link rel="stylesheet" href="http://localhost/assets/css/menu.css?v=1" />
+        <link rel="stylesheet" href="http://localhost/assets/css/main.css" />
+        <link rel="stylesheet" href="http://localhost/assets/css/menu.css" />
         
         <!-- Page load things -->
         <link rel="stylesheet" href="assets/css/loading.css">

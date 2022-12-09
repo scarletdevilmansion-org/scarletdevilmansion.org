@@ -22,7 +22,8 @@
         min-height: 100vh;
         background-color: var(--body-color);
         transition: var(--tran-05);
-        font-family: "Comic Sans MS", "Comic Sans", cursive;
+        font-family: Ubuntu;
+        /*font-family: "Comic Sans MS", "Comic Sans", cursive;*/
     }
     
     ::selection {
@@ -43,7 +44,6 @@
     .cover-nav {
         line-height: 1.5;
         font-size: 17px;
-        font-family: "Comic Sans MS", "Comic Sans", cursive;
         color: #546673;
         -webkit-font-smoothing: antialiased;
         -webkit-tap-highlight-color: transparent;
