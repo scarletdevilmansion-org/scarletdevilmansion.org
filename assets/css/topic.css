@@ -1,53 +1,112 @@
 
 @charset "UTF-8";
 
-body {
-    color: #fff;
-}
+@media only screen and (min-width: 1024px) {
 
-#w-co {
-    color: #fff;
-}
+    body {
+        color: #FED0BB;
+    }
 
-#topics-p span {
-    margin-bottom: 10px;
-}
+    h1, h2, h3, h4, h5 {
+        color: #FED0BB;
+    }
 
-.topic-m {
-    display: flex;
-    width: 80%;
-    height: auto;
-    margin-top: 35px;
-    margin-left: 140px;
-}
+    span {
+        color: #FED0BB;
+    }
 
-.topic-m li {
-    list-style: none;
-}
+    p {
+        margin: 0;
+    }
 
-.list {
-    height: auto;
-    background-color: #3d0909;
-    margin-bottom: 10px;
-    padding: 1px 1px 10px 10px;
-    border-radius: 10px;
-    width: 850px;
-    border-left: 0px solid #89ac39;
-    transition: all 270ms ease-in-out;
-}
+    #w-co {
+        color: #FED0BB;
+    }
 
-.topic-m li:hover{
-    border-left: 7px solid #89ac39;
-    margin-left: 7px;
-}
+    #list-inline-block {
+        display: inline;
+    }
 
-.topic-m a {
-    margin: 0px 10px 0px 0px;
-    text-decoration: none;
-    color: rgb(14, 138, 143);
-    transition: color 150ms ease-in-out;
-}
+    #topics-p h1, h2, h3 {
+        margin: 0;
+        padding: 0;
+    }
 
-.topic-m a:hover {
-    color: #a4d600;
+    .topic-m {
+        display: flex;
+        width: 80%;
+        height: auto;
+        margin-top: 35px;
+        margin-left: 190px;
+    }
+
+    .topic-m li {
+        list-style: none;
+    }
+
+    .list {
+        height: auto;
+        background-color: #B23A48;
+        padding: 0 10px 10px 10px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        width: 450px;
+        border-left: 0px solid #89ac39;
+        transition: all 150ms ease-in-out;
+    }
+
+    .list-icon {
+        height: 40px;
+        background-color: #B23A48;
+        padding: 9px 0px 9px 10px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        width: 45px;
+        margin-left: -4px;
+        margin-top: 22px;
+    }
+
+    .list-pw {
+        height: 40px;
+        background-color: #B23A48;
+        padding: 9px 0px 9px 10px;
+        width: 260px;
+        margin-left: -4px;
+        margin-top: 22px;
+    }
+
+    .list h4 {
+        padding-top: 10px;
+        margin-bottom: 0px;
+    }
+
+    .topic-m li:hover{
+        border-left: 7px solid #89ac39;
+        margin-left: 7px;
+    }
+
+    .topic-m a {
+        margin: 0px 0px 0px 0px;
+        text-decoration: none;
+        color: #46141a;
+        transition: color 150ms ease-in-out;
+    }
+
+    .topic-m a:hover {
+        color: #f6fa28;
+    }
+
+    #new-topic-button:hover {
+        background-color: #311111;
+        color: #ffdeda;
+    }
+
+    #new-topic-button {
+        cursor: default;
+        background-color: #0f4136;
+        padding: 5px;
+        border-radius: 15px;
+        color: #ffdeda;
+    }
+
 }

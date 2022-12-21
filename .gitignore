@@ -14,3 +14,36 @@
 
 # this file include phpmailer settings and mail template
 /functions/register/uvidcheck.php
+
+# JS files
+/assets/js/parallax.js
+/assets/js/loading-back-up.js
+/assets/js/all.js
+
+# Images files
+*.png
+*.webm
+*.jpeg
+*.jpg
+*.gif
+
+# Custom svg files
+/assets/svgs/package.json
+/assets/svgs/sdm-icon-kit.js
+
+# WebSocket configuration and test files
+/.yarn
+/assets/svgs/.yarn
+/assets/svgs/icons
+/pages/chat
+
+# Web Push Notification files
+/functions/web-notifications/
+
+
+# SVG files
+**/*.svg
+
+# Other files
+/functions/archive/
+/pages/chatqq/

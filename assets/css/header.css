@@ -4,13 +4,13 @@
 @media only screen and (min-width: 1024px) {
 
     @font-face {
-        font-family: Ubuntu;
-        src: url(http://localhost/assets/fonts/Ubuntu-Regular.ttf);
+        font-family: 'Torus';
+        src: url(http://localhost/assets/fonts/Torus-Regular.otf);
     }
     
     :root{
         /* ===== Colors ===== */
-        --body-color: #20051a;
+        --body-color: #461220;
         --sidebar-color: #FFF;
         --primary-color: #634a5a;
         --primary-color-light: #F6F5FF;
@@ -25,10 +25,9 @@
     }
     
     body{
-        min-height: 100vh;
-        background-color: var(--body-color);
+        background-color: #461220;
         transition: var(--tran-05);
-        /*font-family: "Comic Sans MS", "Comic Sans", cursive;*/
+        font-family: 'Torus';
     }
     
     ::selection {
@@ -37,9 +36,9 @@
     }
     
     .cover-nav-wrapper {
-        margin: 50px 120px 50px 190px;
+        margin: 50px 190px 50px 190px;
         border-radius: 10px;
-        background: rgb(173, 91, 196);
+        background: #91625d;
     }
     
     .cover-nav-wrapper ul {
@@ -47,17 +46,17 @@
     }
     
     .cover-nav {
+        /*justify-content: center;*/
         line-height: 1.5;
         font-size: 17px;
-        color: #546673;
+        color: #8C2F39;
         -webkit-font-smoothing: antialiased;
         -webkit-tap-highlight-color: transparent;
         box-sizing: inherit;
         border: 0;
-        margin-left: 390px;
+        margin-left: 25%;
         padding: 0;
         display: block;
-        width: 100%;
     }
     
     .cover-nav-options {
@@ -86,7 +85,7 @@
     }
     
     .cover-nav-link:hover {
-        background-color:rgb(99, 32, 76);
+        background-color:rgb(184, 96, 153);
         border-radius: 15px;
     }
     
@@ -98,7 +97,7 @@
     }
     
     #active {
-        background-color: rgb(99, 32, 76, 0.6);
+        background-color: #63204c99;
         transition: all 250ms ease-in-out;
         border-radius: 10px;
     }
@@ -118,7 +117,7 @@
     
     input {
         font-size: 15px;
-        background: rgb(70, 30, 82);
+        background: #63204c99;
     }
     
     input[type="text"] {
@@ -131,11 +130,19 @@
     }
     
     input:hover {
-        background-color: rgb(99, 32, 76, 0.6);
+        background-color: rgb(70, 30, 82, 0.6);
         transition: all 250ms ease-in-out;
     }
     
     .image {
         width: 38px;
+    }
+}
+
+@media only screen and (min-width: 980px) {
+
+    @font-face {
+        font-family: Ubuntu;
+        src: url(http://localhost/assets/fonts/Torus-Regular.otf);
     }
 }

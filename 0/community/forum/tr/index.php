@@ -2,7 +2,7 @@
 session_start();
 error_reporting();
 
-require "../../connections/connection.php";
+require "../../../../connections/connection.php";
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +10,7 @@ require "../../connections/connection.php";
     <head>
         <title>Scarlet Devil Mansion | Türkçe Touhou Şeyler Kaynağınız?..</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta property="og:image" content="assets/images/open-graph/yuyuko-touhou.png">
+        <meta property="og:image" content="http://localhost/assets/images/open-graph/yuyuko-touhou.png">
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="og:url" content="https://scarletdevilmansion.org">
         <meta property="og:title" content="Malikâne Antresi">
@@ -115,25 +115,49 @@ require "../../connections/connection.php";
         }	
         </script>
 
-        <!-- Font Awesome -->
-        <script src="https://kit.fontawesome.com/1493595c02.js" crossorigin="anonymous"></script>
+        <!-- Google ADS -->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3314538898493027" crossorigin="anonymous"></script>
 
         <!----===== Boxicons CSS ===== -->
         <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <script type="text/javascript">
+        var onloadCallback = function()
+        {
+            grecaptcha.render('html_element',
+            {
+                'sitekey' : '6LduPMMgAAAAAFKqfxM01xyBypZbHATlEvv3_A6M',
+                'theme' : 'dark'
+            });
+        };
+        </script>
+
     </head>
 
     <body>
 <?php
-//Giriş yapılmış mı kontrol ediliyor
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
-{
-    echo '
+    //Giriş yapılmış mı kontrol ediliyor
+    if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
+    {
+        $new_thread = '
+                    <table>
+                        <td>
+                            <tr>
+                                <a id="new-topic-button" style="cursor: not-allowed;">
+                                      Önce Giriş Yapmalısın  
+                                </a>
+                            </tr>
+                        </td>
+                    </table>
+        ';
+        echo '
         <center>
             <div class="cover-nav-wrapper">
                 <nav class="cover-nav">
                     <ul class="cover-nav-options tabs-scrollable">
                         <li class="cover-nav-option">
-                            <a title="Ana Sayfa" class="cover-nav-link truncate-line"  id="active" href="#">
+                            <a title="Ana Sayfa" class="cover-nav-link truncate-line"  id="active" href="http://localhost/0/topics">
                                 Ana Sayfa
                             </a>
                         </li>
@@ -171,17 +195,28 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
                 </nav>
             </div>
         </center>
-';
-}
-else
-{
-    echo '
+    ';
+    }
+    else
+    {
+        $new_thread = '
+                    <table>
+                        <td>
+                            <tr>
+                                <a id="new-topic-button" href="http://localhost/0/topics/new-topic/">
+                                     <i class="fa-solid fa-plus fa-sm"></i> Yeni Konu Aç  
+                                </a>
+                            </tr>
+                        </td>
+                    </table>
+        ';
+        echo '
         <center>
             <div class="cover-nav-wrapper">
                 <nav class="cover-nav">
                     <ul class="cover-nav-options tabs-scrollable">
                         <li class="cover-nav-option">
-                            <a title="Ana Sayfa" class="cover-nav-link truncate-line"  id="active" href="#">
+                            <a title="Ana Sayfa" class="cover-nav-link truncate-line"  id="active" href="http://localhost/0/topics">
                                 Ana Sayfa
                             </a>
                         </li>
@@ -206,11 +241,6 @@ else
                             </a>
                         </li>
                         <li class="cover-nav-option">
-                            <a title="Yeni Konu" class="cover-nav-link truncate-line" href="http://localhost/0/topics/new-topic/">
-                                Yeni Konu
-                            </a>
-                        </li>
-                        <li class="cover-nav-option">
                             <a title="Profil" class="cover-nav-link truncate-line" href="http://localhost/pages/u/'.$_SESSION["username"].'">
                                 Profil
                             </a>
@@ -229,113 +259,87 @@ else
                 </nav>
             </div>
         </center>
-    ';}?>
+        ';
+    }
+?>
+        
         <div class="topic-m">
             <div>
                 <div id="topics-p">
-                    <h2>Scarlet Devil Mansion</h2>
-                    <span>Scarlet Devil Mansion Özel</span>
+                    <h2>Türkçe Forum Bölgesi</h2>
+                    <span>Sabitlenmiş Konular</span>
+                    <sup>Turkish</sup>
                     <ul>
-                        <a id="w-co" href="http://localhost/0/topics/development/">
-                            <li class="list">
-                                <h4>Geliştirme</h4>
-                                <p>Sitenin ilerlemesine ve gelişmesine yardım mı etmek istiyorsun? E gelsene o zaman!</p>
-                                <a href="http://localhost/0/topics/development/server-side/">&#62; Sunucu tarafı geliştirme</a><a href="http://localhost/0/topics/development/client-side/">&#62; istemci tarafı geliştirme</a>
-                            </li>
-                        </a>
-                        <a id="w-co" href="http://localhost/0/topics/user-operations/">
-                            <li class="list">
-                                <h4>Destek Ekibi</h4>
-                                <p>Bilirsin... Kullanıcılarla uğraşacak sorumluluk sahibi bireyler gerek. Burada kullanıcıların sorunları çözülür.</p>
-                            </li>
-                            <ol class="list-end">
-                                <i class="fa-solid fa-message fa-2xl"></i>
-                            </ol>
-                        </a>
-                    </ul>
-                    <h2>Kullanıcılardan</h2>
-                    <span>Sizin bölgeniz.</span>
-                    <ul>
-                        <a id="w-co" href="http://localhost/0/community/forum/">
-                            <li class="list">
-                                <h4>Forum</h4>
-                                <p>Değerli kullanıcılarımızın kendi aralarında sohbet edebilecekleri bir bölge.</p>
-                            </li>
-                        </a>
-                    </ul>
-                    <h2>Touhou Danmaku Oyunları</h2>
-                    <span>O çok sevdiğiniz, bayıldığınız oyunlar.</span>
-                    <ul>
-                        <li class="list">
-                            <h4>PC-98 Oyunları</h4>
-                            <p>Touhou'da ilk çıkan 5 oyun.</p>
-                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 1</a>
-                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 2</a>
-                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 3</a>
-                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 4</a>
-                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 5</a>
-                        </li>
-                        <li class="list">
-                            <h4>1. Nesil Oyunlar</h4>
-                            <p>1. nesil oyunlar, 6 ve 9.5'da dahil olmak üzere arasındaki oyunları kapsar.</p>
-                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 6</a>
-                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 7</a>
-                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 8</a>
-                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 9</a>
-                        </li>
-                        <li class="list">
-                            <h4>2. Nesil Oyunlar</h4>
-                            <p>2. nesil oyunlar, 10 ve 12.5'da dahil olmak üzere arasındaki oyunları kapsar.</p>
-                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 10</a>
-                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 11</a>
-                        <li class="list">
-                            <h4>3. Nesil Oyunlar</h4>
-                            <p>3. nesil oyunlar, 12.8 ve 18'de dahil olmak üzere arasındaki oyunları kapsar.</p>
-                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 12.8</a>
-                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 13</a>
-                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 18</a>
-                        </li>
-                    </ul>
-                    <h2>Touhou Dövüş Oyunları</h2>
-                    <span>Alışılmış danmakunun dışına çıkan oyuncular.</span>
-                    <ul>
-                        <li class="list">
-                            <h4>PC-98 Oyunları</h4>
-                            <p>Touhou'da ilk çıkan 5 oyun.</p>
-                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 1</a>
-                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 2</a>
-                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 3</a>
-                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 4</a>
-                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 5</a>
-                        </li>
-                        <li class="list">
-                            <h4>1. Nesil Oyunlar</h4>
-                            <p>1. nesil oyunlar, 6 ve 9.5'da dahil olmak üzere arasındaki oyunları kapsar.</p>
-                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 6</a>
-                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 7</a>
-                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 8</a>
-                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 9</a>
-                        </li>
-                        <li class="list">
-                            <h4>2. Nesil Oyunlar</h4>
-                            <p>2. nesil oyunlar, 10 ve 12.5'da dahil olmak üzere arasındaki oyunları kapsar.</p>
-                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 10</a>
-                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 11</a>
-                        <li class="list">
-                            <h4>3. Nesil Oyunlar</h4>
-                            <p>3. nesil oyunlar, 12.8 ve 18'de dahil olmak üzere arasındaki oyunları kapsar.</p>
-                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 12.8</a>
-                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 13</a>
-                            <a href="http://localhost/0/topics/development/server-side/">&#62; Touhou 18</a>
-                        </li>
+                        <table>
+                            <tr>
+                                <td>
+                                    <a id="w-co" href="http://localhost/0/community/forum/tr/forumda-dikkat-edilmesi-gereken-kurallar">
+                                        <li class="list">
+                                            <h4>Forumda Dikkat Edilmesi Gereken Kurallar~</h4>
+                                            <p><a href="http://localhost/pages/u/remilia.scarlet/">remilia.scarlet</a> tarafından.</p>
+                                        </li>
+                                    </a>
+                                </td>
+                                <td>
+                                    <ol class="list-icon">
+                                        <i class="fa-solid fa-message fa-2xl"></i>
+                                    </ol>
+                                </td>
+                            </tr>
+                        </table>
                     </ul>
                 </div>
+                <div id="topics-p">
+                    <h2>Konular</h2>
+                    <br>
+                    <?php echo $new_thread; ?>
+            <?php
+            $result = $db->query("SELECT * FROM user_topic");
+            $apostrophe = "'";
+            if ($result->num_rows > 0) {
+                // output data of each row
+                while($row = $result->fetch_assoc())
+                {
+                echo '
+                    <ul>
+                        <table>
+                            <tr>
+                                <td>
+                                    <a id="w-co" href="http://localhost/0/community/forum/tr/' . $row["topic_url"] . '">
+                                        <li class="list">
+                                            <h4>' . $row["topic_name"] . '</h4>
+                                            <p><a href="http://localhost/pages/u/' . $row["user_id"] . '/">' . $row["user_id"] . '</a> tarafından.</p>
+                                        </li>
+                                    </a>
+                                </td>
+                                <td>
+                                    <ol class="list-pw">
+                                        <p>' . $row["created_at"] . ' tarihinde oluşturuldu</p>
+                                        <p>';
+                                        if($row["topic_comments"]<1)
+                                        {
+                                            echo "Hiç yorum yok";
+                                        } else
+                                        {
+                                            echo $row["topic_comments"] . ' tane gönderi';
+                                        }
+                                        echo '</p>
+                                    </ol>
+                                </td>
+                                <td>
+                                    <ol class="list-icon">
+                                        <i class="fa-solid fa-message fa-2xl"></i>
+                                    </ol>
+                                </td>
+                            </tr>
+                        </table>
+                    </ul>
+                ';}}?></div>
             </div>
         </div>
 <?php
-
-include('../../assets/footer.php');
-mysqli_close($db);
+    include('../../../../assets/footer.php');
+    mysqli_close($db);
 ?>
 
 </html>

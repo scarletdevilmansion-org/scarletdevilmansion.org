@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: url(http://localhost/assets/img/bg.png);
+    overflow: hidden;
+}
+.parallax-wrap {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.parallax-wrap h2 {
+    position: relative;
+    font-size: 100px;
+    color:  url(http://localhost/assets/img/bg.png);
+    z-index: 2;
+    text-align: center;
+}
+.parallax-wrap span {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+}
+.parallax-wrap span:nth-child(1) {
+    top: 70%;
+    left: 70%;
+    background: blue;
+    z-index: 3;
+}
+.parallax-wrap span:nth-child(2) {
+    top: 60%;
+    left: 50%;
+    background: yellow;
+    z-index: 3;
+}
+.parallax-wrap span:nth-child(3) {
+    top: 20%;
+    left: 60%;
+    background: green;
+    z-index: 3;
+}
+.parallax-wrap span:nth-child(4) {
+    top: 30%;
+    left: 40%;
+    background: red;
+    z-index: 3;
+}
+.parallax-wrap span:nth-child(5) {
+    top: 50%;
+    left: 50%;
+    background: purple;
+    z-index: 3;
+}
+.parallax-wrap span:nth-child(5) {
+    top: 70%;
+    left: 20%;
+    background: thistle;
+    z-index: 3;
+}
+.parallax-wrap span:nth-child(6) {
+    top: 80%;
+    left: 40%;
+    background: gray;
+    z-index: 3;
+}
+.parallax-wrap span:nth-child(7) {
+    top: 10%;
+    left: 10%;
+    background: green;
+    z-index: 3;
+}
+.parallax-wrap span:nth-child(8) {
+    top: 30%;
+    left: 80%;
+    background: aqua;
+    z-index: 3;
+}
+.parallax-wrap span:nth-child(9) {
+    top: 60%;
+    left: 80%;
+    background: gray;
+    z-index: 3;
+}

@@ -15,7 +15,7 @@
             <nav class="cover-nav">
                 <ul class="cover-nav-options tabs-scrollable">
                     <li class="cover-nav-option">
-                        <a title="Ana Sayfa" class="cover-nav-link truncate-line"  id="active" href="#">
+                        <a title="Ana Sayfa" class="cover-nav-link truncate-line"  id="active" href="http://localhost/0/topics/">
                             Forum Ana Sayfa
                         </a>
                     </li>

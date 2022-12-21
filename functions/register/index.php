@@ -2,6 +2,24 @@
 // Oturum başlatılır
 session_start();
 
+// Requires the MongoDB PHP Driver
+// https://www.mongodb.com/docs/drivers/php/
+try {
+
+    // Mongo Sunucusuna bağlanalım
+    
+    $mongo = new MongoClient('mongodb://127.0.0.1:27017');
+    
+    // Veritabanını Seçelim
+    
+    $db = $mongo->selectDB('TestDb');
+    
+} catch(MongoConnectionException $e) {
+    
+    die('Baglanti Kurulamadi : ' . $e->getMessage());
+    
+}
+
 // Include config file
 require_once "../../connections/connection.php";
 

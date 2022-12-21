@@ -1,13 +1,17 @@
-    
         <footer>
 
-        <link rel="stylesheet" href="http://localhost/assets/css/footer.css" />
+            <link rel="stylesheet" href="http://localhost/assets/css/footer.css" />
+            
+            <!-- Font Awesome -->
+            <script src="https://kit.fontawesome.com/1493595c02.js" crossorigin="anonymous"></script>
+            <!--<script src="http://localhost/assets/svgs/sdm-icon-kit.js" crossorigin="anonymous"></script>-->
+            <!--<i class="fab fa-message fa-2xl"></i>-->
 
             <div class="up-footer">
                 <a href="https://instagram.com/scarletdevilmansion.org" title="Yapılırsa Ttkinliklerin Duyurulacağı instagram Hesabı"><i class="fa-brands fa-inverse fa-instagram"></i></a>
                 <a href="https://twitter.com/scarletdmansion" title="Site Twitter Hesabı"><i class="fa-inverse fa-brands fa-twitter"></i></a>
                 <a href="https://discord.gg/c2dpsK8" title="Discord Sunucumuz"><i class="fa-inverse fa-brands fa-discord"></i></a>
-                <a href="https://discord.gg/V9H4gP9kD7" title="Touhou Türkiye Discord Sunucusu"><i class="fa-inverse fa-brands fa-discord"></i></a>
+                <a id="w-co" href="https://discord.gg/V9H4gP9kD7" title="Touhou Türkiye Discord Sunucusu"><i class="fa-inverse fa-brands fa-discord"></i></a>
             </div>
     
             <!-- Copyright -->
@@ -22,56 +26,4 @@
     
         </footer>
 
-        <!-- Initialize Swiper -->
-        <script language=JavaScript>
-        browser = navigator.appName
-            
-        const deviceType = () => {
-            const ua = navigator.userAgent;
-
-        	if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua))
-            {
-            	return "tablet";
-    	    }
-        	else if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua))
-            {
-                return "mobile";
-        	}
-            return "desktop";
-        };
-            
-        const type = deviceType();
-
-        if(type == "tablet" || type == "mobile")
-        {
-            var swiper = new Swiper(".mySwiper",
-            {
-       	        slidesPerView: 1,
-    		    spaceBetween: 3,
-        		loop: true,
-        		pagination:
-                {
-	    	        el: ".swiper-pagination",
-		    	    clickable: false,
-        	    }
-        	});
-        }
-		
-        if(type == "desktop")
-        {
-    	    var swiper = new Swiper(".mySwiper",
-            {
-            	slidesPerView: 6,
-    	    	spaceBetween: 10,
-    		    loop: true,
-        		pagination:
-                {
-    	    		el: ".swiper-pagination",
-    		    	clickable: false,
-        	    }
-	        });
-        }
-        </script>
-
     </body>
-</html>
