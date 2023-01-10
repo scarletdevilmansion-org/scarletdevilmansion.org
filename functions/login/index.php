@@ -142,11 +142,44 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     </form>
                 </div>
                 <div class="wrapper-1">
-                    <h2>Test</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo<br>
-                    unde expedita distinctio dolores saepe corrupti deleniti<br>
-                    excepturi aperiam deserunt, fugit quo? Pariatur voluptatum quaerat<br>
-                    alias necessitatibus optio, modi reprehenderit nesciunt!</p>
+                    <h2>Biliyor muydunuz?</h2>
+                    <?php
+
+                    $number = random_int(1,7);
+
+                    if($number == 1)
+                    {
+                        echo "<p>(Perfect Memento'ya göre) Remilia sadece Sakuya'nın efendisi değil,<br> aynı zamanda Sakuya'ya adını veren kişidir.</p>";}
+
+                    else if($number == 2)
+                    {
+                        echo "<p>Gensokyo zaman çizelgesine göre, Remilia 1502 yılında doğdu. Bu onu,<br> doğum tarihleri bilinen çok az karakterden birisi yapıyor.</p>";}
+
+                    else if($number == 3)
+                    {
+                        echo "<p>Remilia Scarlet'in teması olan 'Septette for the Dead Princess', Ludwig van Beethoven'ın<br> Do minör Piyano Sonatı No.8, Op 13 'Pathetique' 3 Rondo: Allegro'ya dayanmaktadır.<br> <a href='https://www.youtube.com/watch?v=M_124D_7KoU&t=815s' target='_blank'>Buradan bakabilirsiniz.</a>";}
+
+                    else if($number == 4)
+                    {
+                        echo "<p>16. Remilia Avrupalı bir görünüşe sahiptir. Romanyalı da olabilir ama bu sadece spekülasyon.</p>";}
+
+                    else if($number == 5)
+                    {
+                        echo "<p>Flandre, Hopeless Masquerade'in arka planında görünmeyen birkaç karakterden<br> birisidir. Bu onun Kızıl Şeytan Malikânesi dışına çıkmayı sevmediğini gösteriyor.</p>";}
+
+                    else if($number == 6)
+                    {
+                        echo "<p>Flandre'nin kanatlarının benzersiz olduğu söyleniyor. Herhangi bir youkai, hayalet,<br> yarasa ve benzer şeylerden farklı. Reimu bile Flandre'nin<br> o kanatlarla uçma yeteneğini sorguluyor...</p>";}
+
+                    else if($number == 7)
+                    {
+                        echo "<p>Patchouli astımlı olarak doğmuştur.</p>";}
+
+                    else
+                    {
+                        echo "<p>Kızıl Şeytan Malikâne kütüphanesindeki tüm kitapları onun yazdığı söyleniyor. Bu siteyi yapan kişiden daha hayatsız denebilir.</p>";}
+
+                    ?>
                 </div>
             </div>
         </center>

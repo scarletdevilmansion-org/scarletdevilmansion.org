@@ -1,12 +1,20 @@
+@font-face {
+    font-family: 'Torus';
+    src: url(http://localhost/assets/fonts/Torus-Regular.otf);
+}
+
+* {
+    font-family: 'Torus';
+    /*cursor: url(http://localhost/assets/cursor/4361d7e992.png),progress;*/
+}
+
 body {
-    font-family: Comic Sans MS;
-    color: #ffffff;
-    background-color: #533e55;
+    color: #FCB9B2;
+    background-color: #9F3541;
 }
 
 input {
-    font-family: Comic Sans MS;
-    color: #fff;
+    color: #FCB9B2;
 }
 
 input[type="text"] {
@@ -16,7 +24,7 @@ input[type="text"] {
     font-size: 16px;
     border-radius: 5px;
     border: none;
-    color: #dadada;
+    color: #FCB9B2;
 }
 
 button {

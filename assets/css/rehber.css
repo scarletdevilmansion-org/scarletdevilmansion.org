@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+@media only screen and (min-width: 1024px) {
+
+    @font-face {
+        font-family: 'Torus';
+        src: url(http://localhost/assets/fonts/Torus-Regular.otf);
+    }
+
+    * {
+        font-family: 'Torus';
+        color: #FED8C7;
+        cursor: url(http://localhost/assets/cursor/4361d7e992.png),progress;
+    }
+
+    .content {
+        margin: 0px 190px 40px 190px;
+        background-color: #8C2F39;
+        padding: 1px 15px;
+        border-radius: 15px;
+    }
+
+    .content-body-table {
+        margin: 0px 190px 0px 190px;
+        background-color: #8C2F39;
+        padding: 1px 15px;
+        border-radius: 15px;
+    }
+
+    table, td, th {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        padding: 5px 10px;
+        border: 1px #FCB9B2 solid;
+        border-collapse: collapse;
+    }
+
+}

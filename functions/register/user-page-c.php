@@ -1,23 +1,533 @@
 <?php
 
-mkdir("../../pages/u/".$username."/");
+$ust = '.$_SESSION["username"].';
+
+mkdir("../../pages/u/$username/");
+mkdir("../../pages/u/$username/user-pictures");
+mkdir("../../pages/u/$username/settings/");
+
+
 $user_index = fopen("../../pages/u/".$username."/index.php", "w") or die("Dosya oluştuma başarısız.");
 $user_page = fopen("../../pages/u/".$username."/user.php", "w") or die("Dosya oluştuma başarısız.");
 $user_guest = fopen("../../pages/u/".$username."/guest.php", "w") or die("Dosya oluştuma başarısız.");
-mkdir("../../pages/u/".$username."/user-pictures");
 
-mkdir("../../pages/u/".$username."/settings"."/");
+
 $user_setting_index = fopen("../../pages/u/".$username."/settings/index.php", "w") or die("Dosya oluştuma başarısız.");
 $user_setting_p_r = fopen("../../pages/u/".$username."/settings/password-recovery-mail.php", "w") or die("Dosya oluştuma başarısız.");
 $user_setting_page = fopen("../../pages/u/".$username."/settings/user.php", "w") or die("Dosya oluştuma başarısız.");
 
 
+$dot = "'";
 $sym = '$';
 $about = 'about';
 $discord = 'discord';
 $link = 'link';
 $social = 'social';
 $username2 = "'.$username.'";
+
+$index = "
+<?php
+session_start();
+error_reporting(0);
+
+//çalıştırılan sorgunun veritabanında bir karşılığı olup olmadığı kontrol ediliyor
+if(!isset(" . $sym . "_SESSION['loggedin']) || " . $sym . "_SESSION['loggedin'] !== true)
+{
+    include('guest.php');
+    include('http://localhost/assets/pages/footer.php');
+    exit;
+} else {    
+    if(" . $sym . "_SESSION['username'] != '".$username."') {
+        include('guest.php');
+    } else {
+        include('user.php');
+    }
+    include('http://localhost/assets/pages/footer.php');
+}
+
+" . $sym . "db->close();
+?>
+";
+
+$user = '
+<?php
+session_start();
+error_reporting();
+
+?>
+<!DOCTYPE html>
+<html lang=tr>
+    <head>
+        <title> Kullanıcısı | Scarlet Devil Mansion</title>
+        <meta name="description" content="'.$username.' kullanıcısının sayfası.">
+        <meta name="keywords" content="Touhou, Touhou Project, Touhou Projesi">
+        <meta name="author" content="Remilia Sc4rlet">
+        <meta name="copyright" content="Copyright Scarlet Devil Mansion - 2022">
+        <meta name="email" content="kyaleina@sdm-staff.org">
+        <meta name="Charset" content="UTF-8">
+
+        <link rel="icon" type="image/x-icon" href="http://localhost/assets/images/logo.ico">
+        <link rel="stylesheet" href="http://localhost/assets/css/header.css" /> 
+        <link rel="stylesheet" href="http://localhost/assets/css/users.css" />
+        
+        <link rel="stylesheet" href="http://localhost/assets/css/loading.css">
+        <script src="http://localhost/assets/js/loading.js"></script>
+    </head>
+    <body>
+    <?php
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
+{
+   echo '.$dot.'<center>
+            <div class="cover-nav-wrapper">
+                <nav class="cover-nav">
+                    <ul class="cover-nav-options tabs-scrollable">
+                        <li class="cover-nav-option">
+                            <a title="Ana Sayfa" class="cover-nav-link truncate-line"  id="active" href="http://localhost/">
+                                Ana Sayfa
+                            </a>
+                        </li>
+                        <li class="cover-nav-option">
+                            <a title="Oyunlar" class="cover-nav-link truncate-line" href="#">
+                                Oyunlar
+                            </a>
+                        </li>
+                        <li class="cover-nav-option">
+                            <a title="Videolar" class="cover-nav-link truncate-line" href="#">
+                                Videolar
+                            </a>
+                        </li>
+                        <li class="cover-nav-option">
+                            <a title="Müzikler" class="cover-nav-link truncate-line" href="#">
+                                Müzikler
+                            </a>
+                        </li>
+                        <li class="cover-nav-option">
+                            <a title="Mangalar" class="cover-nav-link truncate-line" href="#">
+                                Mangalar
+                            </a>
+                        </li>
+                        <li class="cover-nav-option">
+                            <a title="Giriş Yap" class="cover-nav-link truncate-line" href="http://localhost/functions/login/">
+                                Giriş Yap
+                            </a>
+                        </li>
+                        <li class="cover-nav-option">
+                            <form action="http://localhost/search/" method="GET">
+                                <input type="text" placeholder="Ara Beni Bul Beni" name="q">
+                            </form>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </center>'.$dot.';
+}
+else
+{
+  echo '.$dot.'<center>
+            <div class="cover-nav-wrapper">
+                <nav class="cover-nav">
+                    <ul class="cover-nav-options tabs-scrollable">
+                        <li class="cover-nav-option">
+                            <a title="Ana Sayfa" class="cover-nav-link truncate-line"  id="active" href="#">
+                                Ana Sayfa
+                            </a>
+                        </li>
+                        <li class="cover-nav-option">
+                            <a title="Oyunlar" class="cover-nav-link truncate-line" href="#">
+                                Oyunlar
+                            </a>
+                        </li>
+                        <li class="cover-nav-option">
+                            <a title="Videolar" class="cover-nav-link truncate-line" href="#">
+                                Videolar
+                            </a>
+                        </li>
+                        <li class="cover-nav-option">
+                            <a title="Müzikler" class="cover-nav-link truncate-line" href="#">
+                                Müzikler
+                            </a>
+                        </li>
+                        <li class="cover-nav-option">
+                            <a title="Mangalar" class="cover-nav-link truncate-line" href="#">
+                                Mangalar
+                            </a>
+                        </li>
+                        <li class="cover-nav-option">
+                            <a title="Profil" class="cover-nav-link truncate-line" href="http://localhost/pages/u/'.$ust.'">
+                                Profil
+                            </a>
+                        </li>
+                        <li class="cover-nav-option">
+                            <a title="Çıkış Yap" class="cover-nav-link truncate-line" href="http://localhost/functions/logout/">
+                                Çıkış Yap
+                            </a>
+                        </li>
+                        <li class="cover-nav-option">
+                            <form action="http://localhost/search/" method="GET">
+                                <input type="text" placeholder="Ara Beni Bul Beni" name="q">
+                            </form>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </center>'.$dot.';}?>
+        <center>
+            <div class="section-top-bar">
+                <img src="user-pictures/cover.png"> 
+            </div>
+        </center>
+        <div class="nav-wrapper">
+            <div class="cover-nav-wrapper">
+                <nav class="cover-nav">
+                    <ul class="cover-nav-options tabs-scrollable">
+                        <li class="cover-nav-option">
+                            <a title="Rozetler" class="cover-nav-link truncate-line" href="#">
+                                Rozetler
+                            </a>
+                        </li>
+                        <li class="cover-nav-option">
+                            <a title="Yorumlar" class="cover-nav-link truncate-line" href="#">
+                                Yorumlar
+                            </a>
+                        </li>
+                        <li class="cover-nav-option">
+                            <a title="Takip ettiği konular" class="cover-nav-link truncate-line" href="#">
+                                Takip ettiği konular
+                            </a>
+                        </li>
+                        <li class="cover-nav-option">
+                            <a title="Hakkında" class="cover-nav-link truncate-line" id="active">
+                                Hakkında
+                            </a>
+                        </li>
+                        <li class="cover-nav-option">
+                            <a title="Ayarlar" class="cover-nav-link truncate-line" href="../'.$username.'/settings">
+                                Ayarlar
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <center>
+            <table>
+                <tr>
+                    <td class="profile-rg">
+                        <div>
+                            <img src="user-pictures/logo.png" alt='.$dot.''.$username.''.$dot.'>
+                        </div>
+                        <div class="profile-rg-pic">
+                            <h4>'.$nameuser.' '.$surnameuser.'</h4>
+                            <span>'.$username.'</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="cover-option-bar">
+                            <div>
+                                <h4>Hakkında</h3>
+                                <a class="none-decoration">
+                                    <?php
+                                    include("../../../connections/connection.php");
+                                    $result = $db->query("SELECT * FROM user_about WHERE user_id = '.$dot.''.$username.''.$dot.'");
+
+                                    while ($info = mysqli_fetch_array($result))
+                                    {
+                                        echo $info["'.$about.'"];
+                                    }
+                                    $db->close();
+                                    ?>
+                                </a>
+                                <br>
+                                <h4>Discord ya da başka bi'.$dot.' şey</h3>
+                                <a class="none-decoration" href="#">
+                                    <?php
+                                    include("../../../connections/connection.php");
+                                    $result = $db->query("SELECT * FROM user_about WHERE user_id = '.$dot.''.$username.''.$dot.'");
+
+                                    while ($info = mysqli_fetch_array($result))
+                                    {
+                                        echo $info["'.$discord.'"];
+                                    }
+                                    $db->close();
+                                    ?>
+                                </a>
+                                <br>
+                                <h4>Herhangi bir şey için link</h4>
+                                <a class="none-decoration" href="#">
+                                    <?php
+                                    include("../../../connections/connection.php");
+                                    $result = $db->query("SELECT * FROM user_about WHERE user_id = '.$dot.''.$username.''.$dot.'");
+
+                                    while ($info = mysqli_fetch_array($result))
+                                    {
+                                        echo $info["'.$link.'"];
+                                    }
+                                    $db->close();
+                                    ?>
+                                </a>
+                                <br>
+                                <h4>Sosyal Medya</h4>
+                                <a class="none-decoration" href="#">
+                                    <?php
+                                    include("../../../connections/connection.php");
+                                    $result = $db->query("SELECT * FROM user_about WHERE user_id = '.$dot.''.$username.''.$dot.'");
+
+                                    while ($info = mysqli_fetch_array($result))
+                                    {
+                                        echo $info["'.$social.'"];
+                                    }
+                                    $db->close();
+                                    ?>
+                                </a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </center>';
+
+
+
+        
+
+$guest = '
+<?php
+session_start();
+error_reporting();
+
+?>
+<!DOCTYPE html>
+<html lang=tr>
+    <head>
+        <title>'.$username.' Kullanıcısı | Scarlet Devil Mansion</title>
+        <meta name="description" content="'.$username.' kullanıcısının sayfası.">
+        <meta name="keywords" content="Touhou, Touhou Project, Touhou Projesi">
+        <meta name="author" content="Remilia Sc4rlet">
+        <meta name="copyright" content="Copyright Scarlet Devil Mansion - 2022">
+        <meta name="email" content="kyaleina@sdm-staff.org">
+        <meta name="Charset" content="UTF-8">
+
+        <link rel="icon" type="image/x-icon" href="http://localhost/assets/images/logo.ico">
+        <link rel="stylesheet" href="http://localhost/assets/css/header.css" /> 
+        <link rel="stylesheet" href="http://localhost/assets/css/users.css" />
+        
+        <link rel="stylesheet" href="http://localhost/assets/css/loading.css">
+        <script src="http://localhost/assets/js/loading.js"></script>
+    </head>
+    <body>
+    <?php
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
+{
+    echo '.$dot.'<center>
+            <div class="cover-nav-wrapper">
+                <nav class="cover-nav">
+                    <ul class="cover-nav-options tabs-scrollable">
+                        <li class="cover-nav-option">
+                            <a title="Ana Sayfa" class="cover-nav-link truncate-line"  id="active" href="#">
+                                Ana Sayfa
+                            </a>
+                        </li>
+                        <li class="cover-nav-option">
+                            <a title="Oyunlar" class="cover-nav-link truncate-line" href="#">
+                                Oyunlar
+                            </a>
+                        </li>
+                        <li class="cover-nav-option">
+                            <a title="Videolar" class="cover-nav-link truncate-line" href="#">
+                                Videolar
+                            </a>
+                        </li>
+                        <li class="cover-nav-option">
+                            <a title="Müzikler" class="cover-nav-link truncate-line" href="#">
+                                Müzikler
+                            </a>
+                        </li>
+                        <li class="cover-nav-option">
+                            <a title="Mangalar" class="cover-nav-link truncate-line" href="#">
+                                Mangalar
+                            </a>
+                        </li>
+                        <li class="cover-nav-option">
+                            <a title="Giriş Yap" class="cover-nav-link truncate-line" href="http://localhost/functions/login/">
+                                Giriş Yap
+                            </a>
+                        </li>
+                        <li class="cover-nav-option">
+                            <form action="http://localhost/search/" method="GET">
+                                <input type="text" placeholder="Ara Beni Bul Beni" name="q">
+                            </form>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </center>'.$dot.';
+}
+else
+{
+    echo '.$dot.'<center>
+            <div class="cover-nav-wrapper">
+                <nav class="cover-nav">
+                    <ul class="cover-nav-options tabs-scrollable">
+                        <li class="cover-nav-option">
+                            <a title="Ana Sayfa" class="cover-nav-link truncate-line"  id="active" href="#">
+                                Ana Sayfa
+                            </a>
+                        </li>
+                        <li class="cover-nav-option">
+                            <a title="Oyunlar" class="cover-nav-link truncate-line" href="#">
+                                Oyunlar
+                            </a>
+                        </li>
+                        <li class="cover-nav-option">
+                            <a title="Videolar" class="cover-nav-link truncate-line" href="#">
+                                Videolar
+                            </a>
+                        </li>
+                        <li class="cover-nav-option">
+                            <a title="Müzikler" class="cover-nav-link truncate-line" href="#">
+                                Müzikler
+                            </a>
+                        </li>
+                        <li class="cover-nav-option">
+                            <a title="Mangalar" class="cover-nav-link truncate-line" href="#">
+                                Mangalar
+                            </a>
+                        </li>
+                        <li class="cover-nav-option">
+                            <a title="Profil" class="cover-nav-link truncate-line" href="http://localhost/pages/u/'.$ust.'">
+                                Profil
+                            </a>
+                        </li>
+                        <li class="cover-nav-option">
+                            <a title="Çıkış Yap" class="cover-nav-link truncate-line" href="http://localhost/functions/logout/">
+                                Çıkış Yap
+                            </a>
+                        </li>
+                        <li class="cover-nav-option">
+                            <form action="http://localhost/search/" method="GET">
+                                <input type="text" placeholder="Ara Beni Bul Beni" name="q">
+                            </form>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </center>'.$dot.';}?>
+        <center>
+            <div class="section-top-bar">
+                <img src="user-pictures/cover.png"> 
+            </div>
+        </center>
+        <div class="nav-wrapper">
+            <div class="cover-nav-wrapper">
+                <nav class="cover-nav">
+                    <ul class="cover-nav-options tabs-scrollable">
+                        <li class="cover-nav-option">
+                            <a title="Rozetler" class="cover-nav-link truncate-line" href="#">
+                                Rozetler
+                            </a>
+                        </li>
+                        <li class="cover-nav-option">
+                            <a title="Yorumlar" class="cover-nav-link truncate-line" href="#">
+                                Yorumlar
+                            </a>
+                        </li>
+                        <li class="cover-nav-option">
+                            <a title="Takip ettiği konular" class="cover-nav-link truncate-line" href="#">
+                                Takip ettiği konular
+                            </a>
+                        </li>
+                        <li class="cover-nav-option">
+                            <a title="Hakkında" class="cover-nav-link truncate-line" id="active">
+                                Hakkında
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <center>
+            <table>
+                <tr>
+                    <td class="profile-rg">
+                        <div>
+                            <img src="user-pictures/logo.png" alt='.$dot.''.$username.''.$dot.'>
+                        </div>
+                        <div class="profile-rg-pic">
+                            <h4>'.$nameuser.' '.$surnameuser.'</h4>
+                            <span>'.$username.'</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="cover-option-bar">
+                            <div>
+                                <h4>Hakkında</h3>
+                                <a class="none-decoration">
+                                    <?php
+                                    include("../../../connections/connection.php");
+                                    $result = $db->query("SELECT * FROM user_about WHERE user_id = '.$dot.''.$username.''.$dot.'");
+
+                                    while ($info = mysqli_fetch_array($result))
+                                    {
+                                        echo $info["'.$about.'"];
+                                    }
+                                    $db->close();
+                                    ?>
+                                </a>
+                                <br>
+                                <h4>Discord ya da başka bi'.$dot.' şey</h3>
+                                <a class="none-decoration" href="#">
+                                    <?php
+                                    include("../../../connections/connection.php");
+                                    $result = $db->query("SELECT * FROM user_about WHERE user_id = '.$dot.''.$username.''.$dot.'");
+
+                                    while ($info = mysqli_fetch_array($result))
+                                    {
+                                        echo $info["'.$discord.'"];
+                                    }
+                                    $db->close();
+                                    ?>
+                                </a>
+                                <br>
+                                <h4>Herhangi bir şey için link</h4>
+                                <a class="none-decoration" href="#">
+                                    <?php
+                                    include("../../../connections/connection.php");
+                                    $result = $db->query("SELECT * FROM user_about WHERE user_id = '.$dot.''.$username.''.$dot.'");
+
+                                    while ($info = mysqli_fetch_array($result))
+                                    {
+                                        echo $info["'.$link.'"];
+                                    }
+                                    $db->close();
+                                    ?>
+                                </a>
+                                <br>
+                                <h4>Sosyal Medya</h4>
+                                <a class="none-decoration" href="#">
+                                    <?php
+                                    include("../../../connections/connection.php");
+                                    $result = $db->query("SELECT * FROM user_about WHERE user_id = '.$dot.''.$username.''.$dot.'");
+
+                                    while ($info = mysqli_fetch_array($result))
+                                    {
+                                        echo $info["'.$social.'"];
+                                    }
+                                    $db->close();
+                                    ?>
+                                </a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </center>
+        ';
 
 $user_setting_page_f = "
 <?php
@@ -324,262 +834,6 @@ if(!isset(".$sym."_SESSION['loggedin']) || ".$sym."_SESSION['loggedin'] !== true
 ?>
 ";
 
-$index = "
-<?php
-session_start();
-error_reporting();
-
-
-//çalıştırılan sorgunun veritabanında bir karşılığı olup olmadığı kontrol ediliyor
-if(!isset(".$sym."_SESSION['loggedin']) || ".$sym."_SESSION['loggedin'] !== true){
-    include('../../../assets/logout-header.php');
-    include('guest.php');
-    exit;
-} else {
-    include('../../../assets/login-header.php');
-    
-    if(".$sym."_SESSION['username'] != '".$username."') {
-        include('guest.php');
-    } else {
-        include('user.php');
-    }
-}
-
-include('../../../assets/footer.php');
-
-?>
-";
-
-$user = '
-<div class="section-top-bar">
-<img src="user-pictures/cover.png" height="256px" width="1580px"> 
-</div>
-
-<div class="nav-wrapper">
-<div class="cover-nav-wrapper">
-    <nav class="cover-nav">
-        <ul class="cover-nav-options tabs-scrollable">
-            <li class="cover-nav-option">
-                <a title="Rozetler" class="cover-nav-link truncate-line" href="#">
-                    Rozetler
-                </a>
-            </li>
-            <li class="cover-nav-option">
-                <a title="Yorumlar" class="cover-nav-link truncate-line" href="#">
-                    Yorumlar
-                </a>
-            </li>
-            <li class="cover-nav-option">
-                <a title="Takip ettiği konular" class="cover-nav-link truncate-line" href="#">
-                    Takip ettiği konular
-                </a>
-            </li>
-            <li class="cover-nav-option">
-                <a title="Hakkında" class="cover-nav-link truncate-line" id="active">
-                    Hakkında
-                </a>
-            </li>
-            <li class="cover-nav-option">
-                <a title="Ayarlar" class="cover-nav-link truncate-line" href="../'.$username.'/settings">
-                    Ayarlar
-                </a>
-            </li>
-        </ul>
-    </nav>
-</div>
-
-<center>
-<table class="table border" style="width: 50%;">
-    <tr>
-        <td class="border profile-bg-up" style="width: 240px; padding-top: 10px; padding-left: 10px; padding-bottom: 6px; padding-right: 10px;">
-            <center>
-                <img src="user-pictures/logo.png" alt="'.$username.'" style="width: 100%;">
-            </center>
-        </td>
-        <td rowspan="2">
-            <div class="cover-option-bar">
-                <div>
-                <h4>Hakkında</h3>
-                <a class="none-decoration">
-        <?php 
-            include("../../../connections/connection.php");
-            $result = mysqli_query($db,"SELECT * FROM user_about WHERE user_id = '.$username2.'");
-
-            while ($info = mysqli_fetch_array($result,MYSQLI_ASSOC))
-            {
-                echo $info["'.$about.'"];
-            }
-        ?>
-                </a>
-                <br>
-                <h4>Discord</h3>
-                <a class="none-decoration" href="#">
-        <?php 
-            include("../../../connections/connection.php");
-            $result = mysqli_query($db,"SELECT * FROM user_about WHERE user_id = '.$username2.'");
-
-            while ($info = mysqli_fetch_array($result,MYSQLI_ASSOC))
-            {
-                echo $info["'.$discord.'"];
-            }
-        ?>
-                </a>
-                <br>
-                <h4>Link</h4>
-                <a class="none-decoration" href="#">
-        <?php 
-            include("../../../connections/connection.php");
-            $result = mysqli_query($db,"SELECT * FROM user_about WHERE user_id = '.$username2.'");
-
-            while ($info = mysqli_fetch_array($result,MYSQLI_ASSOC))
-            {
-                echo $info["'.$link.'"];
-            }
-        ?>
-                </a>
-                <br>
-                <h4>Sosyal Medya</h4>
-                <a class="none-decoration" href="#">
-        <?php 
-            include("../../../connections/connection.php");
-            $result = mysqli_query($db,"SELECT * FROM user_about WHERE user_id = '.$username2.'");
-
-            while ($info = mysqli_fetch_array($result,MYSQLI_ASSOC))
-            {
-                echo $info["'.$social.'"];
-            }
-        ?>
-                </a>
-                </div>
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td class="border profile-bg-down">
-            <center>
-                <h4>'.$username.'</h4>
-                <span>'.$username.'</span>
-            </center>
-        </td>
-    </tr>
-</table>
-</center>
-</div>
-';
-
-$guest = '
-<div class="section-top-bar">
-<img src="user-pictures/cover.png" height="256px" width="1580px"> 
-</div>
-
-<div class="nav-wrapper">
-<div class="cover-nav-wrapper">
-    <nav class="cover-nav">
-        <ul class="cover-nav-options tabs-scrollable">
-            <li class="cover-nav-option">
-                <a title="Rozetler" class="cover-nav-link truncate-line" href="#">
-                    Rozetler
-                </a>
-            </li>
-            <li class="cover-nav-option">
-                <a title="Yorumlar" class="cover-nav-link truncate-line" href="#">
-                    Yorumlar
-                </a>
-            </li>
-            <li class="cover-nav-option">
-                <a title="Takip ettiği konular" class="cover-nav-link truncate-line" href="#">
-                    Takip ettiği konular
-                </a>
-            </li>
-            <li class="cover-nav-option">
-                <a title="Hakkında" class="cover-nav-link truncate-line" id="active">
-                    Hakkında
-                </a>
-            </li>
-        </ul>
-    </nav>
-</div>
-
-<center>
-<table class="table border" style="width: 50%;">
-    <tr>
-        <td class="border profile-bg-up" style="width: 240px; padding-top: 10px; padding-left: 10px; padding-bottom: 6px; padding-right: 10px;">
-            <center>
-                <img src="user-pictures/logo.png" alt="'.$username.'" style="width: 100%;">
-            </center>
-        </td>
-        <td rowspan="2">
-            <div class="cover-option-bar">
-                <div>
-                <h4>Hakkında</h3>
-                <a class="none-decoration">
-        <?php 
-            include("../../../connections/connection.php");
-            $result = mysqli_query($db,"SELECT * FROM user_about WHERE user_id = '.$username2.'");
-
-            while ($info = mysqli_fetch_array($result,MYSQLI_ASSOC))
-            {
-                echo $info["'.$about.'"];
-            }
-        ?>
-                </a>
-                <br>
-                <h4>Discord</h3>
-                <a class="none-decoration" href="#">
-        <?php 
-            include("../../../connections/connection.php");
-            $result = mysqli_query($db,"SELECT * FROM user_about WHERE user_id = '.$username2.'");
-
-            while ($info = mysqli_fetch_array($result,MYSQLI_ASSOC))
-            {
-                echo $info["'.$discord.'"];
-            }
-        ?>
-                </a>
-                <br>
-                <h4>Link</h4>
-                <a class="none-decoration" href="#">
-        <?php 
-            include("../../../connections/connection.php");
-            $result = mysqli_query($db,"SELECT * FROM user_about WHERE user_id = '.$username2.'");
-
-            while ($info = mysqli_fetch_array($result,MYSQLI_ASSOC))
-            {
-                echo $info["'.$link.'"];
-            }
-        ?>
-                </a>
-                <br>
-                <h4>Sosyal Medya</h4>
-                <a class="none-decoration" href="#">
-        <?php 
-            include("../../../connections/connection.php");
-            $result = mysqli_query($db,"SELECT * FROM user_about WHERE user_id = '.$username2.'");
-
-            while ($info = mysqli_fetch_array($result,MYSQLI_ASSOC))
-            {
-                echo $info["'.$social.'"];
-            }
-        ?>
-                </a>
-                </div>
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td class="border profile-bg-down">
-            <center>
-                <h4>'.$username.'</h4>
-                <span>'.$username.'</span>
-                </p>
-            </center>
-        </td>
-    </tr>
-</table>
-</center>
-</div>
-';
-
 fwrite($user_index, $index);
 fwrite($user_page, $user);
 fwrite($user_guest, $guest);
@@ -605,7 +859,7 @@ function custom_copy($src, $dst) {
                 // for sub directory 
                 custom_copy($src . '/' . $file, $dst . '/' . $file); 
   
-            } 
+            }
             else { 
                 copy($src . '/' . $file, $dst . '/' . $file); 
             } 
@@ -615,9 +869,9 @@ function custom_copy($src, $dst) {
     closedir($dir);
 } 
   
-$src = "C:/xampp/htdocs/assets/logo/default-user-pictures";
+$src = "C:/xampp/htdocs/assets/images/user-pictures";
   
-$dst = "C:/xampp/htdocs/pages/u/".$username."/user-pictures";
+$dst = "C:/xampp/htdocs/pages/u/$username/user-pictures";
 
 custom_copy($src, $dst);
 

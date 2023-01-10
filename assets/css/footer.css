@@ -1,8 +1,16 @@
-/*  Charset  */
 @charset "UTF-8";
 
+@font-face {
+    font-family: 'Torus';
+    src: url(https://www.scarletdevilmansion.org/assets/fonts/Torus-Regular.otf);
+}
+
+* {
+    font-family: 'Torus';
+}
+
 /*  Masaüstü ve dizüstü bilgisayarlar için  */
-@media only screen and (min-width: 1024px) {
+@media only screen and (max-width: 2560px) {
 
     .up-footer {
         text-align: center;
@@ -37,36 +45,149 @@
         background-color: rgba(0, 0, 0, 0.2);
     }
 }
-/*  Masaüstü ve dizüstü css kod bitimi  */
 
-@media screen and (max-width: 768px) {
-    
+@media only screen and (max-width: 1880px) {
+
     .up-footer {
         text-align: center;
-        margin-top: 30px;
-        padding-top: 10px;
-        padding-bottom: 10px;
+        margin-top: 50px;
+        padding: 10px 15px 5px 15px;
+        margin-right: 190px;
+        margin-left: 190px;
         border-top-left-radius: 15px;
         border-top-right-radius: 15px;
-        margin: 30px 10px 0px 100px;
         color: white;
         background-color: rgba(0, 0, 0, 0.2);
     }
 
     .center-footer {
         text-align: center;
-        padding-bottom: 10px;
-        margin: 0px 10px 0px 100px;
+        padding: 0px 15px 0px 15px;
+        margin-right: 190px;
+        margin-left: 190px;
         color: white;
         background-color: rgba(0, 0, 0, 0.2);
     }
 
     .down-footer {
         text-align: center;
+        padding: 5px 15px 5px 15px;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        margin-right: 190px;
+        margin-left: 190px;
+        margin-bottom: 20px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}
+
+@media only screen and (max-width: 1440px) {
+
+    .up-footer {
+        text-align: center;
+        margin-top: 50px;
+        padding: 10px 15px 5px 15px;
+        margin-right: 190px;
+        margin-left: 190px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .center-footer {
+        text-align: center;
+        padding: 0px 15px 0px 15px;
+        margin-right: 190px;
+        margin-left: 190px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .down-footer {
+        text-align: center;
+        padding: 5px 15px 5px 15px;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        margin-right: 190px;
+        margin-left: 190px;
+        margin-bottom: 20px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}
+
+/*  Masaüstü ve dizüstü bilgisayarlar için  */
+@media only screen and (max-width: 1024px) {
+
+    .up-footer {
+        text-align: center;
+        margin-top: 50px;
+        padding: 10px 15px 5px 15px;
+        margin-right: 30px;
+        margin-left: 30px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .center-footer {
+        text-align: center;
+        padding: 0px 15px 0px 15px;
+        margin-right: 30px;
+        margin-left: 30px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .down-footer {
+        text-align: center;
+        padding: 5px 15px 5px 15px;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        margin-right: 30px;
+        margin-left: 30px;
+        margin-bottom: 20px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}
+
+/*  Masaüstü ve dizüstü css kod bitimi  */
+
+@media screen and (max-width: 768px) {
+    
+    .up-footer {
+        text-align: center;
+        font-size: 12px;
+        margin-top: 30px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        margin: 30px 20px 0px 20px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .center-footer {
+        text-align: center;
+        font-size: 12px;
+        padding-bottom: 10px;
+        margin: 0px 20px 0px 20px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .down-footer {
+        text-align: center;
+        font-size: 12px;
         padding-bottom: 10px;
         border-bottom-left-radius: 15px;
         border-bottom-right-radius: 15px;
-        margin: 0px 10px 20px 100px;
+        margin: 0px 20px 20px 20px;
         color: white;
         background-color: rgba(0, 0, 0, 0.2);
     }
@@ -75,30 +196,33 @@
 /*  425 piksel genişlikli telefonlar için  */
 @media screen and (max-width: 425px) {
     .up-footer {
+        font-size: 12px;
         text-align: center;
         margin-top: 30px;
         padding-top: 10px;
         padding-bottom: 10px;
         border-top-left-radius: 15px;
         border-top-right-radius: 15px;
-        margin: 30px 30px 0px 100px;
+        margin: 30px 10px 0px 10px;
         color: white;
         background-color: rgba(0, 0, 0, 0.2);
     }
 
     .center-footer {
+        font-size: 12px;
         text-align: center;
         padding-bottom: 10px;
-        margin: 0px 30px 0px 100px;
+        margin: 0px 10px 0px 10px;
         background-color: rgba(0, 0, 0, 0.2);
     }
 
     .down-footer {
+        font-size: 12px;
         text-align: center;
         padding-bottom: 10px;
         border-bottom-left-radius: 15px;
         border-bottom-right-radius: 15px;
-        margin: 0px 30px 20px 100px;
+        margin: 0px 10px 20px 10px;
         color: white;
         background-color: rgba(0, 0, 0, 0.2);
     }

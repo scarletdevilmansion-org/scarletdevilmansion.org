@@ -1,95 +1,4 @@
-/*  Charset  */
 @charset "UTF-8";
-
-/*  Masaüstü ve dizüstü bilgisayarlar için  */
-/* @media only screen and (min-width: 1024px) { */
-    @font-face {
-        font-family: Ubuntu;
-        src: url(Ubuntu-Regular.ttf);
-    }
-
-    *{
-        font-family: Ubuntu;
-    }
-
-    .header-v1 {
-        background-color: antiquewhite;
-        border: 1px #000 solid;
-        border-radius: 6px;
-        display: flex;
-        margin: 50px 120px 0 140px;
-        padding: 10px;
-        height: 600px;
-    }
-    .card {
-        background-color: red;
-        border: #000 1px solid;
-        border-radius: 6px;
-        display: block;
-        margin: 35px 0 20px 60px;
-        padding: 5px;
-        height: 100px;
-        width: 80%;
-    }
-    .header-v2 {
-        background-color: #ff6e8b;
-        border-radius: inherit;
-        float: left;
-        margin-right: 5px;
-        width: 680px;
-    }
-    .header-v3 {
-        display: inline;
-        float: right;
-    }
-    .header-v4 {
-        background-color: goldenrod;
-        border-radius: 6px;
-        margin-left: 5px;
-        margin-bottom: 5px;
-        padding: 5px;
-        width: 250px;
-        height: 285px;
-    }
-    .header-v5 {
-        background-color: brown;
-        border-radius: 6px;
-        margin-left: 5px;
-        padding: 5px;
-        width: 250px;
-        height: 290px;
-    }
-    #margin-top {
-        margin-top: 350;
-    }
-    .topic-header {
-        background-color: aquamarine;
-        border: 1px #000 solid;
-        border-radius: inherit;
-        text-align: center;
-        height: auto;
-        margin-bottom: 2px;
-    }
-    .menu-items {
-        background-color: aquamarine;
-        border: 1px #000 solid;
-        border-radius: inherit;
-        font-size: 14px;
-        margin-bottom: 5px;
-    }
-    .menu-items a {
-        text-decoration: none;
-    }
-    .menu-item {
-        text-align: center;
-        display: block;
-        padding: 5px;
-    }
-    .menu-item span {
-        display: block;
-    }
-
-/* } */
 
 /*  Code for Firefox  */
 ::-moz-selection { 
@@ -123,3 +32,643 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #b30000; 
 }
+
+/* Google Chrome Standartlarına göre 2560px 4K Bilgisayarlar */
+@media only screen and (max-width: 2560px) {
+
+    body {
+        color: #FCB9B2;
+    }
+    
+    .header-v1 {
+        background-color: #9F3541;
+        border: 1px #000 solid;
+        border-radius: 6px;
+        display: flex;
+        margin: 50px 190px 0 190px;
+        padding: 10px;
+        height: 600px;
+    }
+
+    .card span {
+        color: #FED8C7;
+        display: block;
+        text-decoration: none;
+    }
+
+    .card a {
+        color: #FED8C7;
+        display: block;
+        text-decoration: none;
+    }
+    
+    .card {
+        background-color: rgb(20, 26, 53);
+        border-radius: 6px;
+        margin: 20px 0 20px 20px;
+        padding: 3px 10px;
+        height: auto;
+        width: 94%;
+    }
+    
+    .header-v2 {
+        background-color: #C55A63;
+        border-radius: inherit;
+        float: left;
+        margin: 5px;
+        width: 80%;
+        height: auto;
+    }
+
+    .header-v3 {
+        border-radius: inherit;
+        float: right;
+        margin-left: 5px;
+        width: 20%;
+    }
+
+    .menu-content table {
+        margin-top: 8   px;
+    }
+
+    .menu-content table, tr, td {
+        text-align: center;
+        display: block;
+    }
+
+    .menu-content {
+        background-color: #C55A63;
+        padding: 10px;
+        margin: 5px;
+        border-radius: inherit;
+        border: 1px #d1d1d1 solid;
+        height: 45%;
+    }
+
+    .menu-title span {
+        background-color: #8C2F39;
+        margin: 2px 2px 2px 4px;
+        padding: 3px 6px;
+        width: 10px;
+        border-radius: 6px;
+    }
+
+    .menu-title a {
+        text-decoration: none;
+        color: yellow;
+    }
+
+    .menu-title a:hover {
+        color: #FED8C7;
+        font-weight: 300;
+    }
+
+    .menu-title td {
+        background-color: #8C2F39;
+        margin: 2px;
+        padding: 3px 6px;
+        width: 240px;
+        border-radius: 6px;
+    }
+
+}
+
+/* Google Chrome Standartlarına göre 1880px Laptoplar */
+@media only screen and (max-width: 1880px) {
+
+    body {
+        color: #FCB9B2;
+    }
+    
+    .header-v1 {
+        background-color: #9F3541;
+        border: 1px #000 solid;
+        border-radius: 6px;
+        display: flex;
+        margin: 50px 190px 0 190px;
+        padding: 10px;
+        height: 600px;
+    }
+
+    .card span {
+        color: #FED8C7;
+        display: block;
+        text-decoration: none;
+    }
+
+    .card a {
+        color: #FED8C7;
+        display: block;
+        text-decoration: none;
+    }
+    
+    .card {
+        background-color: rgb(20, 26, 53);
+        border-radius: 6px;
+        margin: 20px 0 20px 20px;
+        padding: 3px 10px;
+        height: auto;
+        width: 94%;
+    }
+    
+    .header-v2 {
+        background-color: #C55A63;
+        border-radius: inherit;
+        float: left;
+        margin: 5px;
+        width: 80%;
+        height: auto;
+    }
+
+    .header-v3 {
+        border-radius: inherit;
+        float: right;
+        margin-left: 5px;
+        width: 20%;
+    }
+
+    .menu-content table {
+        margin-top: 8   px;
+    }
+
+    .menu-content table, tr, td {
+        text-align: center;
+        display: block;
+    }
+
+    .menu-content {
+        background-color: #C55A63;
+        padding: 10px;
+        margin: 5px;
+        border-radius: inherit;
+        border: 1px #d1d1d1 solid;
+        height: 45%;
+    }
+
+    .menu-title span {
+        background-color: #8C2F39;
+        margin: 2px 2px 2px 4px;
+        padding: 3px 6px;
+        width: 10px;
+        border-radius: 6px;
+    }
+
+    .menu-title a {
+        text-decoration: none;
+        color: yellow;
+    }
+
+    .menu-title a:hover {
+        color: #FED8C7;
+        font-weight: 300;
+    }
+
+    .menu-title td {
+        background-color: #8C2F39;
+        margin: 2px;
+        padding: 3px 6px;
+        width: 240px;
+        border-radius: 6px;
+    }
+
+}
+
+/* Google Chrome Standartlarına göre 1440px Bilgisayarlar */
+@media only screen and (max-width: 1440px) {
+
+    body {
+        color: #FCB9B2;
+    }
+    
+    .header-v1 {
+        background-color: #9F3541;
+        border: 1px #000 solid;
+        border-radius: 6px;
+        display: flex;
+        margin: 50px 190px 0 190px;
+        padding: 10px;
+        height: 600px;
+    }
+
+    .card span {
+        color: #FED8C7;
+        display: block;
+        text-decoration: none;
+    }
+
+    .card a {
+        color: #FED8C7;
+        display: block;
+        text-decoration: none;
+    }
+    
+    .card {
+        background-color: rgb(20, 26, 53);
+        border-radius: 6px;
+        margin: 20px 0 20px 20px;
+        padding: 3px 10px;
+        height: auto;
+        width: 92%;
+    }
+    
+    .header-v2 {
+        background-color: #C55A63;
+        border-radius: inherit;
+        float: left;
+        margin: 5px;
+        width: 80%;
+        height: auto;
+    }
+
+    .header-v3 {
+        border-radius: inherit;
+        float: right;
+        margin-left: 5px;
+        width: 20%;
+    }
+
+    .menu-content table {
+        margin-top: 4px;
+    }
+
+    .menu-content table, tr, td {
+        text-align: center;
+        display: block;
+    }
+
+    .menu-content {
+        background-color: #C55A63;
+        padding: 10px;
+        margin: 5px;
+        border-radius: inherit;
+        border: 1px #d1d1d1 solid;
+        height: 45%;
+    }
+
+    .menu-title span {
+        background-color: #8C2F39;
+        margin: 2px 2px 2px 4px;
+        padding: 3px 6px;
+        width: 10px;
+        border-radius: 6px;
+    }
+
+    .menu-title a {
+        text-decoration: none;
+        color: yellow;
+    }
+
+    .menu-title a:hover {
+        color: #FED8C7;
+        font-weight: 300;
+    }
+
+    .menu-title td {
+        background-color: #8C2F39;
+        margin: 2px;
+        padding: 3px 6px;
+        width: 140px;
+        border-radius: 6px;
+    }
+
+}
+
+/* Google Chrome Standartlarına göre 1024px Laptoplar */
+@media only screen and (max-width: 1024px) {
+
+    body {
+        color: #FCB9B2;
+    }
+    
+    .header-v1 {
+        background-color: #9F3541;
+        border: 1px #000 solid;
+        border-radius: 6px;
+        display: flex;
+        margin: 50px 30px 50px 30px;
+        padding: 10px;
+        height: 600px;
+    }
+
+    .card span {
+        color: #FED8C7;
+        display: block;
+        text-decoration: none;
+    }
+
+    .card a {
+        color: #FED8C7;
+        display: block;
+        text-decoration: none;
+    }
+    
+    .card {
+        background-color: rgb(20, 26, 53);
+        border-radius: 6px;
+        margin: 20px 0 20px 20px;
+        padding: 3px 10px;
+        height: auto;
+        width: 92%;
+    }
+    
+    .header-v2 {
+        background-color: #C55A63;
+        border-radius: inherit;
+        float: left;
+        margin: 5px;
+        width: 80%;
+        height: auto;
+    }
+
+    .header-v3 {
+        border-radius: inherit;
+        float: right;
+        margin-left: 5px;
+        width: 20%;
+    }
+
+    .menu-content table {
+        margin-top: 8   px;
+    }
+
+    .menu-content table, tr, td {
+        text-align: center;
+        display: block;
+    }
+
+    .menu-content {
+        background-color: #C55A63;
+        padding: 10px;
+        margin: 5px;
+        border-radius: inherit;
+        border: 1px #d1d1d1 solid;
+        height: 45%;
+    }
+
+    .menu-title span {
+        background-color: #8C2F39;
+        margin: 2px 2px 2px 4px;
+        padding: 3px 6px;
+        width: 10px;
+        border-radius: 6px;
+    }
+
+    .menu-title a {
+        text-decoration: none;
+        color: yellow;
+    }
+
+    .menu-title a:hover {
+        color: #FED8C7;
+        font-weight: 300;
+    }
+
+    .menu-title td {
+        background-color: #8C2F39;
+        margin: 2px;
+        padding: 3px 6px;
+        width: 140px;
+        border-radius: 6px;
+    }
+
+}
+
+/* Google Chrome Standartlarına göre Tabletler */
+@media only screen and (max-width: 768px) {
+
+    body {
+        color: #FCB9B2;
+    }
+    
+    .header-v1 {
+        background-color: #9F3541;
+        border: 1px #000 solid;
+        border-radius: 6px;
+        display: flex;
+        margin: 50px 20px 50px 20px;
+        padding: 10px;
+        height: 600px;
+    }
+
+    .card span {
+        color: #FED8C7;
+        display: block;
+        text-decoration: none;
+    }
+
+    .card a {
+        color: #FED8C7;
+        display: block;
+        text-decoration: none;
+    }
+    
+    .card {
+        background-color: rgb(20, 26, 53);
+        border-radius: 6px;
+        margin: 20px 0 20px 20px;
+        padding: 3px 10px;
+        height: auto;
+        width: 92%;
+    }
+    
+    .header-v2 {
+        background-color: #C55A63;
+        border-radius: inherit;
+        float: left;
+        margin: 5px;
+        width: 80%;
+        height: auto;
+    }
+
+    .header-v3 {
+        border-radius: inherit;
+        float: right;
+        margin-left: 5px;
+        width: 20%;
+    }
+
+    .menu-content table {
+        margin-top: 8   px;
+    }
+
+    .menu-content table, tr, td {
+        text-align: center;
+        display: block;
+    }
+
+    .menu-content {
+        background-color: #C55A63;
+        padding: 10px;
+        margin: 5px;
+        border-radius: inherit;
+        border: 1px #d1d1d1 solid;
+        height: 45%;
+    }
+
+    .menu-title span {
+        font-size: 11px;
+        background-color: #8C2F39;
+        margin: 2px 2px 2px 4px;
+        padding: 3px 6px;
+        width: 10px;
+        border-radius: 6px;
+    }
+
+    .menu-title a {
+        text-decoration: none;
+        color: yellow;
+    }
+
+    .menu-title a:hover {
+        color: #FED8C7;
+        font-weight: 300;
+    }
+
+    .menu-title td {
+        font-size: 10px;
+        background-color: #8C2F39;
+        margin: 2px;
+        padding: 3px 6px;
+        width: 90px;
+        border-radius: 6px;
+    }
+
+}
+
+/* Google Chrome Standartlarına göre Geniş Mobil Cihaz */
+@media only screen and (max-width: 768px) {
+
+    body {
+        color: #FCB9B2;
+    }
+    
+    .header-v1 {
+        background-color: #9F3541;
+        border: 1px #000 solid;
+        border-radius: 6px;
+        display: flex;
+        margin: 50px 20px 50px 20px;
+        padding: 10px;
+        height: 600px;
+    }
+
+    .card span {
+        color: #FED8C7;
+        display: block;
+        text-decoration: none;
+    }
+
+    .card a {
+        color: #FED8C7;
+        display: block;
+        text-decoration: none;
+    }
+    
+    .card {
+        background-color: rgb(20, 26, 53);
+        font-size: 12px;
+        border-radius: 6px;
+        margin: 20px 0 20px 20px;
+        padding: 3px 10px;
+        height: auto;
+        width: 60%;
+    }
+    
+    .header-v2 {
+        background-color: #C55A63;
+        border-radius: inherit;
+        float: left;
+        margin: 5px;
+        width: 60%;
+        height: auto;
+    }
+
+    .header-v3 {
+        border-radius: inherit;
+        float: right;
+        margin-left: 5px;
+        width: 40%;
+    }
+
+    .menu-content table {
+        margin-top: 2px;
+    }
+
+    .menu-content table, tr, td {
+        text-align: center;
+        display: block;
+    }
+
+    .menu-content {
+        background-color: #C55A63;
+        padding: 10px;
+        margin: 5px;
+        border-radius: inherit;
+        border: 1px #d1d1d1 solid;
+        height: 45%;
+    }
+
+    .menu-title span {
+        font-size: 10px;
+        background-color: #8C2F39;
+        margin: 2px 2px 2px 4px;
+        padding: 3px 6px;
+        width: 10px;
+        border-radius: 6px;
+    }
+
+    .menu-title a {
+        text-decoration: none;
+        color: yellow;
+    }
+
+    .menu-title a:hover {
+        color: #FED8C7;
+        font-weight: 300;
+    }
+
+    .menu-title td {
+        font-size: 9px;
+        background-color: #8C2F39;
+        margin: 2px 2px 2px 0px;
+        padding: 3px 6px;
+        width: 85px;
+        border-radius: 6px;
+    }
+
+}
+
+/* Google Chrome Standartlarına göre Orta Boy Mobil Cihaz */
+@media only screen and (max-width: 375px) {
+
+    .main {
+        margin: 85px 35px 0px 35px;
+    }
+
+}
+
+/* Masaüstü ve dizüstü css kod bitimi */
+/* @media screen and (max-width: 768px) {  } */
+
+/* 425 piksel genişlikli telefonlar için */
+/* @media screen and (max-width: 425px) {  } */
+
+/* 412 piksel genişlikli telefonlar için etc. Samsıng a30s*/
+/* @media only screen and (max-width: 412px) and (max-width: 767px) {  } */
+
+/* @media only screen and (max-width: 891px) and (orientation: landscape) {  } */
+
+/* 412 piksel genişlikli telefonlar için etc. Samsung a30s*/
+/* @media only screen and (max-width: 390px) and (max-width: 767px) {  } */
+
+/* Apple iPhone 12 Pro max-width Media Queries */
+/* @media only screen and (max-width: 390px) {  } */
+
+/* Apple iPhone 12 Pro Min-Height Media Queries */
+/* @media only screen and (min-height: 844px) {  } */
+
+/* Apple iPhone 12 Pro Landscape Media Queries */
+/* @media only screen and (max-width: 844px) and (orientation: landscape) {  } */
+
+/* Apple iPhone 12 Pro Portrait Media Queries */
+/* @media only screen and (max-width: 390px) and (orientation: portrait) {  } */

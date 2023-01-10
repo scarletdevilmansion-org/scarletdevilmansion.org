@@ -1,137 +1,4 @@
-/*  Charset  */
 @charset "UTF-8";
-
-/*  Desktop and laptop  */
-@media only screen and (min-width: 1024px) {
-    body {
-        background-color: #a5a4e9;
-        font-family: "Comic Sans MS", "Comic Sans", cursive;
-    }
-
-    #active {
-        background-color: rgb(99, 32, 76, 0.6);
-        transition: all 250ms ease-in-out;
-        border-radius: 15px;
-    }
-
-    .section-top-bar {
-        border-radius: 15px;
-        height: fit-content;
-        background-color: transparent;
-        margin: 50px 120px 0px 140px;
-    }
-
-    .cover-nav-c {
-        margin-left: 205px;
-    }
-
-    .cover-profile-avatar-img {
-        display: inline-block;
-        position: relative;
-        border: 3px #0f0000 solid;
-        border-radius: 100%;
-        text-align: center;
-        width: 129px;
-        transition: width .2s ease-in-out;
-    }
-
-    .cover-option-bar {
-        border-radius: 15px;
-        height: 360px;
-        background-color: #245557;
-        padding: 20px;
-    }
-
-    .profile-bg {
-        background-color: #465570;
-    }
-
-    .profile-img {
-        width: 64px;
-    }
-
-    .profile-bg-up {
-        background-color: #465570;
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
-    }
-
-    .profile-bg-down {
-        background-color: #465570;
-        border-bottom-left-radius: 15px;
-        border-bottom-right-radius: 15px;
-    }
-
-    .none-decoration {
-        text-decoration: none;
-        color: yellow;
-    }
-
-    sup {
-        background-color: rgb(253, 0, 219, 0.5);
-        font-size: 10px;
-        border-radius: 5px;
-        margin: 2px 5px 2px 5px;
-        padding: 2px 2px 2px 2px;
-    }
-
-    p {
-        margin-top: 5px;
-        padding: 10px;
-    }
-
-    a {
-        font-size: 13px;
-    }
-
-    span {
-        margin:0px;
-        padding:0px;
-    }
-
-    h5 {
-        font-size: 24px;
-    }
-
-    .margin {
-        margin-bottom: 15px;
-    }
-
-    .btn-sett {
-        text-decoration: none;
-        border: transparent;
-        background-color: transparent;
-        background: transparent;
-        margin: 5px 5px 2px 5px;
-    }
-
-    .btn-sett:hover {
-        text-decoration: none;
-        border: #d1d1d1;
-        border-radius: 3px;
-        margin: 5px 5px 2px 5px;
-        background-color: #110606;
-        background: #1a1616;
-    }
-
-    img {
-        border-radius: 15px;
-    }
-}
-
-/*  769 pixel  */
-@media screen and (max-width: 768px) {
-    
-}
-
-/*  425 pixel */
-@media screen and (max-width: 425px) {
-    
-}
-
-@media screen and (max-width: 412px) {
-    
-}
 
 /*  Code for Firefox  */
 ::-moz-selection { 
@@ -150,7 +17,7 @@
     width: 8px;
 }
 
-/*  Kayan �?eyin arkasındaki �?ey  */
+/*  Kayan şeyin arkasındaki şey  */
 ::-webkit-scrollbar-track {
     box-shadow: inset 0 0 3px #0f0000; 
     border-radius: 7px;
@@ -161,7 +28,122 @@
     border-radius: 7px;
 }
 
-/*  kayan �?eyin üstüne gelince olan �?ey  */
+/*  kayan şeyin üstüne gelince olan şey  */
 ::-webkit-scrollbar-thumb:hover {
     background: #b30000; 
 }
+
+/*  Desktop and laptop  */
+@media only screen and (min-width: 1880px) {
+
+    .section-top-bar {
+        border-radius: 15px;
+        height: fit-content;
+        background-color: transparent;
+    }
+    
+    .section-top-bar img {
+        border-radius: 15px;
+    }
+
+    .profile-rg {
+        padding: 3px 0 0 3px;
+        background-color: #465570;
+        color: #FED0BB;
+        border-radius: 15px;
+        display: flex;
+    }
+    
+    .profile-rg img {
+        height: 128px;
+        border-radius: 15px;
+    }
+
+    .profile-rg-pic {
+        margin-left: 15px;
+    }
+
+    .cover-option-bar {
+        border-radius: 15px;
+        height: 360px;
+        color: #FED0BB;
+        background-color: #245557;
+        padding: 1px 20px;
+    }
+
+    .none-decoration {
+        text-decoration: none;
+        color: yellow;
+    }
+}
+
+/* Google Chrome Standartlarına göre 1440px Bilgisayarlar */
+@media only screen and (max-width: 1440px) {
+
+    .main {
+        margin: 150px 550px 0 550px;
+    }
+
+}
+
+/* Google Chrome Standartlarına göre 1024px Laptoplar */
+@media only screen and (max-width: 1024px) {
+
+    .main {
+        margin: 150px 300px 0 300px;
+    }
+
+}
+
+/* Google Chrome Standartlarına göre Tabletler */
+@media only screen and (max-width: 768px) {
+
+    .main {
+        margin: 150px 200px 0 200px;
+    }
+
+}
+
+/* Google Chrome Standartlarına göre Geniş Mobil Cihaz */
+@media only screen and (max-width: 425px) {
+
+    .main {
+        margin: 150px 75px 0 75px;
+    }
+
+}
+
+/* Google Chrome Standartlarına göre Orta Boy Mobil Cihaz */
+@media only screen and (max-width: 375px) {
+
+    .main {
+        margin: 85px 35px 0px 35px;
+    }
+
+}
+
+/* Masaüstü ve dizüstü css kod bitimi */
+/* @media screen and (max-width: 768px) {  } */
+
+/* 425 piksel genişlikli telefonlar için */
+/* @media screen and (max-width: 425px) {  } */
+
+/* 412 piksel genişlikli telefonlar için etc. Samsıng a30s*/
+/* @media only screen and (min-width: 412px) and (max-width: 767px) {  } */
+
+/* @media only screen and (min-width: 891px) and (orientation: landscape) {  } */
+
+/* 412 piksel genişlikli telefonlar için etc. Samsung a30s*/
+/* @media only screen and (min-width: 390px) and (max-width: 767px) {  } */
+
+/* Apple iPhone 12 Pro Min-Width Media Queries */
+/* @media only screen and (min-width: 390px) {  } */
+
+/* Apple iPhone 12 Pro Min-Height Media Queries */
+/* @media only screen and (min-height: 844px) {  } */
+
+/* Apple iPhone 12 Pro Landscape Media Queries */
+/* @media only screen and (min-width: 844px) and (orientation: landscape) {  } */
+
+/* Apple iPhone 12 Pro Portrait Media Queries */
+/* @media only screen and (min-width: 390px) and (orientation: portrait) {  } */

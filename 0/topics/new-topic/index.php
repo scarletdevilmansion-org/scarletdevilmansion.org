@@ -261,48 +261,31 @@ require "../../../connections/connection.php";
             </div>
         </center>
         ';
-    }?>    
+    }?>
         <div class="topic-header">
-            <form action="?" method="POST">
-            <div class="container">
-                <div class="options">
-                    <!-- Text Format -->
-                    <button type="button" id="bold" class="option-button format">
-                        <i class="fa-solid fa-bold"></i>
-                    </button>
-                    <button type="button" id="italic" class="option-button format">
-                        <i class="fa-solid fa-italic"></i>
-                    </button>
-                    <button type="button" id="underline" class="option-button format">
-                        <i class="fa-solid fa-underline"></i>
-                    </button>
-                    <button type="button" id="strikethrough" class="option-button format">
-                        <i class="fa-solid fa-strikethrough"></i>
-                    </button>
-                    <button type="button" id="superscript" class="option-button script">
-                        <i class="fa-solid fa-superscript"></i>
-                    </button>
-                    <button type="button" id="subscript" class="option-button script">
-                        <i class="fa-solid fa-subscript"></i>
-                    </button>
-                </div>
+            <form action="/" method="POST">
                 <div class="form-control">
-                    <div class="input-control input-wrapper">
+                    <div class="input-control">
                         <input class="input-title" type="text" name="topic-title"
-                        id="adv-option-button text-input" contenteditable="true"
-                        maxlength="35" placeholder="Konu Başlığını Buraya Yaz">
+                        contenteditable="true"
+                        maxlength="50" placeholder="Konu Başlığını Buraya Yaz">
                     </div>
-                    <div class="textarea-control input-wrapper">
+                    <div class="textarea-control">
                         <textarea class="input-content" name="topic-content"
-                        id="text-input" contenteditable="true"
+                        contenteditable="true"
                         placeholder="Gönderi içeriğini buraya yaz"></textarea>
+                        <div id="editor">
+                            <span>Yazı özellikleri çalışmıyor ve bunun için üzgün değilim. Koskoca siteyi tek başıma yapmaya çalışıyorum. Renk verme biçimlendirme ve benzer işlemler için lütfen BBCode kullanın. Rehber için <a href="http://localhost/pages/rehber/bbcode" style="text-decoration: none; color: yellow;">Tıklayın</a>. Editör kullanımı için ise buraya <a href="http://localhost/pages/rehber/editor-kullanimi" style="text-decoration: none; color: yellow;">Tıklayın</a>.</span>
+                        </div>
                     </div>
                 </div>
+                
                 <div>
                     <input class="submit-control" type="submit" name="submit" value="Gönder">
                 </div>
-            </div><script src="../../../assets/js/rich-text-script.js"></script>
+                <script src="../../../assets/js/rich-text-script.js"></script>
             </form>
+            <script src="../../../assets/js/rich-text-script.js"></script>
         </div>
         
 <?php

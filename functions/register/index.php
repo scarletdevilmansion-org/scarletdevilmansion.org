@@ -2,24 +2,6 @@
 // Oturum başlatılır
 session_start();
 
-// Requires the MongoDB PHP Driver
-// https://www.mongodb.com/docs/drivers/php/
-try {
-
-    // Mongo Sunucusuna bağlanalım
-    
-    $mongo = new MongoClient('mongodb://127.0.0.1:27017');
-    
-    // Veritabanını Seçelim
-    
-    $db = $mongo->selectDB('TestDb');
-    
-} catch(MongoConnectionException $e) {
-    
-    die('Baglanti Kurulamadi : ' . $e->getMessage());
-    
-}
-
 // Include config file
 require_once "../../connections/connection.php";
 
@@ -43,7 +25,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     // soy isim kontrolü
-    if(empty($_POST["surnameuser"])){
+    if(empty($_POST["surnameuser"]))
+    {
         $surnameuser_err = "Soy adınızı giriniz.";     
     } else{
         $surnameuser = $_POST["surnameuser"];
@@ -131,8 +114,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     $username_err = "Aaaah işe bak... Biri bunu çoktan almış.";
                 } else{
                     $username = trim($_POST["username"]);
-
-                    include('user-page-c.php');
                 }
             } else{
                 echo "AHa! Sunucu isyan ediyor şu an kargaşa var gibi! Daha sonra tekrar dene...";
@@ -185,6 +166,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             //$param_password = $password; // Creates a password hash
             $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
 
+            include('user-page-c.php');
+
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
 
@@ -216,85 +199,118 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
  
 <!DOCTYPE html>
 <html lang="TR">
-<head>
-    <meta charset="UTF-8">
-    <title>Kayıt Formu</title>
-    <link rel="stylesheet" href="../../assets/css/register.css">
-    <link rel="stylesheet" href="../../assets/css/loading.css">
-    <script src="../../assets/js/loading.js"></script>
-</head>
-<body>
-    <center>
-        <div class="section">
-            <div class="wrapper-1">
-                <h1>Başlık H1</h1>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum animi fugit,<br>
-                vitae voluptate possimus placeat vero ullam reiciendis odit ipsam necessitatibus eaque.<br>
-                Dolor placeat facilis, impedit eos esse minus. Dolore? 1425x881,812 - 641,438x633,812</p>
-            </div>
-            <div class="wrapper-2">
-                <center>
-                    <h2>Kayıt Formu</h2>
-                    <p>Hesap oluşturmak bu formu doldur.</p>
-                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                        <div class="form-group">
-                            <label>Adınız</label>
-                            <input type="text" name="nameuser"
-                            class="form-control <?php echo (!empty($nameuser_err)) ? 'is-invalid' : ''; ?>"
-                            placeholder="Adınız" value="<?php echo $nameuser; ?>">
-                            <span class="invalid-feedback"><?php echo $nameuser_err; ?></span>
-                        </div>
-                        <div class="form-group">
-                            <label>Adınız</label>
-                            <input type="text" name="surnameuser"
-                            class="form-control <?php echo (!empty($surnameuser_err)) ? 'is-invalid' : ''; ?>"
-                            placeholder="Soy Adınız" value="<?php echo $surnameuser; ?>">
-                            <span class="invalid-feedback"><?php echo $surnameuser_err; ?></span>
-                        </div>
-                        <div class="form-group">
-                            <label>E-Posta Adresiniz</label>
-                            <input type="email" name="email"
-                            class="form-control <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>"
-                            placeholder="E-posta Adresiniz" value="<?php echo $email; ?>">
-                            <span class="invalid-feedback"><?php echo $email_err; ?></span>
-                        </div>
-                        <div class="form-group">
-                            <label>Kullanıcı Adınız</label>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="username"
-                            class="form-control fix-rounded-right <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>"
-                            placeholder="Kullanıcı Adınızı Seçiniz" value="<?php echo $username; ?>" required>
-                            <span class="invalid-feedback"><?php echo $username_err; ?></span>
-                        </div>
-                        <div class="form-group">
-                            <label>Parola</label>
-                            <input type="password" name="password"
-                            class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>"
-                            placeholder="Şifrenizi Giriniz" value="<?php echo $password; ?>">
-                            <span class="invalid-feedback"><?php echo $password_err; ?></span>
-                        </div>
-                        <div class="form-group">
-                            <label>Parola Doğrulama</label>
-                            <input type="password" name="confirm_password"
-                            class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>"
-                            placeholder="Şifrenizi Doğrulayınız" value="<?php echo $confirm_password; ?>">
-                            <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
-                        </div>
-                        <label style="font-size:14px; margin:0;">
-                            Kayıt olursan <a>Kullanıcı Sözleşmesi</a><br>
-                            ve<br>
-                            <a>Gizlilik Anlaşmasını</a> kabul etmiş sayılırsın.
-                        </label>
-                        <div class="form-group">
-                            <input type="reset" value="Formu Sıfırla">
-                            <input type="submit" value="Kaydol">
-                        </div>
-                        <p>Zaten hesabın mı var? <a href="https://localhost/functions/login/">E- gelsene şuraya</a>.</p>
-                    </form>
-                </center>
-            </div>
-        </div> 
-    </center>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Kayıt Formu</title>
+        <link rel="stylesheet" href="../../assets/css/register.css">
+        <link rel="stylesheet" href="../../assets/css/loading.css">
+        <script src="../../assets/js/loading.js"></script>
+    </head>
+    <body>
+        <center>
+            <div class="section">
+                <div class="wrapper-1">
+                    <h1>Biliyor muydunuz?</h1>
+                        <?php
+
+                        $number = random_int(1,7);
+
+                        if($number == 1)
+                        {
+                            echo "<p>(Perfect Memento'ya göre) Remilia sadece Sakuya'nın efendisi değil,<br> aynı zamanda Sakuya'ya adını veren kişidir.</p>";}
+
+                        else if($number == 2)
+                        {
+                            echo "<p>Gensokyo zaman çizelgesine göre, Remilia 1502 yılında doğdu. Bu onu,<br> doğum tarihleri bilinen çok az karakterden birisi yapıyor.</p>";}
+
+                        else if($number == 3)
+                        {
+                            echo "<p>Remilia Scarlet'in teması olan 'Septette for the Dead Princess', Ludwig van Beethoven'ın<br> Do minör Piyano Sonatı No.8, Op 13 'Pathetique' 3 Rondo: Allegro'ya dayanmaktadır.<br> <a href='https://www.youtube.com/watch?v=M_124D_7KoU&t=815s' target='_blank'>Buradan bakabilirsiniz.</a>";}
+
+                        else if($number == 4)
+                        {
+                            echo "<p>16. Remilia Avrupalı bir görünüşe sahiptir. Romanyalı da olabilir ama bu sadece spekülasyon.</p>";}
+
+                        else if($number == 5)
+                        {
+                            echo "<p>Flandre, Hopeless Masquerade'in arka planında görünmeyen birkaç karakterden<br> birisidir. Bu onun Kızıl Şeytan Malikânesi dışına çıkmayı sevmediğini gösteriyor.</p>";}
+
+                        else if($number == 6)
+                        {
+                            echo "<p>Flandre'nin kanatlarının benzersiz olduğu söyleniyor. Herhangi bir youkai, hayalet,<br> yarasa ve benzer şeylerden farklı. Reimu bile Flandre'nin<br> o kanatlarla uçma yeteneğini sorguluyor...</p>";}
+
+                        else if($number == 7)
+                        {
+                            echo "<p>Patchouli astımlı olarak doğmuştur.</p>";}
+
+                        else
+                        {
+                            echo "<p>Kızıl Şeytan Malikâne kütüphanesindeki tüm kitapları onun yazdığı söyleniyor. Bu siteyi yapan kişiden daha hayatsız denebilir.</p>";}
+
+                        ?>
+                </div>
+                <div class="wrapper-2">
+                    <center>
+                        <h2>Kayıt Formu</h2>
+                        <p>Hesap oluşturmak bu formu doldur.</p>
+                        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                            <div class="form-group">
+                                <label>Adınız</label>
+                                <input type="text" name="nameuser"
+                                class="form-control <?php echo (!empty($nameuser_err)) ? 'is-invalid' : ''; ?>"
+                                placeholder="Adınız" value="<?php echo $nameuser; ?>">
+                                <span class="invalid-feedback"><?php echo $nameuser_err; ?></span>
+                            </div>
+                            <div class="form-group">
+                                <label>Adınız</label>
+                                <input type="text" name="surnameuser"
+                                class="form-control <?php echo (!empty($surnameuser_err)) ? 'is-invalid' : ''; ?>"
+                                placeholder="Soy Adınız" value="<?php echo $surnameuser; ?>">
+                                <span class="invalid-feedback"><?php echo $surnameuser_err; ?></span>
+                            </div>
+                            <div class="form-group">
+                                <label>E-Posta Adresiniz</label>
+                                <input type="email" name="email"
+                                class="form-control <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>"
+                                placeholder="E-posta Adresiniz" value="<?php echo $email; ?>">
+                                <span class="invalid-feedback"><?php echo $email_err; ?></span>
+                            </div>
+                            <div class="form-group">
+                                <label>Kullanıcı Adınız</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="username"
+                                class="form-control fix-rounded-right <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>"
+                                placeholder="Kullanıcı Adınızı Seçiniz" value="<?php echo $username; ?>" required>
+                                <span class="invalid-feedback"><?php echo $username_err; ?></span>
+                            </div>
+                            <div class="form-group">
+                                <label>Parola</label>
+                                <input type="password" name="password"
+                                class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>"
+                                placeholder="Şifrenizi Giriniz" value="<?php echo $password; ?>">
+                                <span class="invalid-feedback"><?php echo $password_err; ?></span>
+                            </div>
+                            <div class="form-group">
+                                <label>Parola Doğrulama</label>
+                                <input type="password" name="confirm_password"
+                                class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>"
+                                placeholder="Şifrenizi Doğrulayınız" value="<?php echo $confirm_password; ?>">
+                                <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
+                            </div>
+                            <label id="low" style="font-size:14px; margin:0;">
+                                <div>Kayıt olursan <a href="http://localhost/pages/kayit-mi-oluyorsun-chen/" target="_blank">ilgli sayfadaki</a> tüm kuralları kabul etmiş sayılırsınız.</div>
+                                <div>Vee evet, kabul etmek kullanabilmeniz için zorunludur.</div>
+                            </label>
+                            <div class="form-group">
+                                <input type="reset" value="Formu Sıfırla">
+                                <input type="submit" value="Kaydol">
+                            </div>
+                            <p>Zaten hesabın mı var? <a href="https://localhost/functions/login/">E- gelsene şuraya</a>.</p>
+                        </form>
+                    </center>
+                </div>
+            </div> 
+        </center>
+    </body>
 </html>

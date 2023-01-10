@@ -1,4 +1,5 @@
 <?php
+session_start();
 error_reporting(0);
 
 require "../connections/connection.php";
@@ -22,44 +23,74 @@ else
     OR upper(`topic_name`) LIKE '%".$get_query."%'");
 }
 
-/* * if(empty($_GET['q']))
- *   {
- *       $post_query = $query;
- *   }
- *   else if(empty($_POST['q']))
- *   {
- *       $get_query = $query;
- *   }
- *   else
- *   {
- *       $query = "";
- *   }
- */
+if(empty($_GET['q']))
+{
+    $query = "Burada Touhou ile ilgili bir şeyler arayabilirsiniz.";
+}
+else
+{
+    $query = $_GET['q'].", ile ilgili sonuçlar.";
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="TR">
-<head>
-    <meta charset="UTF-8">
-    <title>Ara Beni Bul Beni</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Touhou ile ilgili bir şeyler arayabilirsin burada.">
-    <meta name="keywords" content="SDM Ara, Ara">
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta property="og:image" content="assets/images/open-graph/yuyuko-touhou.png">
-    <meta property="og:url" content="https://scarletdevilmansion.org">
-    <meta property="og:title" content="Malikâne Antresi">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Scarlet Devil Mansion | Türkçe Touhou Şeyler Kaynağınız?..">
-    <meta property="og:locale" content="TR">
-    <link rel="canonical" href="https://scarletdevilmansion.org" />
-    <meta name="author" content="Hakurei Remilia">
-
-    <link rel="stylesheet" href="../../assets/css/search.css">
-    <link rel="stylesheet" href="../../assets/css/loading.css">
-    <script src="../../assets/js/loading.js"></script>
-    <script src="https://kit.fontawesome.com/1493595c02.js" crossorigin="anonymous"></script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>Ara Beni Bul Beni</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="<?php echo $query;?>">
+        <meta name="keywords" content="SDM Arama Motoru, Ara">
+        <meta property="og:image" content="assets/images/open-graph/yuyuko-touhou.png">
+        <meta property="og:url" content="https://www.scarletdevilmansion.org">
+        <meta property="og:title" content="Ara Beni Bul Beni">
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="Scarlet Devil Mansion | Türkçe Touhou Şeyler Kaynağınız?..">
+        <meta property="og:locale" content="TR">
+        <link rel="canonical" href="https://www.scarletdevilmansion.org" />
+        <meta name="author" content="Remilia Sc4rlet">
+        
+        <link rel="stylesheet" href="http://localhost/assets/css/header.css" />
+        <link rel="stylesheet" href="../../assets/css/search.css">
+        <link rel="stylesheet" href="../../assets/css/loading.css">
+        <script src="../../assets/js/loading.js"></script>
+        <script src="https://kit.fontawesome.com/1493595c02.js" crossorigin="anonymous"></script>
+    </head>
     <body>
+        <center>
+                <div class="cover-nav-wrapper">
+                    <nav class="cover-nav">
+                        <ul class="cover-nav-options tabs-scrollable">
+                            <li class="cover-nav-option">
+                                <a title="Ana Sayfa" class="cover-nav-link truncate-line"  id="active" href="http://localhost/0/topics">
+                                    Ana Sayfa
+                                </a>
+                            </li>
+                            <li class="cover-nav-option">
+                                <a title="Oyunlar" class="cover-nav-link truncate-line" href="#">
+                                    Oyunlar
+                                </a>
+                            </li>
+                            <li class="cover-nav-option">
+                                <a title="Videolar" class="cover-nav-link truncate-line" href="#">
+                                    Videolar
+                                </a>
+                            </li>
+                            <li class="cover-nav-option">
+                                <a title="Müzikler" class="cover-nav-link truncate-line" href="#">
+                                    Müzikler
+                                </a>
+                            </li>
+                            <li class="cover-nav-option">
+                                <a title="Mangalar" class="cover-nav-link truncate-line" href="#">
+                                    Mangalar
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </center>
         <center>
             <h3>Aramak için Bul</h3>
             <form action="?" method="get">
@@ -91,8 +122,16 @@ else
                         
                         $get_query = $db->real_escape_string($get_query);
                         // makes sure nobody uses SQL injection
+                        echo '
+                            <table>
+                                    <tr>
+                                        <td>Aradığınız şey: "'.$get_query.'"</td>
+                                    </tr>
+                                </table>
+                                ';
 
-                        if ($result->num_rows > 0) {
+                        if ($result->num_rows > 0)
+                        {
                             // output data of each row
                             while($row = $result->fetch_assoc())
                             {
@@ -118,6 +157,7 @@ else
                                     <tr>
                                         <td>Üzgünüz...</td>
                                     </tr>
+                                    </tr>
                                     <tr>
                                         <td>Aradığınla ilgili bir şey bulamadık... Sitenin karanlık tarafına düşmüş olabilir..</td>
                                     </tr>
@@ -140,10 +180,7 @@ else
                     }
                 }
             ?>
-            <div style="width: 56.5%; margin-right: 70px;">
-                <?php include('../assets/footer.php');?>
-            </div>
+    <?php include('../assets/footer.php');?>
         </center>
-        
     </body>
 </html>

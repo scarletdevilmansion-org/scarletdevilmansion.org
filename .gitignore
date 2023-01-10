@@ -7,10 +7,14 @@
 **/connections/
 
 # User page files
-**/pages/u/
+**/pages/u/ -/kaan.kaya
+
+# bootstrap files
+**/bootstrap
 
 # PHPMailer file
 **/PHPMailer
+/functions/register/mail-config.php
 
 # this file include phpmailer settings and mail template
 /functions/register/uvidcheck.php
@@ -21,21 +25,21 @@
 /assets/js/all.js
 
 # Images files
-*.png
-*.webm
-*.jpeg
-*.jpg
-*.gif
+# *.png
+# *.webm
+# *.jpeg
+# *.jpg
+# *.gif
 
 # Custom svg files
-/assets/svgs/package.json
-/assets/svgs/sdm-icon-kit.js
+# /assets/svgs/package.json
+# /assets/svgs/sdm-icon-kit.js
 
 # WebSocket configuration and test files
-/.yarn
-/assets/svgs/.yarn
-/assets/svgs/icons
-/pages/chat
+# /.yarn
+# /assets/svgs/.yarn
+# /assets/svgs/icons
+# /pages/chat
 
 # Web Push Notification files
 /functions/web-notifications/
@@ -45,5 +49,20 @@
 **/*.svg
 
 # Other files
+chata
+chatqqq
+chatqqqq    
+rc
+rt-chat
+sdm-staff.org
+yonetim
+loading-test
+/functions/sm/sitemap.xml
+kaleapp
+wsm
+pages/u
+/readme2.md
+/firebase-messaging-sw.js
+/info.php
 /functions/archive/
-/pages/chatqq/
+node_modules
