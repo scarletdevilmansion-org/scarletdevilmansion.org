@@ -1,0 +1,5 @@
+# scarletdevilmansion.org
+Scarlet Devil Mansion Forum
+OoOoOoOoOoOoOoOoOoOoOoOoOoOo
+AaAaAaAaAaAaAaAaAaAaAaAaAaAa
+asdfasdfasdfasdfasdfasdfasdf
