@@ -1,0 +1,165 @@
+@charset "UTF-8";
+
+@media only screen and (min-width: 1880px) {
+
+    @font-face {
+        font-family: 'Torus';
+        src: url(http://localhost/assets/fonts/Torus-Regular.otf);
+    }
+
+    * {
+        font-family: 'Torus';
+    }
+
+    .topic-header {
+        min-height: 600px;
+        border: 2px #FCB9B2 solid;
+        border-radius: 15px;
+        margin: 35px 380px 35px 380px;
+        background-color: #8C2F39;
+        color: #FED0BB;
+    }
+
+    .form-control{
+        display: inline-block;
+        align-items: baseline;
+    }
+
+    .category {
+        margin-top: 5px;
+        background: #461220;
+        color: #FED0BB;
+        border-radius: 3px;
+        outline: none;
+        border: none;
+    }
+    
+    .option {
+        color: #fff;
+        background-color: rgb(212, 23, 23);
+        background: rgb(156, 45, 110);
+        padding: 5px;
+        margin: 5px;
+    }
+
+    #editor {
+        background: #020929;
+        border-radius: 13px;
+        display: flex;
+        padding: 5px 10px;
+        margin: 0 10px 0 10px;
+    }
+
+    .input-control {
+        padding: 25px 0 0 25px;
+    }
+
+    .input-title {
+        outline: none;
+        border: none;
+        padding: 15px;
+        background-color: none;
+        background: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        font-size: 24px;
+        margin: 0 0 10px;
+    }
+
+    input[type="text"] {
+        color: #FCB9B2;
+    }
+
+    .textarea-control {
+        padding: 0 25px 10px 25px;
+        margin-left: 6px;
+    }
+
+    .input-content {
+        min-width:1020px;
+        max-width:100%;
+        min-height:410px;
+        height:90%;
+        width:100%;
+        outline: none;
+        border: none;
+        background-color: none;
+        background: none;
+        font-size: 14px;
+        color: #FED0BB;
+        resize: none;
+        writing-mode: horizontal-tb !important;
+    }
+
+    .input-title,
+    .input-title::placeholder {
+        font-size: 24px;
+    }
+
+    .input-title:hover {
+        background: none;
+    }
+
+    ::placeholder {
+        color: #FCB9B2;
+    }
+
+    .submit-control {
+        float: right;
+        border-radius: 10px;
+        width: 8%;
+        padding: 3px;
+        margin-right: 25px;
+        margin-top: 5px;
+        font-size: 18px;
+        background-color: #358d35;
+        border: none;
+        color: #FED0BB;
+    }
+
+    .submit-control:hover {
+        background-color: #144114;
+        transition: all 250ms ease-in-out;
+    }
+
+    .options {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 15px;
+    }
+
+    button {
+        height: 28px;
+        width: 28px;
+        display: grid;
+        place-items: center;
+        border-radius: 3px;
+        border: none;
+        background-color: #ffffff;
+        outline: none;
+        color: #020929;
+    }
+
+    select {
+        padding: 7px;
+        border: 1px solid #020929;
+        border-radius: 3px;
+    }
+
+    .options label,
+    .options select {
+        font-family: "Poppins", sans-serif;
+    }
+
+    .options button:hover {
+        background: #a7575f;
+    }
+    
+    .input-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+}

@@ -1,0 +1,108 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Torus';
+    src: url(https://www.scarletdevilmansion.org/assets/fonts/Torus-Regular.otf);
+}
+
+* {
+    font-family: 'Torus';
+    /*cursor: url(https://www.scarletdevilmansion.org/assets/cursor/4361d7e992.png),progress;*/
+}
+
+* a {
+    text-decoration: none;
+    color: yellow;
+}
+
+.main {
+    display: flex;
+}
+
+.user {
+    text-align: center;
+    margin: 30px 5px 30px 190px;
+    padding: 30px 35px;
+    border: none;
+    border-radius: 10px;
+    background-color: #8C2F39;
+}
+
+.user img {
+    border: 3px solid #D77A7D;
+    border-radius: 8px;
+}
+
+.content {
+    width: 100%;
+    color: #FED8C7;
+    margin: 30px 190px 30px 5px;
+    padding: 1px 35px;
+    border: none;
+    border-radius: 10px;
+    background-color: #8C2F39;
+}
+
+.comment {
+    display: flex;
+}
+
+.comment-user {
+    text-align: center;
+    margin: 5px 5px 5px 190px;
+    padding: 30px 35px;
+    border: none;
+    border-radius: 10px;
+    background-color: #8C2F39;
+}
+
+.comment-user img {
+    border: 3px solid #D77A7D;
+    border-radius: 8px;
+}
+
+.comment-content {
+    width: 100%;
+    color: #FED8C7;
+    margin: 5px 190px 5px 5px;
+    padding: 1px 35px;
+    border: none;
+    border-radius: 10px;
+    background-color: #8C2F39;
+}
+
+.comment-content p {
+    margin: 32px 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comment-form button {
+    padding: 6px;
+    color: #FED8C7;
+    background-color: #8C2F39;
+    border: none;
+    border-radius: 7px;
+}
+
+.comment-form button:hover {
+    color: #FED8C7;
+    background-color: #69212D;
+}
+
+textarea {
+    width: 60%;
+    color: #FED8C7;
+    font-size: 1em;
+    background-color: #8C2F39;
+    margin: 30px 190px 30px 190px;
+    padding: 30px 35px;
+    border: none;
+    border-radius: 10px;
+    resize: none;
+    outline: none;
+}

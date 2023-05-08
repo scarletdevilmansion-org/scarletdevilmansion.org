@@ -1,0 +1,42 @@
+Options -Indexes
+RewriteRule ^sitemap\.xml$ sitemap.php [L]
+
+# RewriteCond %{HTTP_HOST} !^www.scarletdevilmansion\.org$ [NC]
+# RewriteRule ^(.*)$ https://www.scarletdevilmansion.org/$1 [R=301,L,QSA]
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [NC,L]
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [NC,L]
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.png -f
+RewriteRule ^(.*)$ $1.png [NC,L]
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.jpg -f
+RewriteRule ^(.*)$ $1.jpg [NC,L]
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.jpeg -f
+RewriteRule ^(.*)$ $1.jpeg [NC,L]
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.ico -f
+RewriteRule ^(.*)$ $1.ico [NC,L]
+
+<FilesMatch "\.(inc|log|txt)$">
+	Deny from all
+</FilesMatch>
+
+# ErrorDocument 404 https://www.scarletdevilmansion.org/error-pages/oh-no/kayip-mi-oldun
+ErrorDocument 404 http://localhost/error-pages/oh-no/kayip-mi-oldun

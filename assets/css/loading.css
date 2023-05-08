@@ -1,0 +1,25 @@
+@keyframes page-load {
+    from {
+        color: rgb(75, 198, 255)
+    }
+    50% {
+        color: rgb(255, 0, 204)
+    }   
+    to {
+        color: rgb(30, 255, 0)
+    }
+  }
+
+.page-loading::before {
+    content:" ";
+    display:block;
+    position:fixed;
+    z-index:10;
+    height:4px;
+    width:100%;
+    top:0;
+    left:0;
+    background-color:#06D;
+    animation: page-load infinite linear 2s;
+    box-shadow:0 2px 2px rgba(0,0,0,.2);
+}

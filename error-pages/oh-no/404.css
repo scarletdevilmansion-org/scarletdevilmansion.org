@@ -1,0 +1,38 @@
+.div-block {
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    padding-top: 0.1%;
+    padding-bottom: 0.1%;
+    margin-top: 100px;
+    margin-left: 400px;
+    margin-right: 400px;
+    background-color: rgb(112, 0, 43);
+    border-radius: 15px;
+    color: #d9d7d7;
+}
+
+input[type=text] {
+    font-family: Comic Sans MS;
+    width: 60%;
+    padding: 12px 20px;
+    margin-top: 10px;
+    margin-bottom: 18px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.search-container button {
+    padding: 16px 18px 14px 14px;
+    margin-left: 5px;
+    border-radius: 8px;
+    background-color: rgb(255, 119, 146);
+    border: none;
+    cursor: pointer;
+}
+
+
+.search-container button:hover {
+    background: rgb(75, 0, 0);
+}

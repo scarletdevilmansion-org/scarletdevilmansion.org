@@ -1,0 +1,89 @@
+# ignore ALL .log files
+*.log
+*.txt
+*.ini
+aa.php
+
+# ignore ALL files in ANY directory named connections
+**/connections/
+**/functions/config.php
+**/functions/cover.png
+**/functions/logo.png
+**/functions/web-notifications.zip
+**/v2/login/aa.php
+
+# User page files
+**/pages/u/
+
+# bootstrap files
+**/bootstrap
+
+# PHPMailer file
+**/PHPMailer
+mail-config.php
+mail-test.php
+
+# this file include phpmailer settings and mail template and other shits
+/functions/register/uvidcheck.php
+v2/login/email-verification.php
+
+# JS files
+/assets/js/parallax.js
+/assets/js/loading-back-up.js
+/assets/js/all.js
+
+# forum shits
+bana-elma-at-da-yiyem-ehe-171849
+
+# Images files
+# *.png
+# *.webm
+# *.jpeg
+# *.jpg
+# *.gif
+
+# Custom svg files
+# /assets/svgs/package.json
+# /assets/svgs/sdm-icon-kit.js
+
+# WebSocket configuration and test files
+# /.yarn
+# /assets/svgs/.yarn
+# /assets/svgs/icons
+# /pages/chat
+
+# Web Push Notification files
+/functions/web-notifications/
+
+# MongoDB files
+**/mongodb/
+
+# SVG files
+**/*.svg
+
+# Other files
+test.php
+test2.php
+test.html
+test2.html
+chat
+chata
+chatqqq
+chatqqqq    
+rc
+rt-chat
+sdm-staff.org
+yonetim
+loading-test
+/functions/sm/sitemap.xml
+kaleapp
+wsm
+pages/u
+/readme2.md
+/firebase-messaging-sw.js
+/info.php
+/functions/archive/
+node_modules
+test.html
+0/community/forum/tr/new-topic/csm.php
+0/community/forum/tr/-bana-elma-at-da-yiyem-ehe-171849/index.php

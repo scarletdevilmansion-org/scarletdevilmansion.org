@@ -1,0 +1,141 @@
+/*  Charset  */
+@charset "UTF-8";
+
+@media only screen and (min-width: 1024px) {
+
+    @font-face {
+        font-family: Ubuntu;
+        src: url(http://localhost/assets/fonts/Ubuntu-Regular.ttf);
+    }
+    
+    :root{
+        /* ===== Colors ===== */
+        --body-color: #20051a;
+        --sidebar-color: #FFF;
+        --primary-color: #634a5a;
+        --primary-color-light: #F6F5FF;
+        --toggle-color: #DDD;
+        --text-color: #707070;
+    
+        /* ====== Transition ====== */
+        --tran-03: all 0.2s ease;
+        --tran-03: all 0.3s ease;
+        --tran-04: all 0.3s ease;
+        --tran-05: all 0.3s ease;
+    }
+    
+    body{
+        min-height: 100vh;
+        background-color: var(--body-color);
+        transition: var(--tran-05);
+        /*font-family: "Comic Sans MS", "Comic Sans", cursive;*/
+    }
+    
+    ::selection {
+        color: #d1d1d1;
+        background: #ff6e8b;
+    }
+    
+    .cover-nav-wrapper {
+        margin: 50px 120px 50px 190px;
+        border-radius: 10px;
+        background: rgb(173, 91, 196);
+    }
+    
+    .cover-nav-wrapper ul {
+        list-style: none;
+    }
+    
+    .cover-nav {
+        line-height: 1.5;
+        font-size: 17px;
+        color: #546673;
+        -webkit-font-smoothing: antialiased;
+        -webkit-tap-highlight-color: transparent;
+        box-sizing: inherit;
+        border: 0;
+        margin-left: 390px;
+        padding: 0;
+        display: block;
+        width: 100%;
+    }
+    
+    .cover-nav-options {
+        display: flex;
+        text-decoration: none;
+    }
+    
+    .cover-nav-options a {
+        text-decoration: none;
+    }
+    
+    .cover-nav-link {
+        display: block;
+        max-width: 170px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 15px;
+        font-weight: 400;
+        color: #fcfcfc;
+        transition: all 250ms ease-in-out;
+        float: left;
+        position: relative;
+        margin: 0px 5px 0px 5px;
+        padding: 0 12px;
+        box-sizing: content-box;
+    }
+    
+    .cover-nav-link:hover {
+        background-color:rgb(99, 32, 76);
+        border-radius: 15px;
+    }
+    
+    .truncate-line, .truncate-line>p {
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    #active {
+        background-color: rgb(99, 32, 76, 0.6);
+        transition: all 250ms ease-in-out;
+        border-radius: 10px;
+    }
+    
+    .img-size {
+        height: 27px;
+        width: 27px;
+        border-radius: 6px;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    
+    ::placeholder {
+        color: #fff;
+        font-size: 15px;
+    }
+    
+    input {
+        font-size: 15px;
+        background: rgb(70, 30, 82);
+    }
+    
+    input[type="text"] {
+        height: 28px;
+        padding: 6px;
+        border-radius: 10px;
+        border: none;
+        width: 80%;
+        color: #fff;
+    }
+    
+    input:hover {
+        background-color: rgb(99, 32, 76, 0.6);
+        transition: all 250ms ease-in-out;
+    }
+    
+    .image {
+        width: 38px;
+    }
+}

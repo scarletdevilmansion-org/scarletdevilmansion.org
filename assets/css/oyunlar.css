@@ -1,0 +1,102 @@
+body {
+    font-family: Comic Sans MS;
+}
+
+h {
+    font-size: 220%;
+}
+
+img {
+    
+    border-radius: 12px;
+}
+
+#sup {
+    font-size: 6px;
+    color: red;
+}
+
+.section-1 {
+    margin-left: 190px;
+    margin-right: 190px;
+    margin-top: 100px;
+    height: 650px;
+    padding: 15px 35px 15px 35px;
+    background-color: bisque;
+    border-radius: 12px;
+}
+
+.comment-section {
+    margin-left: 190px;
+    margin-right: 190px;
+    margin-top: 33px;
+    height: auto;
+    padding: 25px 35px 45px 35px;
+    background-color: bisque;
+    border-radius: 12px;
+}
+
+.input-text {
+    margin-top: 17px;
+    margin-left: 23px;
+    border-radius: 6px;
+    background-color: rgb(221, 221, 221);
+    width: 420px;
+    height: 10%;
+    padding: 6px;
+}
+
+.input-text:hover {
+    background-color: rgb(245, 245, 245);
+}
+
+#input-button {
+    margin-top: 17px;
+    margin-left: 10px;
+    border-radius: 6px;
+    background-color: rgb(103, 255, 111);
+    width: 20%;
+    height: 10%;
+    padding: 6px;
+}
+
+#input-button:hover {
+    background-color: rgb(103, 207, 255);
+    transition: all 0.2s ease;
+}
+
+.comment-form {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: inline-flex;
+}
+
+.comments {
+    margin-top: 1%;
+    margin-left: 1%;
+    background-color: tomato;
+    display: inline-flex;
+    margin-top: 2%;
+    margin-left: 3%;
+    padding: 6px;
+    border-radius: 8px;
+}
+
+.comment-owner-section {
+    height: auto;
+    display: inline-block;
+    width: 100%;
+    border-radius: 15px;
+    border: black 2px solid;
+    background-color: #c453c0;
+}
+
+.comment-content-section {
+    height: auto;
+    display: inline-block;
+    width: 260px;
+    margin-right: 6px;
+    border-radius: 15px;
+    border: black 2px solid;
+    background-color: #2c61d3;
+}

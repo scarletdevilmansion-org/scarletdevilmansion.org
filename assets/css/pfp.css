@@ -1,0 +1,45 @@
+@media screen and (max-width: 2560px) {
+    .pfp {
+        display: block;
+        width:40px;
+        height:40px;
+        max-width:40px;
+        max-height:40px;
+        border-radius: 6px;
+    }
+}
+
+
+/*  benim ekran */
+@media screen and (max-width: 1880px) {
+    .pfp {
+        display: block;
+        width:40px;
+        height:40px;
+        max-width:40px;
+        max-height:40px;
+        border-radius: 6px;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .pfp {
+        display: block;
+        width:40px;
+        height:40px;
+        max-width:40px;
+        max-height:40px;
+        border-radius: 6px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .pfp {
+        display: block;
+        width:40px;
+        height:40px;
+        max-width:40px;
+        max-height:40px;
+        border-radius: 6px;
+    }
+}
